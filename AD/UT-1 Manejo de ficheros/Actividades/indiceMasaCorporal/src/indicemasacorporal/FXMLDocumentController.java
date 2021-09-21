@@ -12,14 +12,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 /**
  *
- * @author dama
+ * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
 public class FXMLDocumentController implements Initializable {
     

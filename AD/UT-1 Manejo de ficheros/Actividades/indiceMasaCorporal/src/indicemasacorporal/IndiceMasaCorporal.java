@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author dama
+ * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
 public class IndiceMasaCorporal extends Application {
     

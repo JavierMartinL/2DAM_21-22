@@ -7,7 +7,7 @@ package indicemasacorporal.modelo;
 
 /**
  *
- * @author dama
+ * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
 public class Persona {
     
