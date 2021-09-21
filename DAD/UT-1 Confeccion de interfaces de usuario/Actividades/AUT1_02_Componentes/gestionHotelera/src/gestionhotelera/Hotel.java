@@ -9,7 +9,7 @@ import javax.swing.JDialog;
 
 /**
  *
- * @author dama
+ * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
 public class Hotel extends javax.swing.JFrame {
     

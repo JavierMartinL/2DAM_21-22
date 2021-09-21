@@ -7,7 +7,7 @@ package gestionhotelera;
 
 /**
  *
- * @author dama
+ * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
 public class Formulario extends javax.swing.JDialog {
 
