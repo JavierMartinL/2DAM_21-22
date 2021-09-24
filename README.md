@@ -4,7 +4,7 @@
 
 | Asignaruta | Nombre | Maestro | Nombre | Correo |
 | -- | -- | -- | -- | -- |
-| AD | Acceso a datos | JCPR | Juan Carlos Pérez Rodríguez | |
+| AD | Acceso a datos | JCPR | Juan Carlos Pérez Rodríguez | jcperrodn@gobiernodecanarias.org |
 | PSP | Programación de servicios y procesos | SamAlb | Samara Albertos Blanchard | |
 | SGE | Sistemas de gestión empresarial | DanZur | Daniel Zurita Piñero (Tutor) | dzurpin@gobiernodecanarias.org |
 | DAD | Desarrollo de interfaces | LaiRom | Laia Romeo Fuentes | |
