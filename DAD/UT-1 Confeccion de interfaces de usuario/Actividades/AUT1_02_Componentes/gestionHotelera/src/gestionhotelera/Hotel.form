@@ -41,41 +41,37 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                       <Component id="btnActivar4" min="-2" pref="163" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnActivar5" min="-2" pref="163" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="btnActivar6" min="-2" pref="163" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="btnActivar7" min="-2" pref="163" max="-2" attributes="0"/>
+                      <EmptySpace pref="100" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="btnActivar" min="-2" pref="163" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnActivar1" min="-2" pref="163" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnActivar2" min="-2" pref="163" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnActivar3" min="-2" pref="163" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btnActivar" min="-2" pref="163" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnActivar1" min="-2" pref="163" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnActivar2" min="-2" pref="163" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnActivar8" min="-2" pref="163" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnActivar7" min="-2" pref="163" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnActivar3" min="-2" pref="163" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnActivar8" min="-2" pref="163" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnActivar9" min="-2" pref="163" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnActivar10" min="-2" pref="163" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnActivar11" min="-2" pref="163" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -87,23 +83,20 @@
                   <Component id="btnActivar" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
                   <Component id="btnActivar1" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
                   <Component id="btnActivar2" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
-                  <Component id="btnActivar3" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnActivar4" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
                   <Component id="btnActivar5" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
                   <Component id="btnActivar6" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
-                  <Component id="btnActivar7" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnActivar8" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
-                  <Component id="btnActivar9" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
-                  <Component id="btnActivar10" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
-                  <Component id="btnActivar11" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
+                  <Component id="btnActivar7" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
+                  <Component id="btnActivar3" alignment="3" min="-2" pref="84" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="68" max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -119,57 +112,50 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnActivar1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
+        <Property name="text" type="java.lang.String" value="Sal&#xf3;n ..."/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnActivar2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
+        <Property name="text" type="java.lang.String" value="Sal&#xf3;n ..."/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnActivar3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
+        <Property name="text" type="java.lang.String" value="Sal&#xf3;n ..."/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnActivar4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
+        <Property name="text" type="java.lang.String" value="Sal&#xf3;n ..."/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnActivar5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
+        <Property name="text" type="java.lang.String" value="Sal&#xf3;n ..."/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnActivar6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
+        <Property name="text" type="java.lang.String" value="Sal&#xf3;n ..."/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnActivar7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
+        <Property name="text" type="java.lang.String" value="Sal&#xf3;n ..."/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnActivar8">
       <Properties>
         <Property name="text" type="java.lang.String" value="Undefine"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnActivar9">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnActivar10">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnActivar11">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Undefine"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
   </SubComponents>
