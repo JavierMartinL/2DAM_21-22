@@ -6,8 +6,8 @@
 package gestiontareas;
 
 import gestiontareas.controller.Controller;
-import gestiontareas.model.Model;
-import gestiontareas.view.View;
+import gestiontareas.model.Tarea;
+import gestiontareas.view.VistaPrincipal;
 
 /**
  *
@@ -19,9 +19,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Model modelo = new Model();
-        View vista = new View();
-        Controller controlador = new Controller(modelo, vista);
+        Tarea tarea = new Tarea();
+        VistaPrincipal vista = new VistaPrincipal();
+        Controller controlador = new Controller(tarea, vista);
         controlador.iniciar();        
     }
     

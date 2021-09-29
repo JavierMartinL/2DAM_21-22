@@ -5,9 +5,10 @@
  */
 package gestiontareas.controller;
 
-import gestiontareas.model.Model;
-import gestiontareas.view.View;
-import gestiontareas.view.addTarea;
+import gestiontareas.model.Tarea;
+import gestiontareas.view.VistaPrincipal;
+import java.util.Date;
+import javax.swing.JSpinner;
 
 /**
  *
@@ -15,29 +16,54 @@ import gestiontareas.view.addTarea;
  */
 public class Controller{
     
-    private View vista;
-    private addTarea tarea;
-    private Model modelo;
+    private VistaPrincipal vistaPrincipal;
+    private Tarea tarea;
     
-    public Controller(Model modelo, View vista) {
-        this.modelo = modelo;
-        this.vista = vista;
+    public Controller(Tarea tarea, VistaPrincipal vista) {
+        this.tarea = tarea;
+        this.vistaPrincipal = vista;
         
-        this.vista.btnAgregar.addActionListener(this::add);
-        this.vista.btnHistorial.addActionListener(this::h);
+        // Ventana Principal
+        this.vistaPrincipal.btnAgregar.addActionListener(this::iniciarTareaModal);
+        this.vistaPrincipal.btnHistorial.addActionListener(this::h);
+        
+        // Modal
+        this.vistaPrincipal.btnAceptar.addActionListener(this::addTarea);
+        this.vistaPrincipal.btnCancelar.addActionListener(this::cerrarAddTareaModal);
+        this.vistaPrincipal.spnDia.setEditor(new JSpinner.DateEditor(vistaPrincipal.spnDia, "dd/MM/yyyy"));
     }
     
     public void iniciar() {
-        vista.setTitle("Gestión de Tareas");
-        vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
+        vistaPrincipal.setTitle("Gestión de Tareas");
+        vistaPrincipal.setLocationRelativeTo(null);
+        vistaPrincipal.setResizable(false);
+        vistaPrincipal.setVisible(true);
     }
     
-    private void add(java.awt.event.ActionEvent evt) {
-        System.out.println("Voy a agregar una nueva tarea");
-        tarea = new addTarea(vista, true);
-        tarea.setLocationRelativeTo(null);
-        tarea.setVisible(true);
+    private void iniciarTareaModal(java.awt.event.ActionEvent evt) {
+        vistaPrincipal.dlgAddTareaModal.setModal(true);
+        vistaPrincipal.dlgAddTareaModal.setTitle("Agregar nueva tarea");
+        vistaPrincipal.dlgAddTareaModal.setLocationRelativeTo(null);
+        vistaPrincipal.dlgAddTareaModal.setResizable(false);
+        vistaPrincipal.dlgAddTareaModal.setSize(490,250);
+        vistaPrincipal.dlgAddTareaModal.setVisible(true);
+    }
+    
+    private void addTarea(java.awt.event.ActionEvent evt) {
+        System.out.println("Agregar nueva tarea");
+        String actividad = vistaPrincipal.txtActividad.getText();
+        String asignatura = vistaPrincipal.txtAsignatura.getText();
+        Date dia = (Date) vistaPrincipal.spnDia.getValue();
+        new Tarea(actividad, asignatura, dia);
+        vistaPrincipal.txaInformacion.setText(tarea.mostrar());
+        cerrarAddTareaModal(evt);
+    }
+    
+    private void cerrarAddTareaModal(java.awt.event.ActionEvent evt) {
+        vistaPrincipal.txtActividad.setText("");
+        vistaPrincipal.txtAsignatura.setText("");
+        vistaPrincipal.spnDia.setValue(new Date());
+        vistaPrincipal.dlgAddTareaModal.dispose();
     }
     
     private void h(java.awt.event.ActionEvent evt) {
