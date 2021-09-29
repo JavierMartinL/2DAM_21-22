@@ -37,10 +37,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
         spnDia = new javax.swing.JSpinner();
         btnAceptar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        dlgHistorial = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txaInfoTareasVencidas = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txaInformacion = new javax.swing.JTextArea();
+        txaInforTareas = new javax.swing.JTextArea();
         btnAgregar = new javax.swing.JButton();
         btnHistorial = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Agregar Tarea");
@@ -125,6 +130,46 @@ public class VistaPrincipal extends javax.swing.JFrame {
                         .addGap(15, 15, 15))))
         );
 
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setToolTipText("");
+        jScrollPane2.setHorizontalScrollBar(null);
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(300, 300));
+
+        txaInfoTareasVencidas.setEditable(false);
+        txaInfoTareasVencidas.setColumns(20);
+        txaInfoTareasVencidas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txaInfoTareasVencidas.setLineWrap(true);
+        txaInfoTareasVencidas.setRows(5);
+        txaInfoTareasVencidas.setAutoscrolls(false);
+        jScrollPane2.setViewportView(txaInfoTareasVencidas);
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        jLabel6.setText("Tareas vencidas");
+
+        javax.swing.GroupLayout dlgHistorialLayout = new javax.swing.GroupLayout(dlgHistorial.getContentPane());
+        dlgHistorial.getContentPane().setLayout(dlgHistorialLayout);
+        dlgHistorialLayout.setHorizontalGroup(
+            dlgHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgHistorialLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(dlgHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgHistorialLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(30, 30, 30))
+        );
+        dlgHistorialLayout.setVerticalGroup(
+            dlgHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgHistorialLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel6)
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -132,43 +177,54 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setHorizontalScrollBar(null);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(300, 300));
 
-        txaInformacion.setColumns(20);
-        txaInformacion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txaInformacion.setLineWrap(true);
-        txaInformacion.setRows(5);
-        txaInformacion.setAutoscrolls(false);
-        jScrollPane1.setViewportView(txaInformacion);
+        txaInforTareas.setEditable(false);
+        txaInforTareas.setColumns(20);
+        txaInforTareas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txaInforTareas.setLineWrap(true);
+        txaInforTareas.setRows(5);
+        txaInforTareas.setAutoscrolls(false);
+        jScrollPane1.setViewportView(txaInforTareas);
 
+        btnAgregar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnAgregar.setText("Agregar");
 
+        btnHistorial.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnHistorial.setText("Historial");
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        jLabel5.setText("Tareas pendientes de realizar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAgregar)
-                    .addComponent(btnHistorial))
-                .addGap(41, 41, 41))
+                    .addComponent(jLabel5)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAgregar)
+                            .addComponent(btnHistorial))))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
+                        .addGap(140, 140, 140)
                         .addComponent(btnAgregar)
                         .addGap(20, 20, 20)
                         .addComponent(btnHistorial))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -216,13 +272,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnHistorial;
     public javax.swing.JDialog dlgAddTareaModal;
+    public javax.swing.JDialog dlgHistorial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JSpinner spnDia;
-    public javax.swing.JTextArea txaInformacion;
+    public javax.swing.JTextArea txaInfoTareasVencidas;
+    public javax.swing.JTextArea txaInforTareas;
     public javax.swing.JTextField txtActividad;
     public javax.swing.JTextField txtAsignatura;
     // End of variables declaration//GEN-END:variables

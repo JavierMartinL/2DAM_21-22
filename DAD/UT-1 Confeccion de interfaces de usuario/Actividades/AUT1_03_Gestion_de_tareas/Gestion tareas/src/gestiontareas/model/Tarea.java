@@ -28,6 +28,11 @@ public class Tarea {
     SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 
     public Tarea() {
+        new Tarea("Actividad01", "SSG", new Date(2022, 9, 22));
+        new Tarea("Actividad02", "EMR", new Date(2022, 9, 23));
+        new Tarea("Actividad03", "EMR", new Date(2022, 9, 24));
+        new Tarea("Actividad01", "AED", new Date(2022, 9, 23));
+        new Tarea("AUT01_01", "DAD", new Date(2022, 9, 24));
     }
     
     public Tarea(String actividad, String asignatura, Date dia) {
@@ -37,7 +42,7 @@ public class Tarea {
         tareas.add(this);
     }
     
-    public String mostrar() {
+    public String mostrar(boolean vencidas) {
         Collections.sort(tareas, new Comparator<Tarea>() {
             @Override
             public int compare(Tarea t1, Tarea t2) {
@@ -47,9 +52,15 @@ public class Tarea {
         Date hoy = eliminarTiempo(new Date());
         String informacion = "";
         for (Tarea tarea : tareas) {
-            if (hoy.before(tarea.dia) || hoy.equals(tarea.dia)) {
-                informacion += "- " + tarea + "\n";                
-            }
+            if (vencidas) {
+                if (hoy.after(tarea.dia)) {
+                    informacion += "- " + tarea + "\n";                
+                }
+            } else {
+                if (hoy.before(tarea.dia) || hoy.equals(tarea.dia)) {
+                    informacion += "- " + tarea + "\n";                
+                }
+            }            
         }
         return informacion;
     }

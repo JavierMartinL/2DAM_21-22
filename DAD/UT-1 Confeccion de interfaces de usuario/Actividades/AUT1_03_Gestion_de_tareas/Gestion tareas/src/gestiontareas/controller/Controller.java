@@ -25,7 +25,7 @@ public class Controller{
         
         // Ventana Principal
         this.vistaPrincipal.btnAgregar.addActionListener(this::iniciarTareaModal);
-        this.vistaPrincipal.btnHistorial.addActionListener(this::h);
+        this.vistaPrincipal.btnHistorial.addActionListener(this::iniciarHistorialModal);
         
         // Modal
         this.vistaPrincipal.btnAceptar.addActionListener(this::addTarea);
@@ -38,6 +38,8 @@ public class Controller{
         vistaPrincipal.setLocationRelativeTo(null);
         vistaPrincipal.setResizable(false);
         vistaPrincipal.setVisible(true);
+        
+        vistaPrincipal.txaInforTareas.setText(tarea.mostrar(false));
     }
     
     private void iniciarTareaModal(java.awt.event.ActionEvent evt) {
@@ -49,13 +51,24 @@ public class Controller{
         vistaPrincipal.dlgAddTareaModal.setVisible(true);
     }
     
+    private void iniciarHistorialModal(java.awt.event.ActionEvent evt) {
+        vistaPrincipal.dlgHistorial.setModal(true);
+        vistaPrincipal.dlgHistorial.setTitle("Historial de tareas");
+        vistaPrincipal.dlgHistorial.setLocationRelativeTo(null);
+        vistaPrincipal.dlgHistorial.setResizable(false);
+        vistaPrincipal.dlgHistorial.setSize(490,250);
+        vistaPrincipal.dlgHistorial.setVisible(true);
+        
+        vistaPrincipal.txaInfoTareasVencidas.setText(tarea.mostrar(true));
+    }
+    
     private void addTarea(java.awt.event.ActionEvent evt) {
         System.out.println("Agregar nueva tarea");
         String actividad = vistaPrincipal.txtActividad.getText();
         String asignatura = vistaPrincipal.txtAsignatura.getText();
         Date dia = (Date) vistaPrincipal.spnDia.getValue();
         new Tarea(actividad, asignatura, dia);
-        vistaPrincipal.txaInformacion.setText(tarea.mostrar());
+        vistaPrincipal.txaInforTareas.setText(tarea.mostrar(false));
         cerrarAddTareaModal(evt);
     }
     
@@ -64,10 +77,6 @@ public class Controller{
         vistaPrincipal.txtAsignatura.setText("");
         vistaPrincipal.spnDia.setValue(new Date());
         vistaPrincipal.dlgAddTareaModal.dispose();
-    }
-    
-    private void h(java.awt.event.ActionEvent evt) {
-        System.out.println("Voy a mostrar el historial de tareas");
     }
     
 }
