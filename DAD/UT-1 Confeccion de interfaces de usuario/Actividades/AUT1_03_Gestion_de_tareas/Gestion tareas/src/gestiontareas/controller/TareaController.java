@@ -15,13 +15,13 @@ import javax.swing.JSpinner;
  *
  * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
-public class Controller{
+public class TareaController{
     
     private VistaPrincipal vistaPrincipal;
     private Tarea tarea;
     
     
-    public Controller(Tarea tarea, VistaPrincipal vista) {
+    public TareaController(Tarea tarea, VistaPrincipal vista) {
         this.tarea = tarea;
         // Generar tareas por defecto
         this.tarea.crearTareasBase();

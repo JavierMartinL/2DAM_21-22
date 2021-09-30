@@ -5,7 +5,7 @@
  */
 package gestiontareas;
 
-import gestiontareas.controller.Controller;
+import gestiontareas.controller.TareaController;
 import gestiontareas.model.Tarea;
 import gestiontareas.view.VistaPrincipal;
 
@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         Tarea tarea = new Tarea();
         VistaPrincipal vista = new VistaPrincipal();
-        Controller controlador = new Controller(tarea, vista);
+        TareaController controlador = new TareaController(tarea, vista);
         controlador.iniciar();        
     }
     
