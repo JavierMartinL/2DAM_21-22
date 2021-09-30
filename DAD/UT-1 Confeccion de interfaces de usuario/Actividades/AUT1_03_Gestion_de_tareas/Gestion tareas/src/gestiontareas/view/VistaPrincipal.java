@@ -27,7 +27,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dlgAddTareaModal = new javax.swing.JDialog();
+        dlgTareaModal = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -37,6 +37,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
         spnDia = new javax.swing.JSpinner();
         btnAceptar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        cmbTareas = new javax.swing.JComboBox<>();
+        btnEliminar = new javax.swing.JButton();
+        ckbTerminar = new javax.swing.JCheckBox();
         dlgHistorial = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         txaInfoTareasVencidas = new javax.swing.JTextArea();
@@ -49,7 +52,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 100, 200));
-        jLabel1.setText("Agregar Tarea");
+        jLabel1.setText("Editor Tareas");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setText("Nombre");
@@ -75,68 +78,87 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         btnAceptar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnAceptar.setText("Aceptar");
-        btnAceptar.setToolTipText("Crear la nueva tarea");
+        btnAceptar.setToolTipText("Aceptar actualizacion en la tarea");
 
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
-        btnCancelar.setToolTipText("Cancelar la creación");
+        btnCancelar.setToolTipText("Cancelar la accion");
 
-        javax.swing.GroupLayout dlgAddTareaModalLayout = new javax.swing.GroupLayout(dlgAddTareaModal.getContentPane());
-        dlgAddTareaModal.getContentPane().setLayout(dlgAddTareaModalLayout);
-        dlgAddTareaModalLayout.setHorizontalGroup(
-            dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dlgAddTareaModalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(dlgAddTareaModalLayout.createSequentialGroup()
+        cmbTareas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
+        cmbTareas.setToolTipText("Selector de tarea para modificar/eliminar");
+
+        btnEliminar.setBackground(new java.awt.Color(255, 0, 0));
+        btnEliminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setToolTipText("Eliminar una tarea");
+
+        ckbTerminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        ckbTerminar.setText("Terminar Tarea");
+        ckbTerminar.setToolTipText("Dar por terminada una tarea");
+
+        javax.swing.GroupLayout dlgTareaModalLayout = new javax.swing.GroupLayout(dlgTareaModal.getContentPane());
+        dlgTareaModal.getContentPane().setLayout(dlgTareaModalLayout);
+        dlgTareaModalLayout.setHorizontalGroup(
+            dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgTareaModalLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dlgAddTareaModalLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(dlgAddTareaModalLayout.createSequentialGroup()
-                        .addGroup(dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(dlgTareaModalLayout.createSequentialGroup()
+                        .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(txtActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spnDia, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(dlgAddTareaModalLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(btnAceptar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCancelar))
+                        .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(txtAsignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(51, 51, 51))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(dlgTareaModalLayout.createSequentialGroup()
+                        .addComponent(spnDia, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(dlgTareaModalLayout.createSequentialGroup()
+                                .addComponent(btnAceptar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCancelar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminar))
+                            .addGroup(dlgTareaModalLayout.createSequentialGroup()
+                                .addComponent(ckbTerminar, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                                .addGap(187, 187, 187))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dlgTareaModalLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbTareas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
         );
-        dlgAddTareaModalLayout.setVerticalGroup(
-            dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dlgAddTareaModalLayout.createSequentialGroup()
+        dlgTareaModalLayout.setVerticalGroup(
+            dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgTareaModalLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbTareas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtActividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAsignatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addGroup(dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dlgAddTareaModalLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(spnDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgAddTareaModalLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addGroup(dlgAddTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCancelar)
-                            .addComponent(btnAceptar))
-                        .addGap(15, 15, 15))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spnDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ckbTerminar))
+                .addGap(20, 20, 20)
+                .addGroup(dlgTareaModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelar)
+                    .addComponent(btnAceptar)
+                    .addComponent(btnEliminar)))
         );
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -197,8 +219,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txaInforTareas);
 
         btnAgregar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnAgregar.setText("Agregar");
-        btnAgregar.setToolTipText("Agregar una nueva tarea");
+        btnAgregar.setText("Editor Tarea");
+        btnAgregar.setToolTipText("Agregar, editar o eliminar una tarea");
 
         btnHistorial.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnHistorial.setText("Historial");
@@ -212,18 +234,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAgregar)
-                    .addComponent(btnHistorial))
-                .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(30, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +258,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(btnAgregar)
-                        .addGap(20, 20, 20)
+                        .addGap(18, 18, 18)
                         .addComponent(btnHistorial))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -285,9 +309,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnCancelar;
+    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnHistorial;
-    public javax.swing.JDialog dlgAddTareaModal;
+    public javax.swing.JCheckBox ckbTerminar;
+    public javax.swing.JComboBox<String> cmbTareas;
     public javax.swing.JDialog dlgHistorial;
+    public javax.swing.JDialog dlgTareaModal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

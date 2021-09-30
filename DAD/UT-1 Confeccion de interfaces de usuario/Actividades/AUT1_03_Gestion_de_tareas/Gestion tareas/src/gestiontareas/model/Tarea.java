@@ -17,36 +17,43 @@ import java.util.Date;
  */
 public class Tarea {
     
-    static ArrayList<Tarea> tareas = new ArrayList<Tarea>();
+    private static ArrayList<Tarea> tareas = new ArrayList<Tarea>();
     
     private String actividad;
     private String asignatura;
     private Date dia;
+    private boolean terminar;
     
     SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 
     public Tarea() { }
     
-    public Tarea(String actividad, String asignatura, Date dia) {
+    public Tarea(String actividad, String asignatura, Date dia, boolean terminar) {
         this.actividad = actividad;
         this.asignatura = asignatura;
         this.dia = eliminarTiempo(dia);
+        this.terminar = terminar;
         if (!this.actividad.equals("") && !this.asignatura.equals("")) {
             tareas.add(this);
         }
     }
     
+    /**
+     * Leer todas las actividades y devolver segun la seleccionada
+     * @param vencidas boolean (true -> la tarea esta vencida | false -> la tarea sigue activa)
+     * @return String con las actividades
+     */
     public String mostrar(boolean vencidas) {
         Collections.sort(tareas, (Tarea t1, Tarea t2) -> t1.getDia().compareTo(t2.getDia()));
         Date hoy = eliminarTiempo(new Date());
         String informacion = "";
         for (Tarea tarea : tareas) {
             if (vencidas) {
-                if (hoy.after(tarea.dia)) {
+                if (hoy.after(tarea.dia) || tarea.terminar) {
                     informacion += "- " + tarea + "\n";                
                 }
             } else {
-                if (hoy.before(tarea.dia) || hoy.equals(tarea.dia)) {
+                if ((hoy.before(tarea.dia) || hoy.equals(tarea.dia)) && !tarea.terminar) {
                     informacion += "- " + tarea + "\n";                
                 }
             }            
@@ -54,6 +61,11 @@ public class Tarea {
         return informacion;
     }
     
+    /**
+     * Eliminar el tiempo de las fechas
+     * @param fecha Date que queremos modificar
+     * @return Date sin tiempo
+     */
     private Date eliminarTiempo(Date fecha) {
         Calendar horario = Calendar.getInstance();
         horario.setTime(fecha);
@@ -63,13 +75,23 @@ public class Tarea {
         horario.set(Calendar.MILLISECOND, 0);
         return horario.getTime();
     }
+    
+    /**
+     * Eliminar una Tarea del ArrayList
+     * @param index posición de la tarea dentro del ArrayList
+     */
+    public void eliminar(int index) {
+        tareas.remove(index);
+        System.out.println(tareas.size());
+    }
 
     public String getActividad() {
         return actividad;
     }
 
     public void setActividad(String actividad) {
-        this.actividad = actividad;
+        if (!actividad.equals(""))
+            this.actividad = actividad;
     }
 
     public String getAsignatura() {
@@ -77,7 +99,8 @@ public class Tarea {
     }
 
     public void setAsignatura(String asignatura) {
-        this.asignatura = asignatura;
+        if (!asignatura.equals(""))
+            this.asignatura = asignatura;
     }
 
     public Date getDia() {
@@ -88,17 +111,33 @@ public class Tarea {
         this.dia = dia;
     }
 
+    public boolean isTerminar() {
+        return terminar;
+    }
+
+    public void setTerminar(boolean terminar) {
+        this.terminar = terminar;
+    }
+
+    public static ArrayList<Tarea> getTareas() {
+        return tareas;
+    }
+
+    public static void setTareas(ArrayList<Tarea> tareas) {
+        Tarea.tareas = tareas;
+    }
+
     @Override
     public String toString() {        
-        return actividad + " de " + asignatura + " [" + formatoFecha.format(dia) + ']';
+        return actividad + " de " + asignatura + " [" + formatoFecha.format(dia) + ']' + ((terminar) ? " - Terminada" : "");
     }
     
     public void crearTareasBase() {
-        new Tarea("Actividad01", "SSG", new Date(121, 8, 22));
-        new Tarea("Actividad02", "EMR", new Date(121, 8, 23));
-        new Tarea("Actividad03", "EMR", new Date(121, 8, 24));
-        new Tarea("Actividad01", "AED", new Date(121, 9, 23));
-        new Tarea("AUT01_01", "DAD", new Date(121, 9, 24));
+        new Tarea("Actividad01", "SSG", new Date(121, 8, 22), false);
+        new Tarea("Actividad02", "EMR", new Date(121, 8, 23), false);
+        new Tarea("Actividad03", "EMR", new Date(121, 8, 24), false);
+        new Tarea("Actividad01", "AED", new Date(121, 9, 23), false);
+        new Tarea("AUT01_01", "DAD", new Date(121, 9, 24), false);
     }
     
 }
