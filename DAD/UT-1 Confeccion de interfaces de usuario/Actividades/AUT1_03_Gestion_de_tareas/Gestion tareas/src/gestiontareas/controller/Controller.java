@@ -21,6 +21,7 @@ public class Controller{
     
     public Controller(Tarea tarea, VistaPrincipal vista) {
         this.tarea = tarea;
+        this.tarea.crearTareasBase();
         this.vistaPrincipal = vista;
         
         // Ventana Principal
@@ -52,18 +53,16 @@ public class Controller{
     }
     
     private void iniciarHistorialModal(java.awt.event.ActionEvent evt) {
+        vistaPrincipal.txaInfoTareasVencidas.setText(tarea.mostrar(true));
         vistaPrincipal.dlgHistorial.setModal(true);
         vistaPrincipal.dlgHistorial.setTitle("Historial de tareas");
         vistaPrincipal.dlgHistorial.setLocationRelativeTo(null);
         vistaPrincipal.dlgHistorial.setResizable(false);
-        vistaPrincipal.dlgHistorial.setSize(490,250);
-        vistaPrincipal.dlgHistorial.setVisible(true);
-        
-        vistaPrincipal.txaInfoTareasVencidas.setText(tarea.mostrar(true));
+        vistaPrincipal.dlgHistorial.setSize(494,429);
+        vistaPrincipal.dlgHistorial.setVisible(true);        
     }
     
     private void addTarea(java.awt.event.ActionEvent evt) {
-        System.out.println("Agregar nueva tarea");
         String actividad = vistaPrincipal.txtActividad.getText();
         String asignatura = vistaPrincipal.txtAsignatura.getText();
         Date dia = (Date) vistaPrincipal.spnDia.getValue();

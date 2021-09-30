@@ -48,29 +48,38 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 100, 200));
         jLabel1.setText("Agregar Tarea");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setText("Nombre");
+        jLabel2.setToolTipText("");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setText("Asignatura");
+        jLabel3.setToolTipText("");
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setText("Día");
+        jLabel4.setToolTipText("");
 
         txtActividad.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtActividad.setToolTipText("Nombre de la tarea");
 
         txtAsignatura.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtAsignatura.setToolTipText("Asignatura de la tarea");
 
         spnDia.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         spnDia.setModel(new javax.swing.SpinnerDateModel());
+        spnDia.setToolTipText("Dia de entrega de la tarea");
 
         btnAceptar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnAceptar.setText("Aceptar");
+        btnAceptar.setToolTipText("Crear la nueva tarea");
 
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.setToolTipText("Cancelar la creación");
 
         javax.swing.GroupLayout dlgAddTareaModalLayout = new javax.swing.GroupLayout(dlgAddTareaModal.getContentPane());
         dlgAddTareaModal.getContentPane().setLayout(dlgAddTareaModalLayout);
@@ -140,10 +149,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
         txaInfoTareasVencidas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txaInfoTareasVencidas.setLineWrap(true);
         txaInfoTareasVencidas.setRows(5);
+        txaInfoTareasVencidas.setToolTipText("Lista de tareas vencidas");
         txaInfoTareasVencidas.setAutoscrolls(false);
         jScrollPane2.setViewportView(txaInfoTareasVencidas);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 100, 200));
         jLabel6.setText("Tareas vencidas");
 
         javax.swing.GroupLayout dlgHistorialLayout = new javax.swing.GroupLayout(dlgHistorial.getContentPane());
@@ -152,20 +163,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
             dlgHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgHistorialLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(dlgHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgHistorialLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(30, 30, 30))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgHistorialLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dlgHistorialLayout.setVerticalGroup(
             dlgHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dlgHistorialLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel6)
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
@@ -182,16 +192,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
         txaInforTareas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txaInforTareas.setLineWrap(true);
         txaInforTareas.setRows(5);
+        txaInforTareas.setToolTipText("Lista de tareas pendientes");
         txaInforTareas.setAutoscrolls(false);
         jScrollPane1.setViewportView(txaInforTareas);
 
         btnAgregar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnAgregar.setText("Agregar");
+        btnAgregar.setToolTipText("Agregar una nueva tarea");
 
         btnHistorial.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnHistorial.setText("Historial");
+        btnHistorial.setToolTipText("Mostrar el historial de tareas");
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 100, 200));
         jLabel5.setText("Tareas pendientes de realizar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -200,15 +214,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgregar)
-                            .addComponent(btnHistorial))))
+                    .addComponent(btnAgregar)
+                    .addComponent(btnHistorial))
                 .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,14 +232,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
+                        .addGap(141, 141, 141)
                         .addComponent(btnAgregar)
                         .addGap(20, 20, 20)
                         .addComponent(btnHistorial))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(31, 31, 31)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();

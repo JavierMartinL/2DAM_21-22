@@ -5,12 +5,10 @@
  */
 package gestiontareas.model;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -27,28 +25,19 @@ public class Tarea {
     
     SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Tarea() {
-        new Tarea("Actividad01", "SSG", new Date(2022, 9, 22));
-        new Tarea("Actividad02", "EMR", new Date(2022, 9, 23));
-        new Tarea("Actividad03", "EMR", new Date(2022, 9, 24));
-        new Tarea("Actividad01", "AED", new Date(2022, 9, 23));
-        new Tarea("AUT01_01", "DAD", new Date(2022, 9, 24));
-    }
+    public Tarea() { }
     
     public Tarea(String actividad, String asignatura, Date dia) {
         this.actividad = actividad;
         this.asignatura = asignatura;
         this.dia = eliminarTiempo(dia);
-        tareas.add(this);
+        if (!this.actividad.equals("") && !this.asignatura.equals("")) {
+            tareas.add(this);
+        }
     }
     
     public String mostrar(boolean vencidas) {
-        Collections.sort(tareas, new Comparator<Tarea>() {
-            @Override
-            public int compare(Tarea t1, Tarea t2) {
-                return t1.getDia().compareTo(t2.getDia());
-            }            
-        });
+        Collections.sort(tareas, (Tarea t1, Tarea t2) -> t1.getDia().compareTo(t2.getDia()));
         Date hoy = eliminarTiempo(new Date());
         String informacion = "";
         for (Tarea tarea : tareas) {
@@ -102,6 +91,14 @@ public class Tarea {
     @Override
     public String toString() {        
         return actividad + " de " + asignatura + " [" + formatoFecha.format(dia) + ']';
+    }
+    
+    public void crearTareasBase() {
+        new Tarea("Actividad01", "SSG", new Date(121, 8, 22));
+        new Tarea("Actividad02", "EMR", new Date(121, 8, 23));
+        new Tarea("Actividad03", "EMR", new Date(121, 8, 24));
+        new Tarea("Actividad01", "AED", new Date(121, 9, 23));
+        new Tarea("AUT01_01", "DAD", new Date(121, 9, 24));
     }
     
 }
