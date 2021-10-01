@@ -29,18 +29,40 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblInforTarea = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 500));
 
         tblInforTarea.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Actividad", "Asignatura", "Fecha"
+                "Actividad", "Asignatura", "Fecha", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblInforTarea);
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 100, 200));
+        jLabel5.setText("Tareas pendientes de realizar");
+
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton1.setText("Nueva Tarea");
+
+        jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton2.setText("Historial");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -48,15 +70,33 @@ public class VistaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addGap(38, 38, 38))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,6 +138,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tblInforTarea;
     // End of variables declaration//GEN-END:variables

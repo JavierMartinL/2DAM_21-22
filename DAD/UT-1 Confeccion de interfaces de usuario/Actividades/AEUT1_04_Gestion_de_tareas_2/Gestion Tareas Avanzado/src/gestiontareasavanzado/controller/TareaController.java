@@ -26,7 +26,7 @@ public class TareaController {
         vistaPrincipal.setTitle("Gestión de Tareas");
         vistaPrincipal.setLocationRelativeTo(null);
         vistaPrincipal.setResizable(false);
-        vistaPrincipal.setVisible(true);
+        vistaPrincipal.setVisible(true);        
     }
     
 }
