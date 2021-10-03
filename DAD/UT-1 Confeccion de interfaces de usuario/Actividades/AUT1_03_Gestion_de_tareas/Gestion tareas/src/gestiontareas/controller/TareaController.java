@@ -28,14 +28,20 @@ public class TareaController{
         this.vistaPrincipal = vista;
         
         // Ventana Principal
-        this.vistaPrincipal.btnAgregar.addActionListener(this::iniciarTareaModal);
+        this.vistaPrincipal.btnAgregar.addActionListener(this::iniciarAddTareaModal);
         this.vistaPrincipal.btnHistorial.addActionListener(this::iniciarHistorialModal);
+        this.vistaPrincipal.btnModificar.addActionListener(this::iniciarUpdateTareaModal);
         
-        // Modal Tarea
-        this.vistaPrincipal.btnAceptar.addActionListener(this::agregarTarea);
-        this.vistaPrincipal.btnCancelar.addActionListener(this::cerrarTareaModal);
-        this.vistaPrincipal.btnEliminar.addActionListener(this::eliminarTarea);
+        // Modal Add Tarea
+        this.vistaPrincipal.btnGuardar.addActionListener(this::agregarTarea);
+        this.vistaPrincipal.btnCancelar.addActionListener(this::cerrarAddTareaModal);
         this.vistaPrincipal.spnDia.setEditor(new JSpinner.DateEditor(vistaPrincipal.spnDia, "dd/MM/yyyy"));
+        
+        // Modal Update Tarea
+        this.vistaPrincipal.btnEditar.addActionListener(this::modificarTarea);
+        this.vistaPrincipal.btnCancelarUpd.addActionListener(this::cerrarUpdateTareaModal);
+        this.vistaPrincipal.btnEliminar.addActionListener(this::eliminarTarea);
+        this.vistaPrincipal.spnDiaUpd.setEditor(new JSpinner.DateEditor(vistaPrincipal.spnDiaUpd, "dd/MM/yyyy"));
     }
     
     public void iniciar() {
@@ -48,27 +54,13 @@ public class TareaController{
         vistaPrincipal.txaInforTareas.setText(tarea.mostrar(false));
     }
     
-    private void iniciarTareaModal(java.awt.event.ActionEvent evt) {
-        // Limpiar el JComboBox
-        DefaultComboBoxModel jComboBox1Model = new DefaultComboBoxModel();
-        vistaPrincipal.cmbTareas.setModel(jComboBox1Model);
-        vistaPrincipal.cmbTareas.addItem("---");
-        
-        // Agregar todas las actividades
-        for (Tarea actividad : tarea.getTareas()) {
-            vistaPrincipal.cmbTareas.addItem(actividad.toString());
-        }
-        // Activar el evento al utilizar el JComboBox
-        vistaPrincipal.cmbTareas.addActionListener(this::cargarTarea);
-        // Mostrar el boton de eliminar
-        vistaPrincipal.btnEliminar.setVisible(false);
-        
-        vistaPrincipal.dlgTareaModal.setModal(true);
-        vistaPrincipal.dlgTareaModal.setTitle("Agregar nueva tarea");
-        vistaPrincipal.dlgTareaModal.setLocationRelativeTo(null);
-        vistaPrincipal.dlgTareaModal.setResizable(false);
-        vistaPrincipal.dlgTareaModal.setSize(510,300);
-        vistaPrincipal.dlgTareaModal.setVisible(true);
+    private void iniciarAddTareaModal(java.awt.event.ActionEvent evt) {       
+        vistaPrincipal.dlgAddTareaModal.setModal(true);
+        vistaPrincipal.dlgAddTareaModal.setTitle("Agregar nueva tarea");
+        vistaPrincipal.dlgAddTareaModal.setLocationRelativeTo(null);
+        vistaPrincipal.dlgAddTareaModal.setResizable(false);
+        vistaPrincipal.dlgAddTareaModal.setSize(300, 385);
+        vistaPrincipal.dlgAddTareaModal.setVisible(true);
     }
     
     private void iniciarHistorialModal(java.awt.event.ActionEvent evt) {
@@ -79,8 +71,30 @@ public class TareaController{
         vistaPrincipal.dlgHistorial.setTitle("Historial de tareas");
         vistaPrincipal.dlgHistorial.setLocationRelativeTo(null);
         vistaPrincipal.dlgHistorial.setResizable(false);
-        vistaPrincipal.dlgHistorial.setSize(494,429);
+        vistaPrincipal.dlgHistorial.setSize(494, 429);
         vistaPrincipal.dlgHistorial.setVisible(true);        
+    }
+    
+    private void iniciarUpdateTareaModal(java.awt.event.ActionEvent evt) {
+        // Limpiar el JComboBox
+        DefaultComboBoxModel jComboBox1Model = new DefaultComboBoxModel();
+        vistaPrincipal.cmbTareas.setModel(jComboBox1Model);
+        vistaPrincipal.cmbTareas.addItem("---");
+        
+        // Agregar todas las actividades
+        for(Tarea tarea : tarea.getTareas()) {
+            vistaPrincipal.cmbTareas.addItem(tarea.toString());
+        }
+        
+        // Activar el evento al utilizar el JComboBox
+        vistaPrincipal.cmbTareas.addActionListener(this::cargarTarea);
+        
+        vistaPrincipal.dlgUpdateTareaModal.setModal(true);
+        vistaPrincipal.dlgUpdateTareaModal.setTitle("Modificar Tarea");
+        vistaPrincipal.dlgUpdateTareaModal.setLocationRelativeTo(null);
+        vistaPrincipal.dlgUpdateTareaModal.setResizable(false);
+        vistaPrincipal.dlgUpdateTareaModal.setSize(345, 450);
+        vistaPrincipal.dlgUpdateTareaModal.setVisible(true);
     }
     
     private void agregarTarea(java.awt.event.ActionEvent evt) {
@@ -88,55 +102,93 @@ public class TareaController{
         String actividad = vistaPrincipal.txtActividad.getText();
         String asignatura = vistaPrincipal.txtAsignatura.getText();
         Date dia = (Date) vistaPrincipal.spnDia.getValue();
-        boolean terminar = vistaPrincipal.ckbTerminar.isSelected();
         
-        // Comprobar si existe una tarea seleccionada en el JComboBox
-        if (vistaPrincipal.cmbTareas.getSelectedIndex() == 0) {
-            // Generar una nueva tarea
-            new Tarea(actividad, asignatura, dia, terminar);
-        } else {
-            // Modificar una tarea
-            Tarea seleccion = tarea.getTareas().get(vistaPrincipal.cmbTareas.getSelectedIndex() - 1);
-            seleccion.setActividad(actividad);
-            seleccion.setAsignatura(asignatura);
-            seleccion.setDia(dia);
-            seleccion.setTerminar(terminar);
-        }
-        cerrarTareaModal(evt);
+        // Generar una nueva tarea
+        new Tarea(actividad, asignatura, dia);
+        
+        // Cerrar el Modal
+        cerrarAddTareaModal(evt);
     }
     
-    private void eliminarTarea(java.awt.event.ActionEvent evt) {
-        // Eliminar una tarea
-        tarea.eliminar(vistaPrincipal.cmbTareas.getSelectedIndex() - 1);
-        cerrarTareaModal(evt);
-    }
-    
-    private void cerrarTareaModal(java.awt.event.ActionEvent evt) {
+    private void cerrarAddTareaModal(java.awt.event.ActionEvent evt) {
+        // Mostrar los nuevos cambios
         vistaPrincipal.txaInforTareas.setText(tarea.mostrar(false));
+        
+        // Limpiar los textField
         vistaPrincipal.txtActividad.setText("");
         vistaPrincipal.txtAsignatura.setText("");
         vistaPrincipal.spnDia.setValue(new Date());
-        vistaPrincipal.dlgTareaModal.dispose();
+        
+        // Cerrar el Modal
+        vistaPrincipal.dlgAddTareaModal.dispose();
     }
     
     private void cargarTarea(java.awt.event.ActionEvent evt) {
         // Comprobar si existe una tarea seleccionada en el JComboBox
         if (vistaPrincipal.cmbTareas.getSelectedIndex() == 0) {
+            // Desactivar los textField
+            controlarUpdateTarea(false);
+            
             // Limpiar los textField
-            vistaPrincipal.txtActividad.setText("");
-            vistaPrincipal.txtAsignatura.setText("");
+            vistaPrincipal.txtActividadUpd.setText("");
+            vistaPrincipal.txtAsignaturaUpd.setText("");
+            vistaPrincipal.spnDiaUpd.setValue(new Date());
             vistaPrincipal.ckbTerminar.setSelected(false);
-            vistaPrincipal.spnDia.setValue(new Date());
-            vistaPrincipal.btnEliminar.setVisible(false);
         } else {
-            // Añadir los datos de la tarea a los textField
+            // Recoger los datos de la tarea
             Tarea seleccion = tarea.getTareas().get(vistaPrincipal.cmbTareas.getSelectedIndex() - 1);
-            vistaPrincipal.txtActividad.setText(seleccion.getActividad());
-            vistaPrincipal.txtAsignatura.setText(seleccion.getAsignatura());
-            vistaPrincipal.spnDia.setValue(seleccion.getDia());
-            vistaPrincipal.ckbTerminar.setSelected(seleccion.isTerminar());
-            vistaPrincipal.btnEliminar.setVisible(true);
+            
+            // Activar los textField
+            controlarUpdateTarea(true);
+            
+            // Cargar los datos de la tarea en los textField
+            vistaPrincipal.txtActividadUpd.setText(seleccion.getActividad());
+            vistaPrincipal.txtAsignaturaUpd.setText(seleccion.getAsignatura());
+            vistaPrincipal.spnDiaUpd.setValue(seleccion.getDia());
+            vistaPrincipal.ckbTerminar.setSelected(seleccion.isTerminar());            
         }
+    }
+    
+    private void modificarTarea(java.awt.event.ActionEvent evt) {
+        // Actividad Seleccionada
+        Tarea seleccion = tarea.getTareas().get(vistaPrincipal.cmbTareas.getSelectedIndex() - 1);
+        
+        // Actualizar los datos
+        seleccion.setActividad(vistaPrincipal.txtActividadUpd.getText());
+        seleccion.setAsignatura(vistaPrincipal.txtAsignaturaUpd.getText());
+        seleccion.setDia((Date) vistaPrincipal.spnDiaUpd.getValue());
+        seleccion.setTerminar(vistaPrincipal.ckbTerminar.isSelected());
+        
+        // Cerrar el Modal
+        cerrarUpdateTareaModal(evt);
+    }
+    
+    private void cerrarUpdateTareaModal(java.awt.event.ActionEvent evt) {
+        // Mostrar los nuevos cambios
+        vistaPrincipal.txaInforTareas.setText(tarea.mostrar(false));
+        
+        // Cerrar el Modal
+        vistaPrincipal.dlgUpdateTareaModal.dispose();
+    }
+    
+    private void eliminarTarea(java.awt.event.ActionEvent evt) {
+        // Eliminar una tarea
+        tarea.eliminar(vistaPrincipal.cmbTareas.getSelectedIndex() - 1);
+        
+        // Cerrar el Modal
+        cerrarUpdateTareaModal(evt);
+    }
+    
+    private void controlarUpdateTarea(boolean activar) {
+        vistaPrincipal.lblActividadUpd.setEnabled(activar);
+        vistaPrincipal.txtActividadUpd.setEnabled(activar);
+        vistaPrincipal.lblAsignaturaUpd.setEnabled(activar);
+        vistaPrincipal.txtAsignaturaUpd.setEnabled(activar);
+        vistaPrincipal.lblDiaUpd.setEnabled(activar);
+        vistaPrincipal.spnDiaUpd.setEnabled(activar);
+        vistaPrincipal.ckbTerminar.setEnabled(activar);
+        vistaPrincipal.btnEditar.setEnabled(activar);
+        vistaPrincipal.btnEliminar.setEnabled(activar);
     }
     
 }

@@ -28,6 +28,10 @@ public class Tarea {
 
     public Tarea() { }
     
+    public Tarea(String actividad, String asignatura, Date dia) {
+        this(actividad, asignatura, dia, false);
+    }
+    
     public Tarea(String actividad, String asignatura, Date dia, boolean terminar) {
         this.actividad = actividad;
         this.asignatura = asignatura;
@@ -82,7 +86,6 @@ public class Tarea {
      */
     public void eliminar(int index) {
         tareas.remove(index);
-        System.out.println(tareas.size());
     }
 
     public String getActividad() {
