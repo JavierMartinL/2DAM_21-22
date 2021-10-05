@@ -42,9 +42,9 @@ public class TareaController {
     
     private void iniciarTareaModal(java.awt.event.ActionEvent evt) {
         vistaPrincipal.dlgTareaModal.setTitle("Agregar Tarea");
-        vistaPrincipal.dlgTareaModal.setLocationRelativeTo(null);
-        vistaPrincipal.dlgTareaModal.setResizable(false);
         vistaPrincipal.dlgTareaModal.setSize(600, 300);
+        vistaPrincipal.dlgTareaModal.setResizable(false);
+        vistaPrincipal.dlgTareaModal.setLocationRelativeTo(null);
         vistaPrincipal.dlgTareaModal.setVisible(true);
     }
     

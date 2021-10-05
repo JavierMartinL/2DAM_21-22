@@ -102,12 +102,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(txtAsignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(50, 50, 50))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgTareaModalLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(dlgTareaModalLayout.createSequentialGroup()
                         .addComponent(spnDia, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgTareaModalLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         dlgTareaModalLayout.setVerticalGroup(
@@ -136,16 +136,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        tblInforTarea.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tblInforTarea.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Actividad", "Asignatura", "Fecha", "Title 4"
+                "Actividad", "Asignatura", "Fecha", "Id"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -153,6 +154,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tblInforTarea);
+        if (tblInforTarea.getColumnModel().getColumnCount() > 0) {
+            tblInforTarea.getColumnModel().getColumn(3).setMinWidth(0);
+            tblInforTarea.getColumnModel().getColumn(3).setPreferredWidth(0);
+            tblInforTarea.getColumnModel().getColumn(3).setMaxWidth(0);
+        }
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 100, 200));
