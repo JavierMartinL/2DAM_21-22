@@ -46,8 +46,8 @@ public class TareaController{
     
     public void iniciar() {
         vistaPrincipal.setTitle("Gestión de Tareas");
-        vistaPrincipal.setLocationRelativeTo(null);
         vistaPrincipal.setResizable(false);
+        vistaPrincipal.setLocationRelativeTo(null);
         vistaPrincipal.setVisible(true);
         
         // Mostrar las actividades que siguen activas
@@ -57,9 +57,9 @@ public class TareaController{
     private void iniciarAddTareaModal(java.awt.event.ActionEvent evt) {       
         vistaPrincipal.dlgAddTareaModal.setModal(true);
         vistaPrincipal.dlgAddTareaModal.setTitle("Agregar nueva tarea");
-        vistaPrincipal.dlgAddTareaModal.setLocationRelativeTo(null);
         vistaPrincipal.dlgAddTareaModal.setResizable(false);
         vistaPrincipal.dlgAddTareaModal.setSize(300, 385);
+        vistaPrincipal.dlgAddTareaModal.setLocationRelativeTo(null);
         vistaPrincipal.dlgAddTareaModal.setVisible(true);
     }
     
@@ -69,9 +69,9 @@ public class TareaController{
         
         vistaPrincipal.dlgHistorial.setModal(true);
         vistaPrincipal.dlgHistorial.setTitle("Historial de tareas");
-        vistaPrincipal.dlgHistorial.setLocationRelativeTo(null);
         vistaPrincipal.dlgHistorial.setResizable(false);
         vistaPrincipal.dlgHistorial.setSize(494, 429);
+        vistaPrincipal.dlgHistorial.setLocationRelativeTo(null);
         vistaPrincipal.dlgHistorial.setVisible(true);        
     }
     
@@ -91,9 +91,9 @@ public class TareaController{
         
         vistaPrincipal.dlgUpdateTareaModal.setModal(true);
         vistaPrincipal.dlgUpdateTareaModal.setTitle("Modificar Tarea");
-        vistaPrincipal.dlgUpdateTareaModal.setLocationRelativeTo(null);
         vistaPrincipal.dlgUpdateTareaModal.setResizable(false);
         vistaPrincipal.dlgUpdateTareaModal.setSize(345, 450);
+        vistaPrincipal.dlgUpdateTareaModal.setLocationRelativeTo(null);
         vistaPrincipal.dlgUpdateTareaModal.setVisible(true);
     }
     
