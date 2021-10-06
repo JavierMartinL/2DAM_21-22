@@ -37,6 +37,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        dlgHistorialModal = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblInforTarea = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
@@ -132,6 +133,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnCancelar)
                     .addComponent(btnAceptar))
                 .addGap(20, 20, 20))
+        );
+
+        javax.swing.GroupLayout dlgHistorialModalLayout = new javax.swing.GroupLayout(dlgHistorialModal.getContentPane());
+        dlgHistorialModal.getContentPane().setLayout(dlgHistorialModalLayout);
+        dlgHistorialModalLayout.setHorizontalGroup(
+            dlgHistorialModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        dlgHistorialModalLayout.setVerticalGroup(
+            dlgHistorialModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -248,6 +260,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnHistorial;
     public javax.swing.JButton btnNuevaTarea;
+    public javax.swing.JDialog dlgHistorialModal;
     public javax.swing.JDialog dlgTareaModal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

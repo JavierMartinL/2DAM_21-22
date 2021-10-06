@@ -9,6 +9,7 @@ import gestiontareasavanzado.model.Tarea;
 import gestiontareasavanzado.view.VistaPrincipal;
 import java.util.Date;
 import javax.swing.JSpinner;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,7 +17,9 @@ import javax.swing.JSpinner;
  */
 public class TareaController {
     
+    // Vista Principal
     private VistaPrincipal vistaPrincipal;
+    // Modelo de Tarea
     private Tarea tarea;
     
     public TareaController(Tarea tarea, VistaPrincipal vista) {        
@@ -25,7 +28,7 @@ public class TareaController {
         
         // Vista Principal
         this.vistaPrincipal.btnNuevaTarea.addActionListener(this::iniciarTareaModal);
-        this.vistaPrincipal.btnHistorial.addActionListener(this::iniciarModal);
+        this.vistaPrincipal.btnHistorial.addActionListener(this::iniciarHistorialModal);
         
         // Modal Tarea
         this.vistaPrincipal.btnAceptar.addActionListener(this::crearTarea);
@@ -33,6 +36,9 @@ public class TareaController {
         this.vistaPrincipal.spnDia.setEditor(new JSpinner.DateEditor(this.vistaPrincipal.spnDia, "dd/MM/yyyy"));
     }
     
+    /**
+     * Método que muestra la vista principal
+     */
     public void iniciar() {
         vistaPrincipal.setTitle("Gestión de Tareas");
         vistaPrincipal.setLocationRelativeTo(null);
@@ -40,7 +46,14 @@ public class TareaController {
         vistaPrincipal.setVisible(true);        
     }
     
+    /**
+     * Método que muestra el modal para agregar una nueva tarea
+     * @param evt Accion
+     */
     private void iniciarTareaModal(java.awt.event.ActionEvent evt) {
+        // Mostar las tareas que estan activas
+        mostrarTareas(true);
+        
         vistaPrincipal.dlgTareaModal.setTitle("Agregar Tarea");
         vistaPrincipal.dlgTareaModal.setSize(600, 300);
         vistaPrincipal.dlgTareaModal.setResizable(false);
@@ -48,19 +61,43 @@ public class TareaController {
         vistaPrincipal.dlgTareaModal.setVisible(true);
     }
     
+    /**
+     * Método que muestra el modal con las tareas vencidas / terminadas
+     * @param evt Accion
+     */
+    private void iniciarHistorialModal(java.awt.event.ActionEvent evt) {
+        vistaPrincipal.dlgHistorialModal.setTitle("");
+        vistaPrincipal.dlgHistorialModal.setSize(100, 100);
+        vistaPrincipal.dlgHistorialModal.setResizable(false);
+        vistaPrincipal.dlgHistorialModal.setLocationRelativeTo(null);
+        vistaPrincipal.dlgHistorialModal.setVisible(true);
+    }
+    
+    
+    /**
+     * Método que cierra el modal para agregar una nueva tarea
+     * @param evt Accion
+     */
     private void cerrarTareaModal(java.awt.event.ActionEvent evt) {
         vistaPrincipal.dlgTareaModal.dispose();
     }
     
-    private void iniciarModal(java.awt.event.ActionEvent evt) {
-        
-    }
-    
+    /**
+     * Método que recoje los datos de la nueva actividad y llama al modelo Tarea
+     * @param evt 
+     */
     private void crearTarea(java.awt.event.ActionEvent evt) {
         String actividad = vistaPrincipal.txtActividad.getText();
         String asignatura = vistaPrincipal.txtAsignatura.getText();
         Date dia = (Date) vistaPrincipal.spnDia.getValue();
         
-        System.out.println("Actividad: " + actividad + "\nAsignatura: " + asignatura + "\nDia: " + dia);
+        Tarea tarea = new Tarea(actividad, asignatura, dia, false);        
+    }
+    
+    private void mostrarTareas(boolean activa) {
+        DefaultTableModel tableModel = (DefaultTableModel) vistaPrincipal.tblInforTarea.getModel();
+        tableModel.setRowCount(0);
+        
+        //tarea.
     }
 }
