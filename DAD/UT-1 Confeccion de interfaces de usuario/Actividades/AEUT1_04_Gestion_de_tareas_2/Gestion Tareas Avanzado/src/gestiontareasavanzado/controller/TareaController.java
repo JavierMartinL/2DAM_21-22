@@ -208,13 +208,21 @@ public class TareaController {
         
         tableModel.setRowCount(0);
         
+        Object[] datosFila = new Object[3];
+        
         // Recorrer las tareas y mostrarlas en la tabla
         for (Tarea tarea : tarea.mostrar(finalizada)) {
-            tableModel.addRow(new Object[] {
-                "- " + tarea.getActividad() + " de " + tarea.getAsignatura(),
-                formatoFecha.format(tarea.getDia()),
-                tarea.isTerminar()
-            });
+            String descripcion = "- " + tarea.getActividad() + " de " + tarea.getAsignatura();
+            if (tarea.isTerminar()) {
+                datosFila[0] = tachar(descripcion);
+                datosFila[1] = tachar(formatoFecha.format(tarea.getDia()));
+                datosFila[2] = tarea.isTerminar();
+            } else {
+                datosFila[0] = descripcion;
+                datosFila[1] = formatoFecha.format(tarea.getDia());
+                datosFila[2] = tarea.isTerminar();
+            }
+            tableModel.addRow(datosFila);
         }
     }
     
@@ -274,5 +282,14 @@ public class TareaController {
         
         // Cerrar el Modal
         cerrarModTareaModal();
+    }
+    
+    /**
+     * Método para tachar los datos de la tabla
+     * @param texto que vamos a tachar
+     * @return texto tachado
+     */
+    private String tachar(String texto) {
+        return "<html><strike>" + texto + "</strike></html>";
     }
 }

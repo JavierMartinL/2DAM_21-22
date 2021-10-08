@@ -68,10 +68,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel4.setToolTipText("");
 
         txtActividad.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtActividad.setToolTipText("Nombre de la tarea");
+        txtActividad.setToolTipText("Nombre de la actividad");
 
         txtAsignatura.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtAsignatura.setToolTipText("Asignatura de la tarea");
+        txtAsignatura.setToolTipText("Nombre de la Asignatura");
 
         spnDia.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         spnDia.setModel(new javax.swing.SpinnerDateModel());
@@ -79,11 +79,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         btnAceptar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnAceptar.setText("Aceptar");
-        btnAceptar.setToolTipText("Aceptar actualizacion en la tarea");
+        btnAceptar.setToolTipText("Guardar la nueva  tarea");
 
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
-        btnCancelar.setToolTipText("Cancelar la accion");
+        btnCancelar.setToolTipText("Cancelar la accion y cerrar");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 100, 200));
@@ -160,7 +160,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false
@@ -174,6 +174,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblInforHistorial.setToolTipText("Todas las tareas que estan vencidas o terminadas");
         jScrollPane2.setViewportView(tblInforHistorial);
         if (tblInforHistorial.getColumnModel().getColumnCount() > 0) {
             tblInforHistorial.getColumnModel().getColumn(1).setMinWidth(80);
@@ -220,10 +221,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel8.setToolTipText("");
 
         txtModActividad.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtModActividad.setToolTipText("Nombre de la tarea");
+        txtModActividad.setToolTipText("Nombre de la actividad");
 
         txtModAsignatura.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtModAsignatura.setToolTipText("Asignatura de la tarea");
+        txtModAsignatura.setToolTipText("Nombre  de la asignatura");
 
         spnModDia.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         spnModDia.setModel(new javax.swing.SpinnerDateModel());
@@ -234,15 +235,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel9.setText("Gestionar datos de la Tarea");
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel10.setText("Nombre");
+        jLabel10.setText("Actividad");
         jLabel10.setToolTipText("");
 
         btnModificar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnModificar.setText("Modificar");
+        btnModificar.setToolTipText("Guardar modificaciones de la tarea");
 
         btnEliminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 0, 0));
         btnEliminar.setText("Eliminar");
+        btnEliminar.setToolTipText("Eliminar esta tarea");
 
         javax.swing.GroupLayout dlgModTareaModalLayout = new javax.swing.GroupLayout(dlgModTareaModal.getContentPane());
         dlgModTareaModal.getContentPane().setLayout(dlgModTareaModalLayout);
@@ -330,6 +333,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblInforTarea.setToolTipText("Todas las tareas que estan activas");
         jScrollPane1.setViewportView(tblInforTarea);
         if (tblInforTarea.getColumnModel().getColumnCount() > 0) {
             tblInforTarea.getColumnModel().getColumn(1).setMinWidth(80);
@@ -342,12 +346,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         btnNuevaTarea.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnNuevaTarea.setText("Nueva Tarea");
+        btnNuevaTarea.setToolTipText("Crear una nueva tarea");
 
         btnHistorial.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnHistorial.setText("Historial");
+        btnHistorial.setToolTipText("Mostrar el historial de tareas vencidas");
 
         btnFinalizarTarea.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnFinalizarTarea.setText("Finalizar");
+        btnFinalizarTarea.setToolTipText("Finalizar las tareas seleccionadas");
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 100, 200));
