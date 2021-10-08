@@ -41,7 +41,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblInforHistorial = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         dlgModTareaModal = new javax.swing.JDialog();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -164,7 +163,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 java.lang.String.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -189,10 +188,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 100, 200));
         jLabel6.setText("Tareas vencidas");
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 100, 200));
-        jLabel5.setText("Tareas pendientes de realizar");
-
         javax.swing.GroupLayout dlgHistorialModalLayout = new javax.swing.GroupLayout(dlgHistorialModal.getContentPane());
         dlgHistorialModal.getContentPane().setLayout(dlgHistorialModalLayout);
         dlgHistorialModalLayout.setHorizontalGroup(
@@ -205,11 +200,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
                 .addGap(20, 20, 20))
-            .addGroup(dlgHistorialModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(dlgHistorialModalLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         dlgHistorialModalLayout.setVerticalGroup(
             dlgHistorialModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,11 +209,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(dlgHistorialModalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(dlgHistorialModalLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
@@ -461,7 +446,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
