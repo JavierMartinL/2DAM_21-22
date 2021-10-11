@@ -1,4 +1,5 @@
 # AD
+## UT-1 Manejo de ficheros
 /AD/UT-1 Manejo de ficheros/Actividades/IndiceMasaCorporal/nbproject/private/
 /AD/UT-1 Manejo de ficheros/Actividades/IndiceMasaCorporal/build/
 /AD/UT-1 Manejo de ficheros/Actividades/IndiceMasaCorporal/dist/
@@ -36,6 +37,7 @@
 /AD/UT-1 Manejo de ficheros/Actividades/MonedasXML/dist/
 
 # DAD
+## UT-1 Confeccion de interfaces de usuario
 /DAD/UT-1 Confeccion de interfaces de usuario/Actividades/AUT1_01_Primera_Interfaz_Java/Primera Interfaz Java/nbproject/private/
 /DAD/UT-1 Confeccion de interfaces de usuario/Actividades/AUT1_01_Primera_Interfaz_Java/Primera Interfaz Java/dist/
 /DAD/UT-1 Confeccion de interfaces de usuario/Actividades/AUT1_01_Primera_Interfaz_Java/Primera Interfaz Java/build/
@@ -53,7 +55,33 @@
 /DAD/UT-1 Confeccion de interfaces de usuario/Actividades/AEUT1_04_Gestion_de_tareas_2/Gestion Tareas Avanzado/build/
 
 # PGL
+## UT-1 Analisis de tecnologias para aplicaciones en dispositivos moviles
 /PGL/UT-1 Analisis de tecnologias para aplicaciones en dispositivos moviles/Actividades/GestionBanco/nbproject/private/
 /PGL/UT-1 Analisis de tecnologias para aplicaciones en dispositivos moviles/Actividades/GestionBanco/dist/
 /PGL/UT-1 Analisis de tecnologias para aplicaciones en dispositivos moviles/Actividades/GestionBanco/build/
-/AD/UT-1 Manejo de ficheros/Actividades/MonedasXML/nbproject/private/
+
+#PSP
+## UT-1 Programacion multiproceso
+/PSP/UT-1 Programacion multiproceso/Ejemplos/SincronizacionThreads/nbproject/private/
+/PSP/UT-1 Programacion multiproceso/Ejemplos/SincronizacionThreads/build/
+/PSP/UT-1 Programacion multiproceso/Ejemplos/SincronizacionThreads/dist/
+
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjClaseMultiplicacion/nbproject/private/
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjClaseMultiplicacion/build/
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjClaseMultiplicacion/dist/
+
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjemploHilos/nbproject/private/
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjemploHilos/build/
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjemploHilos/dist/
+
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjProcesosLinux/nbproject/private/
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjProcesosLinux/build/
+/PSP/UT-1 Programacion multiproceso/Ejemplos/EjProcesosLinux/dist/
+
+/PSP/UT-1 Programacion multiproceso/Actividades/Aleatorios/nbproject/private/
+/PSP/UT-1 Programacion multiproceso/Actividades/Aleatorios/build/
+/PSP/UT-1 Programacion multiproceso/Actividades/Aleatorios/dist/
+
+/PSP/UT-1 Programacion multiproceso/Actividades/OrdenarNumeros/nbproject/private/
+/PSP/UT-1 Programacion multiproceso/Actividades/OrdenarNumeros/build/
+/PSP/UT-1 Programacion multiproceso/Actividades/OrdenarNumeros/dist/
