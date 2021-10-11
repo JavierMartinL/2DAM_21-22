@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.iespuertodelacruz.javier.numerosprimosmenores;
+package es.iespuertodelacruz.javier.gestorpersonasserializado;
 
-import es.iespuertodelacruz.javier.numerosprimosmenores.controller.MenuController;
+import es.iespuertodelacruz.javier.gestorpersonasserializado.controller.MenuController;
+import java.io.IOException;
 
 /**
  *
@@ -16,11 +17,11 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
-        MenuController menuControllar = new MenuController();
+        MenuController menuController = new MenuController();
+        menuController.iniciar();
         
-        menuControllar.mostrarMenu();
     }
     
 }

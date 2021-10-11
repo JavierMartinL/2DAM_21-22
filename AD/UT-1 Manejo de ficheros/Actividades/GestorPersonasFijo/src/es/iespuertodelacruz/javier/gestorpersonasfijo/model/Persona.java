@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.iespuertodelacruz.javier.gestorpersonas.model;
+package es.iespuertodelacruz.javier.gestorpersonasfijo.model;
 
 /**
  *
@@ -13,16 +13,13 @@ public class Persona {
     
     private String nombre;
     private String apellido;
-    private String dni;
     private int edad;
-    
-    public Persona() {
-    }
 
-    public Persona(String nombre, String apellido, String dni, int edad) {
+    public Persona() { }
+
+    public Persona(String nombre, String apellido, int edad) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
         this.edad = edad;
     }
 
@@ -42,14 +39,6 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
     public int getEdad() {
         return edad;
     }
@@ -60,7 +49,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", edad=" + edad + '}';
+        return nombre + " " + apellido + ", " + edad + " años";
     }
     
 }

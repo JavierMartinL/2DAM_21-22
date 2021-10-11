@@ -5,9 +5,7 @@
  */
 package es.iespuertodelacruz.javier.gestorpersonas;
 
-import es.iespuertodelacruz.javier.gestorpersonas.model.Persona;
-import es.iespuertodelacruz.javier.gestorpersonas.model.RegistroPersona;
-import java.io.IOException;
+import es.iespuertodelacruz.javier.gestorpersonas.controller.MenuController;
 
 /**
  *
@@ -18,13 +16,11 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         
-        RegistroPersona registro = new RegistroPersona();
+        MenuController personasController = new MenuController();
+        personasController.iniciar();
         
-        for (Persona persona : registro.getAll()) {
-            System.out.println(persona);
-        }        
     }
     
 }

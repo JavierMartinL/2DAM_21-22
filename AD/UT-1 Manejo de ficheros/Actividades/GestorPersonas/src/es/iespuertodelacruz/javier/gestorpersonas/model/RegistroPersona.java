@@ -35,7 +35,6 @@ public class RegistroPersona {
         Persona paux = getPersona(p.getDni());
         
         ok = paux == null;
-        
         if (ok) {
             try (
                 PrintWriter pw = new PrintWriter(
@@ -44,15 +43,15 @@ public class RegistroPersona {
                     )
                 )
             ) {
-
-                //la linea formato: nombre, apellidos, dni, edad, altura, peso
                 String registro = p.getNombre() + ";" +
+                        p.getApellido()+ ";" +
                         p.getDni() + ";" +
                         p.getEdad();
+                
                 pw.println(registro);
 
             } catch (IOException ex) { }
-        }        
+        }
         
     }
     
@@ -65,19 +64,11 @@ public class RegistroPersona {
             while ((strPersona = reader.readLine()) != null) {
                 
                 String arrpersona[] = strPersona.split(";");
-//                if (arrpersona[2].toUpperCase(dni)) {
-//                    
-//                }
+                if (arrpersona[2].toUpperCase().equals(dni.toUpperCase())) {
+                    persona = new Persona(arrpersona[0], arrpersona[1], arrpersona[2], Integer.parseInt(arrpersona[3]));
+                }
                 
             }
-            
-//            reader.lines()
-//                    .forEach( p -> {
-//                        String[] arrypersona = p.split(";");
-//                        if (arrypersona[1].equals(dni)) {
-//                            persona = new Persona(arrypersona[0], arrypersona[1], Integer.parseInt(arrypersona[2]));
-//                        }
-//                    });
         }
         return persona;
     }
@@ -91,8 +82,9 @@ public class RegistroPersona {
                         String[] persona = p.split(";");
                         personas.add(new Persona(
                                 persona[0], 
-                                persona[1], 
-                                Integer.parseInt(persona[2]))
+                                persona[1],
+                                persona[2],
+                                Integer.parseInt(persona[3]))
                         );
                     });
         } 

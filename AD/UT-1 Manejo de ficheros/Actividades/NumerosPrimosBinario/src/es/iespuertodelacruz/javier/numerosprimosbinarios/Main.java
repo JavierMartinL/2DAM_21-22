@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.iespuertodelacruz.javier.numerosprimosmenores;
+package es.iespuertodelacruz.javier.numerosprimosbinarios;
 
-import es.iespuertodelacruz.javier.numerosprimosmenores.controller.MenuController;
+import es.iespuertodelacruz.javier.numerosprimosbinarios.modelo.GestorFicherosBinarios;
+import es.iespuertodelacruz.javier.numerosprimosbinarios.modelo.NumerosPrimos;
 
 /**
  *
@@ -18,9 +19,11 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        MenuController menuControllar = new MenuController();
+        NumerosPrimos n = new NumerosPrimos();
+        GestorFicherosBinarios gfb = new GestorFicherosBinarios();
         
-        menuControllar.mostrarMenu();
+        gfb.guargar(n.generarPrimos());
+        gfb.leer();
     }
     
 }

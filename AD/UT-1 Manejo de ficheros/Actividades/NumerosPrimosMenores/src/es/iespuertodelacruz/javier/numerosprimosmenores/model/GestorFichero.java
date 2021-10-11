@@ -20,7 +20,7 @@ public class GestorFichero {
         BufferedWriter bw = null;
         
         try {
-            bw = new BufferedWriter(new FileWriter("info.txt"));
+            bw = new BufferedWriter(new FileWriter("infoTodo.txt"));
             for (Integer numero : primos) {
                 bw.write(Integer.toString(numero));
                 bw.newLine();
@@ -40,7 +40,7 @@ public class GestorFichero {
         
         try {            
             for (Integer numero : primos) {
-                bw = new BufferedWriter(new FileWriter("info2.txt", true));
+                bw = new BufferedWriter(new FileWriter("infoUnoUno.txt", true));
                 bw.write(Integer.toString(numero));
                 bw.newLine();
                 bw.close();

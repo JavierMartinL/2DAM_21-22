@@ -3,18 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.iespuertodelacruz.javier.gestorpersonas.model;
+package es.iespuertodelacruz.javier.gestorpersonasserializado.model;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
  * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
-public class Persona {
+public class Persona implements Serializable{
     
     private String nombre;
     private String apellido;
-    private String dni;
+    private Dni dni;
     private int edad;
+
+    static ArrayList<Persona> personas = new ArrayList<>();
     
     public Persona() {
     }
@@ -22,8 +27,34 @@ public class Persona {
     public Persona(String nombre, String apellido, String dni, int edad) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
+        this.dni = new Dni(dni.substring(0,dni.length() - 1), dni.toUpperCase().charAt(dni.length()-1));
         this.edad = edad;
+    }
+    
+    public String guardarPersona(Persona persona) {
+        String error = "";
+        if(persona.getDni().isValido()) {
+            boolean existe = false;
+            for (Persona personaGuardada : personas) {
+                String dniGuardado = personaGuardada.getDni().toString();
+                String dni = persona.getDni().toString();
+                if (dniGuardado.equals(dni)) {
+                    existe = true;
+                }
+            }
+            if (!existe) {
+                personas.add(persona);
+            }
+        }
+        return error;
+    }
+    
+    public ArrayList<Persona> getAll() {
+        return personas;
+    }
+    
+    public void setAll(ArrayList<Persona> personas) {
+        this.personas = personas;
     }
 
     public String getNombre() {
@@ -42,11 +73,11 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public String getDni() {
+    public Dni getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(Dni dni) {
         this.dni = dni;
     }
 
