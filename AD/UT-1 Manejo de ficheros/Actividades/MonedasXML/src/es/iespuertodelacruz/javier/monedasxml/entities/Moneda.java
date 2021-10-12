@@ -7,6 +7,10 @@ package es.iespuertodelacruz.javier.monedasxml.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -14,6 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
 @XmlRootElement(name="moneda")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Moneda implements Serializable{
 
     Integer idMoneda;
@@ -29,7 +34,8 @@ public class Moneda implements Serializable{
         this.historicos = historicos;
     }
     
-    
+    @XmlElementWrapper(name="historicos")
+    @XmlElement(name="historico")
     ArrayList<Historico> historicos = new ArrayList<Historico>();
 
     public Moneda(){}

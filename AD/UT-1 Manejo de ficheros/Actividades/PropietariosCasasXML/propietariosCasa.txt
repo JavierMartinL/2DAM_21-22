@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<propietarios>
+    <propietario>
+        <idPropietario>0</idPropietario>
+        <nombre>Paco</nombre>
+        <casas>
+            <casa>
+                <dirección>c/San matias</dirección>
+                <idCasa>0</idCasa>
+                <numero>34</numero>
+            </casa>
+            <casa>
+                <dirección>c/Marisol</dirección>
+                <idCasa>1</idCasa>
+                <numero>17</numero>
+            </casa>
+        </casas>
+    </propietario>
+    <propietario>
+        <idPropietario>1</idPropietario>
+        <nombre>Ana</nombre>
+        <casas>
+            <casa>
+                <dirección>c/San matias</dirección>
+                <idCasa>0</idCasa>
+                <numero>34</numero>
+            </casa>
+        </casas>
+    </propietario>
+    <propietario>
+        <idPropietario>2</idPropietario>
+        <nombre>Luis</nombre>
+        <casas>
+            <casa>
+                <dirección>c/Marisol</dirección>
+                <idCasa>1</idCasa>
+                <numero>17</numero>
+            </casa>
+        </casas>
+    </propietario>
+    <propietario>
+        <idPropietario>3</idPropietario>
+        <nombre>Ruben</nombre>
+        <casas/>
+    </propietario>
+</propietarios>

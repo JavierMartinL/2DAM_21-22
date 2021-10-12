@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.iespuertodelacruz.javier.monedasxml.utils;
+package es.iespuertodelacruz.javier.propietarioscasasxml.utils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -63,5 +63,4 @@ public class ManejoFichero {
         }
         return texto;
     }
-    
 }

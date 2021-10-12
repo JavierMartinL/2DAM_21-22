@@ -6,7 +6,6 @@
 package es.iespuertodelacruz.javier.monedasxml.xml;
 
 import es.iespuertodelacruz.javier.monedasxml.entities.Almacen;
-import java.io.OutputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
@@ -24,7 +23,6 @@ public class AlmacenXML implements JavaToXMLString<Almacen>{
     public String objToStringXML(Almacen almacen) {
         JAXBContext contexto;
         Marshaller marshaller;
-        OutputStream outputStream = null;
         StringWriter stringWriter = new StringWriter();
         try {
             contexto = JAXBContext.newInstance(almacen.getClass());

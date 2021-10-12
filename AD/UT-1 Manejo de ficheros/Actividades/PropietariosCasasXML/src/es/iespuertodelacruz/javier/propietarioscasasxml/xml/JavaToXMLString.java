@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.iespuertodelacruz.javier.monedasxml.xml;
+package es.iespuertodelacruz.javier.propietarioscasasxml.xml;
 
 /**
  *
  * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
 public interface JavaToXMLString<T> {
-
-    String objToStringXML( T obj);
+    
+    String objToStringXML(T obj);
     
     T stringXMLToObj(String texto);
 }

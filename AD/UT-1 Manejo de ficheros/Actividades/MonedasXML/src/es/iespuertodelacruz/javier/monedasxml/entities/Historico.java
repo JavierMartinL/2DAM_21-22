@@ -60,6 +60,11 @@ public class Historico implements Serializable{
     public void setEquivalenteEuro(double equivalenteEuro) {
         this.equivalenteEuro = equivalenteEuro;
     }
+
+    @Override
+    public String toString() {
+        return "ID= " + idHistorico + ", fecha= " + fecha + ", equivalenteEuro= " + equivalenteEuro;
+    }
     
     
    Moneda moneda;

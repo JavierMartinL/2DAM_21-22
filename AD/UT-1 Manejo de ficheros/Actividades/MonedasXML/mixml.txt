@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<monedas>
+    <moneda>
+        <idMoneda>0</idMoneda>
+        <nombre>libra</nombre>
+        <pais>uk</pais>
+        <historicos>
+            <historico>
+                <equivalenteEuro>2.3</equivalenteEuro>
+                <fecha>2021-10-12T20:16:39.549+01:00</fecha>
+                <idHistorico>0</idHistorico>
+            </historico>
+        </historicos>
+    </moneda>
+</monedas>
