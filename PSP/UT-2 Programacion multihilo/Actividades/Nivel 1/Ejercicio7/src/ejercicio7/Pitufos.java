@@ -34,7 +34,7 @@ public class Pitufos extends Thread{
                 panComido = true;
             }
         }
-        System.out.println("Termino: " + nombre);
+        System.out.println("\n\tTermino: " + nombre + "\n");
     } 
     
 }
