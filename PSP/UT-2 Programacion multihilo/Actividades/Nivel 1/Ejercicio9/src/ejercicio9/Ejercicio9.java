@@ -15,7 +15,18 @@ public class Ejercicio9 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MarcasTelefonos samsung, xiaomi, sony, apple;
+        samsung = new MarcasTelefonos("samsung");
+        xiaomi = new MarcasTelefonos("xiaomi");
+        sony = new MarcasTelefonos("sony");
+        apple = new MarcasTelefonos("apple");
+        
+        System.out.println("Listado de llamadas");
+        
+        samsung.start();
+        xiaomi.start();
+        sony.start();
+        apple.start();
     }
     
 }
