@@ -15,7 +15,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Transporte auto = new Transporte("auto", 13);
+        Transporte moto = new Transporte("moto", 30);
+        Transporte guagua = new Transporte("guagua", 8);
+        auto.start();
+        moto.start();
+        guagua.start();
     }
     
 }
