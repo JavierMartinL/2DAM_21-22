@@ -17,10 +17,10 @@ public class Main {
     public static void main(String[] args) {
         Saludar saludar = new Saludar();
         
-        Alumno javier = new Alumno("javier", saludar, true);
         Alumno juan = new Alumno("juan", saludar, false);
         Alumno adrian = new Alumno("adrian", saludar, false);
         Alumno luis = new Alumno("luis", saludar, false);
+        Alumno javier = new Alumno("javier", saludar, true);
         
         juan.start();
         adrian.start();
