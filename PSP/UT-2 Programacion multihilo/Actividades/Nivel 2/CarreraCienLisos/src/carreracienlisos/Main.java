@@ -15,7 +15,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Atleta atleta1 = new Atleta("Ernesto");
+        Atleta atleta2 = new Atleta("Jesus");
+
+        PistaCarrera pista = new PistaCarrera(20);
+        pista.setCorredores(atleta1, atleta2);
+        pista.empezarCarrera();
     }
     
 }
