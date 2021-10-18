@@ -5,14 +5,15 @@
  */
 package carreracienlisos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
 public class PistaCarrera {
 
-    private Atleta a1;
-    private Atleta a2;
+    private ArrayList<Atleta> atletas;
     private int meta;
     private boolean hayGanador = false;
 
@@ -24,20 +25,21 @@ public class PistaCarrera {
         return meta;
     }
 
-    public void setCorredores(Atleta a1, Atleta a2) {
-        a1.setPista(this);
-        a2.setPista(this);
-        this.a1 = a1;
-        this.a2 = a2;
+    public void setCorredores(ArrayList<Atleta> atletas) {
+        for (Atleta atleta : atletas) {
+            atleta.setPista(this);
+        }
+        this.atletas = atletas;
     }
 
     public void empezarCarrera() {
         try {
-            a1.start();
-            a2.start();
-
-            a1.join();
-            a2.join();
+            for (Atleta atleta : atletas) {
+                atleta.start();
+            }
+            for (Atleta atleta : atletas) {
+                atleta.join();
+            }
             System.out.println("Carrera finalizada");
         } catch (InterruptedException ex) { }
     }
@@ -45,7 +47,9 @@ public class PistaCarrera {
     public synchronized void cruzarMeta(Atleta atleta) {
         if(!hayGanador) {
             hayGanador = true;
+            System.out.println("\n*************************************");
             System.out.println("Corredor " + atleta.getNombre()+ " es el ganador");
+            System.out.println("*************************************\n");
         }
     }
 }
