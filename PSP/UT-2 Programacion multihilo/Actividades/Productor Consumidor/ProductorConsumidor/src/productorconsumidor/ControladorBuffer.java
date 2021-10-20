@@ -54,6 +54,8 @@ public class ControladorBuffer {
         }
         bufferLleno = false;
         notify();
+        
+        //Devolver el carácter obtenido
         return buffer[posUltimo]; 
     }
     
