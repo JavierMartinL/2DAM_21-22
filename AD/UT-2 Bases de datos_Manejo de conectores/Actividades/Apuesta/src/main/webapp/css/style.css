@@ -1,0 +1,6 @@
+@charset "ISO-8859-1";
+
+.fondo {
+	background: radial-gradient(#198754,#26a821cf);
+	height: 100vh !important;
+}
