@@ -69,6 +69,15 @@
 /PGL/UT-1 Analisis de tecnologias para aplicaciones en dispositivos moviles/Actividades/GestionBanco/build/
 
 #PSP
+## Examenes
+/PSP/Examenes/Trimestre 1/EjEvaluableT1y2/Factorial/nbproject/private/
+/PSP/Examenes/Trimestre 1/EjEvaluableT1y2/Factorial/build/
+/PSP/Examenes/Trimestre 1/EjEvaluableT1y2/Factorial/dist/
+
+/PSP/Examenes/Trimestre 1/EjEvaluableT1y2/Probadores/nbproject/private/
+/PSP/Examenes/Trimestre 1/EjEvaluableT1y2/Probadores/build/
+/PSP/Examenes/Trimestre 1/EjEvaluableT1y2/Probadores/dist/
+
 ## UT-1 Programacion multiproceso
 /PSP/UT-1 Programacion multiproceso/Ejemplos/SincronizacionThreads/nbproject/private/
 /PSP/UT-1 Programacion multiproceso/Ejemplos/SincronizacionThreads/build/
