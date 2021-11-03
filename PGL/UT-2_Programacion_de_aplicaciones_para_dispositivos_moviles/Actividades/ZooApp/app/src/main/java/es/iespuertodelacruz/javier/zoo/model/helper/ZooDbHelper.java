@@ -18,9 +18,14 @@ public class ZooDbHelper extends ComunDbHelper {
         super(context);
     }
 
+    /**
+     * Metodo encargado en crear la tabla de la BBDD
+     * @param sqLiteDatabase BBDD SqLite
+     */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + ZooContract.ZooEntry.TABLE_NAME + " (" +
+                ZooContract.ZooEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ZooContract.ZooEntry.NOMBRE + " TEXT NOT NULL," +
                 ZooContract.ZooEntry.CIUDAD + " TEXT NOT NULL," +
                 ZooContract.ZooEntry.PAIS + " TEXT NOT NULL," +
@@ -31,10 +36,19 @@ public class ZooDbHelper extends ComunDbHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { }
 
+    /**
+     * Metodo que almacena la informacion en la BBDD
+     * @param zoo Zoo de la BBDD
+     * @return identificador con el resultado en el proceso de almacenar en la BBDD
+     */
     public long save(Zoo zoo) {
         return super.save(ZooContract.ZooEntry.TABLE_NAME, zoo.toContentValues());
     }
 
+    /**
+     * Metodo que devuelve todos los elementos de la BBDD
+     * @return Lista con los elementos
+     */
     public List<Zoo> getAll() {
         List<Zoo> zoos = null;
         Cursor cursor = null;
@@ -63,4 +77,40 @@ public class ZooDbHelper extends ComunDbHelper {
         return Collections.emptyList();
     }
 
+    public Zoo getById(String id) {
+        Zoo zoo = null;
+        Cursor cursor = null;
+
+        try {
+            cursor = super.getAll(ZooContract.ZooEntry.TABLE_NAME,
+                    null,
+                    ZooContract.ZooEntry._ID + " = ?",
+                    new String[]{id},
+                    null,
+                    null,
+                    null);
+
+            if(cursor.moveToFirst()){
+                @SuppressLint("Range") String nombre = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.NOMBRE));
+                @SuppressLint("Range") String ciudad = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.CIUDAD));
+                @SuppressLint("Range") String pais = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.PAIS));
+                @SuppressLint("Range") int tamanio = cursor.getInt(cursor.getColumnIndex(ZooContract.ZooEntry.TAMANIO));
+                @SuppressLint("Range") Double presupuestoAnual = cursor.getDouble(cursor.getColumnIndex(ZooContract.ZooEntry.PRESUPUESTO_ANUAL));
+                zoo = new Zoo(nombre, ciudad, pais, tamanio, presupuestoAnual);
+            }
+        } catch (Exception exception) { }finally {
+            if (!cursor.isClosed()) {
+                cursor.close();
+            }
+        }
+        return zoo;
+    }
+
+    public int delete(String id) {
+        return super.delete(ZooContract.ZooEntry.TABLE_NAME,ZooContract.ZooEntry._ID + " = ?", new String[]{id});
+    }
+
+    public int update(Zoo zoo, String id) {
+        return super.update(ZooContract.ZooEntry.TABLE_NAME, zoo.toContentValues(), ZooContract.ZooEntry._ID + " = ?", new String[]{id});
+    }
 }
