@@ -51,10 +51,10 @@ public class GestorLapices {
 		
 		try (Connection connection = gbd.getConnection()) {
 			
-			String marcaBuscar = "%" + submarca + "%";
+			//String marcaBuscar = "%" + submarca + "%";
 			
 			Statement statement = connection.createStatement();
-			String sql = "SELECT idlapiz, marca, numero FROM lapices WHERE marca like" + marcaBuscar;
+			String sql = "SELECT idlapiz, marca, numero FROM lapices WHERE marca like" + submarca;
 			ResultSet result = statement.executeQuery(sql);
 			
 			while(result.next()) {
