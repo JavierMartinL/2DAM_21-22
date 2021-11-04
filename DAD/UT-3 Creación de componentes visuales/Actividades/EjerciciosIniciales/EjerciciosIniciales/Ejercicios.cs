@@ -177,16 +177,67 @@ namespace EjerciciosIniciales
          */
         public static void ejercicio7()
         {
+            int numero = 0;
+            int secreto = 15;
+            int oportunidades = 5;
 
+            do
+            {
+                try
+                {
+                    Console.Write("-> ");
+                    numero = int.Parse(Console.ReadLine());
+                    oportunidades--;
+                    if (numero < secreto)
+                    {
+                        Console.WriteLine("{0} , es mas pequeño que el secreto, te quedan {1} " + (oportunidades > 1 ? "oportunidades" : "oportunidad"), numero, oportunidades);
+                    }
+                    else if (numero > secreto)
+                    {
+                        Console.WriteLine("{0} , es mas grande que el secreto, te quedan {1} " + (oportunidades > 1 ? "oportunidades" : "oportunidad"), numero, oportunidades);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Acertaste!!!  {0} , es el número secreto", numero);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Debes introducir un número: " + ex.Message);
+                }
+            } 
+            while (numero != secreto && oportunidades > 0);
         }
 
         /**
          * Aplicación de calculadora que muestre un menú con las opciones sumar, restar, multiplicar, dividir y salir. A continuación 
          * pida dos números, y por último la operación. Y devuelva el resultado.
          */
-        public static void ejercicio8()
+        public static void ejercicio8(int num1, int num2, char operacion)
         {
-
+            int resutado;
+            switch (operacion)
+            {
+                case 's':
+                    resutado = num1 + num2;
+                    Console.WriteLine("{0} + {1} = {2}", num1, num2, resutado);
+                    break;
+                case 'r':
+                    resutado = num1 - num2;
+                    Console.WriteLine("{0} - {1} = {2}", num1, num2, resutado);
+                    break;
+                case 'm':
+                    resutado = num1 * num2;
+                    Console.WriteLine("{0} * {1} = {2}", num1, num2, resutado);
+                    break;
+                case 'd':
+                    resutado = num1 / num2;
+                    Console.WriteLine("{0} / {1} = {2}", num1, num2, resutado);
+                    break;
+                default:
+                    Console.WriteLine("El operador introducido '{0}' no equivale a un operador del menu", operacion);
+                    break;
+            }
         }
 
         /**

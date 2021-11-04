@@ -10,7 +10,7 @@ namespace EjerciciosIniciales
             bool finalizar = false;
             do
             {
-                Program.menu();
+                menu();
                 short opt = -1;
 
                 try
@@ -36,7 +36,7 @@ namespace EjerciciosIniciales
                         try
                         {
                             Console.Write("Introduce la altura de la piramide: ");
-                            int altura = Int32.Parse(Console.ReadLine());
+                            int altura = int.Parse(Console.ReadLine());
                             Console.WriteLine("La altura introducida es: {0} \n", altura);
 
                             Ejercicios.ejercicio1(altura);
@@ -53,7 +53,7 @@ namespace EjerciciosIniciales
                         try
                         {
                             Console.Write("Introduce el numero del DNI para asignar una letra: ");
-                            int numDni = Int32.Parse(Console.ReadLine());
+                            int numDni = int.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio2(numDni);
                         }
@@ -88,9 +88,9 @@ namespace EjerciciosIniciales
                         try
                         {
                             Console.Write("Introduce el primer número: ");
-                            int num1 = Int32.Parse(Console.ReadLine());
+                            int num1 = int.Parse(Console.ReadLine());
                             Console.Write("Introduce el segundo número: ");
-                            int num2 = Int32.Parse(Console.ReadLine());
+                            int num2 = int.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio4(num1, num2);
                         }
@@ -107,7 +107,7 @@ namespace EjerciciosIniciales
                         try
                         {
                             Console.Write("Escribre un número: ");
-                            int num = Int32.Parse(Console.ReadLine());
+                            int num = int.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio5(num);
                         }
@@ -129,7 +129,7 @@ namespace EjerciciosIniciales
                             do
                             {
                                 Console.Write("-> ");
-                                int numero = Int32.Parse(Console.ReadLine());
+                                int numero = int.Parse(Console.ReadLine());
 
                                 if (numero >= 0)
                                 {
@@ -153,10 +153,45 @@ namespace EjerciciosIniciales
 
                     case 7:
                         Console.WriteLine("Ejercicio 7");
+
+                        Console.WriteLine("Acierta el número secreto, tienes 5 oportunidades");
+
+                        Ejercicios.ejercicio7();
                         break;
 
                     case 8:
                         Console.WriteLine("Ejercicio 8");
+
+                        menuCalculadora();
+                        int primerNumero = 0;
+                        int segundoNumero = 0;
+                        char operacion = 'x';
+
+                        try
+                        {
+                            Console.Write("Introduce el primer número: ");
+                            primerNumero = int.Parse(Console.ReadLine());
+                            Console.Write("Introduce el segundo número: ");
+                            segundoNumero = int.Parse(Console.ReadLine());
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
+                        }
+                        try
+                        {
+                            Console.Write("Introduce un operador del menu: ");
+                            operacion = char.Parse(Console.ReadLine());
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("\n\tERROR: Debes introducir un caracter: \n" + ex.Message);
+                        }
+
+                        if (operacion != 'x') {
+                            Ejercicios.ejercicio8(primerNumero, segundoNumero, operacion);
+                        }
+
                         break;
 
                     case 9:
@@ -199,6 +234,18 @@ namespace EjerciciosIniciales
             Console.WriteLine(ejercicios);
             Console.Write("\nQue ejercicio quieres ejecutar: ");
 
+        }
+
+        private static void menuCalculadora()
+        {
+            String operaciones = "\ts) sumar" +
+                "\n\tr) restar" +
+                "\n\tm) multiplicar" +
+                "\n\td) dividir" +
+                "\n\tx) Salir";
+
+            Console.WriteLine("\nMenu de Operaciones:");
+            Console.WriteLine(operaciones);
         }
     }
 }
