@@ -18,7 +18,7 @@ namespace EjerciciosIniciales
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("\n\tERROR: El valor introducido no es válido\n");
+                    Console.WriteLine("\n\tERROR: El valor introducido no es válido: \n" + ex.Message);
                 }
 
                 Console.WriteLine();
@@ -39,9 +39,10 @@ namespace EjerciciosIniciales
                             Console.WriteLine("La altura introducida es: {0} \n", altura);
 
                             Ejercicios.ejercicio1(altura);
-                        } catch (Exception ex)
+                        } 
+                        catch (Exception ex)
                         {
-                            Console.WriteLine("\n\tERROR: Debes introducir un número\n");
+                            Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
                         }
                         break;
 
@@ -54,9 +55,10 @@ namespace EjerciciosIniciales
                             int numDni = Int32.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio2(numDni);
-                        } catch (Exception ex)
+                        } 
+                        catch (Exception ex)
                         {
-                            Console.WriteLine("\n\tERROR: Debes introducir un número\n");
+                            Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
                         }
                         break;
 
@@ -71,9 +73,10 @@ namespace EjerciciosIniciales
                             double altura = double.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio3(peso, altura);
-                        } catch (Exception ex)
+                        } 
+                        catch (Exception ex)
                         {
-                            Console.WriteLine("\n\tERROR: Debes introducir un número\n");
+                            Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
                         }
                         break;
 
@@ -89,10 +92,53 @@ namespace EjerciciosIniciales
                             int num2 = Int32.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio4(num1, num2);
-                        } catch (Exception ex)
+                        } 
+                        catch (Exception ex)
                         {
-                            Console.WriteLine("\n\tERROR: Debes introducir un número\n");
+                            Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
                         }
+                        break;
+
+                    case 5:
+                        Console.WriteLine("Ejercicio 5");
+
+                        Console.WriteLine("Número Factorial");
+                        try
+                        {
+                            Console.Write("Escribre un número: ");
+                            int num = Int32.Parse(Console.ReadLine());
+
+                            Ejercicios.ejercicio5(num);
+                        } 
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
+                        }
+
+                        break;
+
+                    case 6:
+                        Console.WriteLine("Ejercicio 6");
+                        break;
+
+                    case 7:
+                        Console.WriteLine("Ejercicio 7");
+                        break;
+
+                    case 8:
+                        Console.WriteLine("Ejercicio 8");
+                        break;
+
+                    case 9:
+                        Console.WriteLine("Ejercicio 9");
+                        break;
+
+                    case 10:
+                        Console.WriteLine("Ejercicio 10");
+                        break;
+
+                    case 11:
+                        Console.WriteLine("Ejercicio 11");
                         break;
 
                     default:

@@ -81,10 +81,12 @@ namespace EjerciciosIniciales
             if (num1 > num2)
             {
                 mensaje = "El número " + num1 + " es el mayor";
-            } else if (num1 < num2)
+            } 
+            else if (num1 < num2)
             {
                 mensaje = "El número " + num2 + " es el mayor";
-            } else
+            } 
+            else
             {
                 mensaje = "Ambos números son iguales";
             }
@@ -96,8 +98,24 @@ namespace EjerciciosIniciales
          * Lee un número por teclado e indica si es divisible entre 2 (resto = 0). Si no lo es, también debemos indicarlo. 
          * En caso afirmativo que calcule el factorial (n * (n-1) * ... * 1)
          */
-        public void ejercicio5()
+        public static void ejercicio5(int num)
         {
+            long resultado = num;
+            int factorial = num;
+
+            if (factorial % 2 == 0)
+            {
+                while (factorial > 1)
+                {
+                    factorial--;
+                    resultado *= factorial;
+                }
+                Console.WriteLine("El factorial es: {0}", resultado);
+            }
+            else
+            {
+                Console.WriteLine("{0} no es un número par", num);
+            }
 
         }
 
@@ -105,7 +123,7 @@ namespace EjerciciosIniciales
          * Crear una aplicación que nos permite insertar números hasta que insertamos un -1. Calcular el total de números introducidos, 
          * cuál es el más pequeño, cuál es el más grande, y el más repetido.
          */
-        public void ejercicio6()
+        public static void ejercicio6()
         {
 
         }
@@ -117,7 +135,7 @@ namespace EjerciciosIniciales
          * situación al usuario y se le vuelve a pedir que introduzca otro número. El juego termina cuando el usuario acierta o si llega 
          * a las 5 oportunidades.
          */
-        public void ejercicio7()
+        public static void ejercicio7()
         {
 
         }
@@ -126,7 +144,7 @@ namespace EjerciciosIniciales
          * Aplicación de calculadora que muestre un menú con las opciones sumar, restar, multiplicar, dividir y salir. A continuación 
          * pida dos números, y por último la operación. Y devuelva el resultado.
          */
-        public void ejercicio8()
+        public static void ejercicio8()
         {
 
         }
@@ -136,7 +154,7 @@ namespace EjerciciosIniciales
          * que aparece, o si se trata de un elemento repetido y nos indique cuántas veces había aparecido con anterioridad. 
          * Con Diccionary: https://docs.microsoft.com/es-es/dotnet/api/system.collections.generic.dictionary-2?view=net-5.0
          */
-        public void ejercicio9()
+        public static void ejercicio9()
         {
 
         }
@@ -148,7 +166,7 @@ namespace EjerciciosIniciales
          * > 6.- bucles utilizar arrayList
          * > 8.- iterativas, funciones(calculadora) utilizar una clase propia que recoja los operandos y que como métodos realice las operaciones
          */
-        public void ejercicio10()
+        public static void ejercicio10()
         {
 
         }
@@ -161,7 +179,7 @@ namespace EjerciciosIniciales
          *  •  Guardar el archivo con el mismo nombre 
          *  •  Salir 
          */
-        public void ejercicio11()
+        public static void ejercicio11()
         {
 
         }
