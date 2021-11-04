@@ -2,6 +2,8 @@ package es.iespuertodelacruz.javier.zoo.vo;
 
 import android.content.ContentValues;
 
+import java.util.Objects;
+
 import es.iespuertodelacruz.javier.zoo.model.contract.ZooContract;
 import es.iespuertodelacruz.javier.zoo.model.inteface.IZoo;
 
@@ -37,5 +39,53 @@ public class Zoo implements IZoo {
         values.put(ZooContract.ZooEntry.TAMANIO, tamanio);
         values.put(ZooContract.ZooEntry.PRESUPUESTO_ANUAL, presupuestoAnual);
         return values;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public int getTamanio() {
+        return tamanio;
+    }
+
+    public void setTamanio(int tamanio) {
+        this.tamanio = tamanio;
+    }
+
+    public double getPresupuestoAnual() {
+        return presupuestoAnual;
+    }
+
+    public void setPresupuestoAnual(double presupuestoAnual) {
+        this.presupuestoAnual = presupuestoAnual;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Zoo zoo = (Zoo) o;
+        return tamanio == zoo.tamanio && Double.compare(zoo.presupuestoAnual, presupuestoAnual) == 0 && Objects.equals(nombre, zoo.nombre) && Objects.equals(ciudad, zoo.ciudad) && Objects.equals(pais, zoo.pais);
     }
 }

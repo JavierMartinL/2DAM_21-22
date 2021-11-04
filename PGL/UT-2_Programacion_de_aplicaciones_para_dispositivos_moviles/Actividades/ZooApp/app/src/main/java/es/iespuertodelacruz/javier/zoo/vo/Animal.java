@@ -2,6 +2,8 @@ package es.iespuertodelacruz.javier.zoo.vo;
 
 import android.content.ContentValues;
 
+import java.util.Objects;
+
 import es.iespuertodelacruz.javier.zoo.model.contract.AnimalContract;
 import es.iespuertodelacruz.javier.zoo.model.inteface.IAnimal;
 
@@ -40,5 +42,61 @@ public class Animal implements IAnimal {
         values.put(AnimalContract.AnimalEntry.PAIS, pais);
         values.put(AnimalContract.AnimalEntry.CONTINENTE, continente);
         return values;
+    }
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
+    }
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public void setEspecie(String especie) {
+        this.especie = especie;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getNacimiento() {
+        return nacimiento;
+    }
+
+    public void setNacimiento(String nacimiento) {
+        this.nacimiento = nacimiento;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getContinente() {
+        return continente;
+    }
+
+    public void setContinente(String continente) {
+        this.continente = continente;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return identificador == animal.identificador && Objects.equals(especie, animal.especie) && Objects.equals(sexo, animal.sexo) && Objects.equals(nacimiento, animal.nacimiento) && Objects.equals(pais, animal.pais) && Objects.equals(continente, animal.continente);
     }
 }

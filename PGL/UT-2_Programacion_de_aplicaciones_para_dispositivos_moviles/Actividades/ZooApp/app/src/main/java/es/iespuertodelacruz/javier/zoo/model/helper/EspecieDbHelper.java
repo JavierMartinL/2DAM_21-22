@@ -25,15 +25,18 @@ public class EspecieDbHelper extends ComunDbHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + EspecieContract.EspecieEntry.TABLE_NAME + " (" +
-                EspecieContract.EspecieEntry.NOMBRE_VULGAR + " TEXT PRIMARY KEY NOT NULL," +
-                EspecieContract.EspecieEntry.NOMBRE_CIENTIFICO + " TEXT NOT NULL," +
+                EspecieContract.EspecieEntry.NOMBRE_CIENTIFICO + " TEXT PRIMARY KEY NOT NULL," +
+                EspecieContract.EspecieEntry.NOMBRE_VULGAR + " TEXT NOT NULL," +
                 EspecieContract.EspecieEntry.FAMILIA + " TEXT NOT NULL," +
                 EspecieContract.EspecieEntry.PELIGRO_EXTINCION + " INTEGER NOT NULL," +
                 "UNIQUE (" + EspecieContract.EspecieEntry.NOMBRE_VULGAR + "))");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { }
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + EspecieContract.EspecieEntry.TABLE_NAME);
+        onCreate(sqLiteDatabase);
+    }
 
     /**
      * Metodo que almacena la informacion en la BBDD
@@ -75,22 +78,22 @@ public class EspecieDbHelper extends ComunDbHelper {
         return Collections.emptyList();
     }
 
-    public Especie getById(String nombreVulg) {
+    public Especie getById(String nombreCif) {
         Especie especie = null;
         Cursor cursor = null;
 
         try {
             cursor = super.getAll(EspecieContract.EspecieEntry.TABLE_NAME,
                     null,
-                    EspecieContract.EspecieEntry.NOMBRE_VULGAR + " = ?",
-                    new String[]{nombreVulg},
+                    EspecieContract.EspecieEntry.NOMBRE_CIENTIFICO + " = ?",
+                    new String[]{nombreCif},
                     null,
                     null,
                     null);
 
             if(cursor.moveToFirst()){
+                @SuppressLint("Range") String nombreCientifico = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.NOMBRE_CIENTIFICO));
                 @SuppressLint("Range") String nombreVulgar = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.NOMBRE_VULGAR));
-                @SuppressLint("Range") String nombreCientifico = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.NOMBRE_VULGAR));
                 @SuppressLint("Range") String familia = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.FAMILIA));
                 @SuppressLint("Range") boolean peligroExtincion = cursor.getInt(cursor.getColumnIndex(EspecieContract.EspecieEntry.PELIGRO_EXTINCION)) == 1;
                 especie = new Especie(nombreVulgar, nombreCientifico, familia, peligroExtincion);
@@ -103,11 +106,11 @@ public class EspecieDbHelper extends ComunDbHelper {
         return especie;
     }
 
-    public int delete(String nombreVulg) {
-        return super.delete(EspecieContract.EspecieEntry.TABLE_NAME,EspecieContract.EspecieEntry.NOMBRE_VULGAR + " = ?", new String[]{nombreVulg});
+    public int delete(String nombreCif) {
+        return super.delete(EspecieContract.EspecieEntry.TABLE_NAME,EspecieContract.EspecieEntry.NOMBRE_CIENTIFICO + " = ?", new String[]{nombreCif});
     }
 
-    public int update(Especie especie, String nombreVulg) {
-        return super.update(EspecieContract.EspecieEntry.TABLE_NAME, especie.toContentValues(), EspecieContract.EspecieEntry.NOMBRE_VULGAR + " = ?", new String[]{nombreVulg});
+    public int update(Especie especie, String nombreCif) {
+        return super.update(EspecieContract.EspecieEntry.TABLE_NAME, especie.toContentValues(), EspecieContract.EspecieEntry.NOMBRE_CIENTIFICO + " = ?", new String[]{nombreCif});
     }
 }

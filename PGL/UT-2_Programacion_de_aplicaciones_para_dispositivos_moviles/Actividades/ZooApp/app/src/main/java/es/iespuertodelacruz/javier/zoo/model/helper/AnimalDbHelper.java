@@ -37,6 +37,8 @@ public class AnimalDbHelper extends ComunDbHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + AnimalContract.AnimalEntry.TABLE_NAME);
+        onCreate(sqLiteDatabase);
     }
 
     /**

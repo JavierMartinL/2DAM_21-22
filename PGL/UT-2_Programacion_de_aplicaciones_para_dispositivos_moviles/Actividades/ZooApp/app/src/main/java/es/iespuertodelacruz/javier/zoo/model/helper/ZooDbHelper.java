@@ -34,7 +34,10 @@ public class ZooDbHelper extends ComunDbHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { }
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + ZooContract.ZooEntry.TABLE_NAME);
+        onCreate(sqLiteDatabase);
+    }
 
     /**
      * Metodo que almacena la informacion en la BBDD
@@ -77,15 +80,15 @@ public class ZooDbHelper extends ComunDbHelper {
         return Collections.emptyList();
     }
 
-    public Zoo getById(String id) {
+    public Zoo getById(String nombreBuscar) {
         Zoo zoo = null;
         Cursor cursor = null;
 
         try {
             cursor = super.getAll(ZooContract.ZooEntry.TABLE_NAME,
                     null,
-                    ZooContract.ZooEntry._ID + " = ?",
-                    new String[]{id},
+                    ZooContract.ZooEntry.NOMBRE + " = ?",
+                    new String[]{nombreBuscar},
                     null,
                     null,
                     null);
@@ -106,11 +109,11 @@ public class ZooDbHelper extends ComunDbHelper {
         return zoo;
     }
 
-    public int delete(String id) {
-        return super.delete(ZooContract.ZooEntry.TABLE_NAME,ZooContract.ZooEntry._ID + " = ?", new String[]{id});
+    public int delete(String nombre) {
+        return super.delete(ZooContract.ZooEntry.TABLE_NAME,ZooContract.ZooEntry.NOMBRE + " = ?", new String[]{nombre});
     }
 
-    public int update(Zoo zoo, String id) {
-        return super.update(ZooContract.ZooEntry.TABLE_NAME, zoo.toContentValues(), ZooContract.ZooEntry._ID + " = ?", new String[]{id});
+    public int update(Zoo zoo, String nombre) {
+        return super.update(ZooContract.ZooEntry.TABLE_NAME, zoo.toContentValues(), ZooContract.ZooEntry.NOMBRE + " = ?", new String[]{nombre});
     }
 }
