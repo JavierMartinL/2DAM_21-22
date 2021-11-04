@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EjerciciosIniciales
 {
@@ -39,7 +40,7 @@ namespace EjerciciosIniciales
                             Console.WriteLine("La altura introducida es: {0} \n", altura);
 
                             Ejercicios.ejercicio1(altura);
-                        } 
+                        }
                         catch (Exception ex)
                         {
                             Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
@@ -55,7 +56,7 @@ namespace EjerciciosIniciales
                             int numDni = Int32.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio2(numDni);
-                        } 
+                        }
                         catch (Exception ex)
                         {
                             Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
@@ -73,7 +74,7 @@ namespace EjerciciosIniciales
                             double altura = double.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio3(peso, altura);
-                        } 
+                        }
                         catch (Exception ex)
                         {
                             Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
@@ -92,7 +93,7 @@ namespace EjerciciosIniciales
                             int num2 = Int32.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio4(num1, num2);
-                        } 
+                        }
                         catch (Exception ex)
                         {
                             Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
@@ -109,7 +110,7 @@ namespace EjerciciosIniciales
                             int num = Int32.Parse(Console.ReadLine());
 
                             Ejercicios.ejercicio5(num);
-                        } 
+                        }
                         catch (Exception ex)
                         {
                             Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
@@ -119,6 +120,35 @@ namespace EjerciciosIniciales
 
                     case 6:
                         Console.WriteLine("Ejercicio 6");
+
+                        Console.WriteLine("Introduces todos los números (Salir = -1)");
+                        List<int> numeros = new List<int>();
+                        try
+                        {
+                            bool finalizarEj = false;
+                            do
+                            {
+                                Console.Write("-> ");
+                                int numero = Int32.Parse(Console.ReadLine());
+
+                                if (numero >= 0)
+                                {
+                                    numeros.Add(numero);
+                                }
+                                else
+                                {
+                                    finalizarEj = true;
+                                }
+                            }
+                            while (!finalizarEj);
+
+                            Ejercicios.ejercicio6(numeros);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
+                        }
+
                         break;
 
                     case 7:
@@ -145,7 +175,8 @@ namespace EjerciciosIniciales
                         break;
                 }
 
-            } while (!finalizar);
+            } 
+            while (!finalizar);
 
         }
 

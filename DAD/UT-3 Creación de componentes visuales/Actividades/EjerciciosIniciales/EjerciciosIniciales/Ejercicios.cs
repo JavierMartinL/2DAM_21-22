@@ -123,9 +123,49 @@ namespace EjerciciosIniciales
          * Crear una aplicación que nos permite insertar números hasta que insertamos un -1. Calcular el total de números introducidos, 
          * cuál es el más pequeño, cuál es el más grande, y el más repetido.
          */
-        public static void ejercicio6()
+        public static void ejercicio6(List<int> numeros)
         {
+            int contador = 0;
+            int numMax = 0;
+            int numMin = 1000000000;
+            int repetido = 0;
+            int ocurencia = 0;
 
+            Dictionary<int, int> repetidos = new Dictionary<int, int>();
+
+            foreach(int numero in numeros)
+            {
+                contador += numero;
+                if (numMax < numero)
+                {
+                    numMax = numero;
+                }
+
+                if (numMin > numero)
+                {
+                    numMin = numero;
+                }
+
+                if (!repetidos.ContainsKey(numero))
+                {
+                    repetidos.Add(numero, 1);
+                }
+                else
+                {
+                    repetidos[numero] += 1;
+                }
+            }
+
+            foreach (var rep in repetidos)
+            {
+                if (rep.Value > ocurencia)
+                {
+                    ocurencia = rep.Value;
+                    repetido = rep.Key;
+                }
+            }
+
+            Console.WriteLine("El total de los numeros es {0}, el número mas pequeño es {1}, el número mas grande es {2} y el mas repetido es {3}", contador, numMin, numMax, repetido);
         }
 
         /**
