@@ -22,5 +22,9 @@ public class Main {
 		
 		lapices.forEach(System.out::println);
 		
+		ArrayList<Lapiz> lapices2 = (ArrayList<Lapiz>) gl.readByName("alpino");
+		
+		lapices2.forEach(System.out::println);
+		
 	}
 }

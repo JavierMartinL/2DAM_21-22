@@ -46,4 +46,31 @@ public class GestorLapices {
 		return lapices;
 	}
 	
+	public List<Lapiz> readByName(String submarca)  {
+		ArrayList<Lapiz> lapices = new ArrayList<Lapiz>();
+		
+		try (Connection connection = gbd.getConnection()) {
+			
+			//String marcaBuscar = "%" + submarca + "%";
+			
+			Statement statement = connection.createStatement();
+			String sql = "SELECT idlapiz, marca, numero FROM lapices WHERE marca like" + submarca;
+			ResultSet result = statement.executeQuery(sql);
+			
+			while(result.next()) {
+				
+				int id = result.getInt("idlapiz");
+				String marca = result.getString("marca");
+				int numero = result.getInt("numero");
+				
+				lapices.add(new Lapiz(id, marca, numero));
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return lapices;
+	}
+	
 }
