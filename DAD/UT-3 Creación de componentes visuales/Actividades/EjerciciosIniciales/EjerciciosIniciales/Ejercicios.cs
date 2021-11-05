@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,25 +99,15 @@ namespace EjerciciosIniciales
          * Lee un número por teclado e indica si es divisible entre 2 (resto = 0). Si no lo es, también debemos indicarlo. 
          * En caso afirmativo que calcule el factorial (n * (n-1) * ... * 1)
          */
-        public static void ejercicio5(int num)
+        public static int ejercicio5(int num)
         {
-            long resultado = num;
-            int factorial = num;
-
-            if (factorial % 2 == 0)
+            if (num == 0)
             {
-                while (factorial > 1)
-                {
-                    factorial--;
-                    resultado *= factorial;
-                }
-                Console.WriteLine("El factorial es: {0}", resultado);
+                return 1;
             }
-            else
-            {
-                Console.WriteLine("{0} no es un número par", num);
+            else {
+                return num * ejercicio5(num - 1);
             }
-
         }
 
         /**
@@ -247,19 +238,45 @@ namespace EjerciciosIniciales
          */
         public static void ejercicio9()
         {
+            Random ramdon = new Random();
+            int[] numeros = new int[20];
 
-        }
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                numeros[i] = ramdon.Next(10, 20);
+                if (i < numeros.Length - 1)
+                {
+                    Console.Write("{0} - ", numeros[i]);
+                }
+                else
+                {
+                    Console.WriteLine(numeros[i]);
+                }
+            }
 
-        /**
-         * Añadir el tratamiento de errores a los ejercicios anteriores
-         * En los ejercicios:
-         * > 5 - bucles hacer el factorial con recursividad.
-         * > 6.- bucles utilizar arrayList
-         * > 8.- iterativas, funciones(calculadora) utilizar una clase propia que recoja los operandos y que como métodos realice las operaciones
-         */
-        public static void ejercicio10()
-        {
+            Console.WriteLine();
 
+            Dictionary<int, int> dicNumeros = new Dictionary<int, int>();
+            foreach (int numero in numeros)
+            {
+                if (!dicNumeros.ContainsKey(numero))
+                {
+                    Console.WriteLine("{0} es la primera vez que aparece", numero);
+                    dicNumeros[numero] = 1;
+                }
+                else
+                {
+                    Console.WriteLine("{0} es un número repetido", numero);
+                    dicNumeros[numero] += 1;
+                }
+            }
+            
+            Console.WriteLine();
+
+            foreach (KeyValuePair<int, int> kvp in dicNumeros)
+            {
+                Console.WriteLine("El número {0} aparece {1} {2}", kvp.Key, kvp.Value, kvp.Value > 1 ? "veces" : "vez");
+            }
         }
 
         /**
@@ -270,9 +287,53 @@ namespace EjerciciosIniciales
          *  •  Guardar el archivo con el mismo nombre 
          *  •  Salir 
          */
-        public static void ejercicio11()
+        public static string ejercicio11(int opt, string texto)
         {
+            string ruta = @"prueba.txt";
+            try
+            {
+                switch (opt)
+                {
+                    case 1:
+                        texto = File.ReadAllText(ruta);
+                        Console.WriteLine("Contenido: \n" + texto);
+                        break;
 
+                    case 2:
+                        string frase = "Esto es una prueba de trabajo con los ficheros \n";
+                        File.AppendAllText(ruta, frase, Encoding.UTF8);
+                        break;
+
+                    case 3:
+                        string palabra = "trabajo";
+                        texto = "";
+                        using (StreamReader sr = new StreamReader(ruta))
+                        {
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                texto += line.Replace(palabra, "") + "\n";
+
+                            }
+                            Console.WriteLine("Nuevo texto: ");
+                            Console.WriteLine(texto);
+                        }
+                        File.WriteAllText(ruta, texto);
+                        break;
+
+                    case 4:
+                        File.WriteAllText(ruta, texto);
+                        break;
+                    default:
+                        Console.WriteLine("Introduce una opción válida");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\n\tERROR: Problema con el fichero: \n" + ex.Message);
+            }
+            return texto;
         }
 
     }

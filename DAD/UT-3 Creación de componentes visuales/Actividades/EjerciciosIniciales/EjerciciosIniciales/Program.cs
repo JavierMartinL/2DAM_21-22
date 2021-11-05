@@ -109,7 +109,16 @@ namespace EjerciciosIniciales
                             Console.Write("Escribre un número: ");
                             int num = int.Parse(Console.ReadLine());
 
-                            Ejercicios.ejercicio5(num);
+                            if (num % 2 == 0)
+                            {
+                                int resultado = Ejercicios.ejercicio5(num);
+                                Console.WriteLine("{0} es un número par", num);
+                                Console.WriteLine("El factorial es: {0}", resultado);
+                            }
+                            else
+                            {
+                                Console.WriteLine("{0} no es un número par", num);
+                            }
                         }
                         catch (Exception ex)
                         {
@@ -161,49 +170,100 @@ namespace EjerciciosIniciales
 
                     case 8:
                         Console.WriteLine("Ejercicio 8");
-
-                        menuCalculadora();
                         int primerNumero = 0;
                         int segundoNumero = 0;
                         char operacion = 'x';
+                        int tipoCalculadora = 0;
 
+                        menuEjercicio8();
                         try
                         {
-                            Console.Write("Introduce el primer número: ");
-                            primerNumero = int.Parse(Console.ReadLine());
-                            Console.Write("Introduce el segundo número: ");
-                            segundoNumero = int.Parse(Console.ReadLine());
+                            Console.Write("-> ");
+                            tipoCalculadora = int.Parse(Console.ReadLine());
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
                         }
-                        try
-                        {
-                            Console.Write("Introduce un operador del menu: ");
-                            operacion = char.Parse(Console.ReadLine());
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("\n\tERROR: Debes introducir un caracter: \n" + ex.Message);
-                        }
 
-                        if (operacion != 'x') {
-                            Ejercicios.ejercicio8(primerNumero, segundoNumero, operacion);
+                        if (tipoCalculadora != 0)
+                        {
+                            menuCalculadora();
+
+                            try
+                            {
+                                Console.Write("Introduce el primer número: ");
+                                primerNumero = int.Parse(Console.ReadLine());
+                                Console.Write("Introduce el segundo número: ");
+                                segundoNumero = int.Parse(Console.ReadLine());
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
+                            }
+
+                            try
+                            {
+                                Console.Write("Introduce un operador del menu: ");
+                                operacion = char.Parse(Console.ReadLine());
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("\n\tERROR: Debes introducir un caracter: \n" + ex.Message);
+                            }
+
+                            if (operacion != 'x')
+                            {
+                                if (tipoCalculadora == 1)
+                                {
+                                    Ejercicios.ejercicio8(primerNumero, segundoNumero, operacion);
+                                }
+                                else
+                                {
+                                    Calculadora calculadora = new Calculadora(primerNumero, segundoNumero, operacion);
+                                    String resultado = calculadora.calcular();
+
+                                    Console.WriteLine(resultado);
+                                }
+                            }
                         }
 
                         break;
 
                     case 9:
                         Console.WriteLine("Ejercicio 9");
-                        break;
-
-                    case 10:
-                        Console.WriteLine("Ejercicio 10");
+                        Ejercicios.ejercicio9();
                         break;
 
                     case 11:
                         Console.WriteLine("Ejercicio 11");
+
+                        bool finalizarFichero = false;
+                        string texto = "";
+
+                        do
+                        {
+                            menuFichero();
+                            int optFichero = -1;
+                            try
+                            {
+                                 optFichero = int.Parse(Console.ReadLine());
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("\n\tERROR: Debes introducir un número: \n" + ex.Message);
+                            }
+
+                            if (optFichero == 0)
+                            {
+                                finalizarFichero = true;
+                            }
+                            else
+                            {
+                                texto = Ejercicios.ejercicio11(optFichero, texto);
+                            }
+                        }
+                        while (!finalizarFichero);
                         break;
 
                     default:
@@ -217,7 +277,8 @@ namespace EjerciciosIniciales
 
         private static void menu()
         {
-            String ejercicios = "\t1)  Ejercicio 1" +
+            String ejercicios = "\nMenu de Ejercicios:" +
+                "\n\t1)  Ejercicio 1" +
                 "\n\t2)  Ejercicio 2" +
                 "\n\t3)  Ejercicio 3" +
                 "\n\t4)  Ejercicio 4" +
@@ -226,11 +287,9 @@ namespace EjerciciosIniciales
                 "\n\t7)  Ejercicio 7" +
                 "\n\t8)  Ejercicio 8" +
                 "\n\t9)  Ejercicio 9" +
-                "\n\t10) Ejercicio 10" +
                 "\n\t11) Ejercicio 11" +
                 "\n\t0)  Salir";
 
-            Console.WriteLine("\nMenu de Ejercicios:");
             Console.WriteLine(ejercicios);
             Console.Write("\nQue ejercicio quieres ejecutar: ");
 
@@ -238,14 +297,37 @@ namespace EjerciciosIniciales
 
         private static void menuCalculadora()
         {
-            String operaciones = "\ts) sumar" +
+            String operaciones = "\nMenu de Operaciones:" +
+                "\n\ts) sumar" +
                 "\n\tr) restar" +
                 "\n\tm) multiplicar" +
                 "\n\td) dividir" +
                 "\n\tx) Salir";
 
-            Console.WriteLine("\nMenu de Operaciones:");
             Console.WriteLine(operaciones);
+        }
+
+        private static void menuEjercicio8()
+        {
+            String menu = "\nTipo de calculadora:" +
+                "\n\t1) Manual" +
+                "\n\t2) Clase" +
+                "\n\t0) Salir";
+
+            Console.WriteLine(menu);
+        }
+
+        private static void menuFichero()
+        {
+            String acciones = "Aciones del fichero" +
+                "\n\t1) Mostrar el archivo" +
+                "\n\t2) Añadir un texto al final del archivo" +
+                "\n\t3) Borrar una palabra" +
+                "\n\t4) Guardar el archivo" +
+                "\n\t0) Salir" +
+                "\n-> ";
+
+            Console.Write(acciones);
         }
     }
 }
