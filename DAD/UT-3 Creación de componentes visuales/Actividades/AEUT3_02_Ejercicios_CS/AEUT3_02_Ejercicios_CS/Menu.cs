@@ -7,22 +7,14 @@ using System.Threading.Tasks;
 namespace AEUT3_02_Ejercicios_CS
 {
     class Menu
-    { 
-        /**
-         * Método encargado de mostrar el menú principal de la aplicación y recoger la opción del usuario
+    {
+        /*
+         * Método que muestra el menú y recoge los datos introducidos
          * @return int Devuelve la opción del usuario
          */
-        public static int menuPrincipal()
+        private static int recogerDatos(string textoMenu)
         {
-            string menu = "\nMenu de los ejercicios: " +
-                "\n\t1) Ejercicio 1: Fechas" +
-                "\n\t2) Ejercicio 2: Texto" +
-                "\n\t3) Ejercicio 3: ADN" +
-                "\n\t4) Ejercicio 4: Temperaturas" +
-                "\n\t0) Salir" +
-                "\n-> ";
-
-            Console.Write(menu);
+            Console.Write(textoMenu);
 
             // La opción a -1 para evitar que termine la ejecución
             int opt = -1;
@@ -40,10 +32,26 @@ namespace AEUT3_02_Ejercicios_CS
         }
 
         /**
+         * Método que muestra el menú Principal
+         */
+        public static int menuPrincipal()
+        {
+            string menu = "\nMenu de los ejercicios: " +
+                "\n\t1) Ejercicio 1: Fechas" +
+                "\n\t2) Ejercicio 2: Texto" +
+                "\n\t3) Ejercicio 3: ADN" +
+                "\n\t4) Ejercicio 4: Temperaturas" +
+                "\n\t0) Salir" +
+                "\n-> ";
+
+            return recogerDatos(menu);
+        }
+
+        /**
          * Método que se encarga de mostrar los dos submenús del ejercicio 1
+         * @return int[] con las opciones:
          * > menuFecha sirve para elegir si queremos la fecha actual o introducida por el usuario
          * > menuForma sirve para que el cálculo sea manual o automático
-         * @return
          */
         public static int[] menuEjercicio1()
         {
@@ -98,6 +106,21 @@ namespace AEUT3_02_Ejercicios_CS
                 while (optForma < 0 || optForma > 2);
             }
             return opts;
+        }
+
+        /**
+         * Método que muestra el menú para el ejercicio 2
+         */
+        public static int menuEjercicio2()
+        {
+            string menu = "\nAcciones sobre el texto introducido: " +
+                "\n\t1) Buscar una palabra" +
+                "\n\t2) Modificar una palabra" +
+                "\n\t3) Borrar una palabra" +
+                "\n\t0) Salir" +
+                "\n-> ";
+
+            return recogerDatos(menu);
         }
     }
 }

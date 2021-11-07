@@ -20,10 +20,11 @@ namespace AEUT3_02_Ejercicios_CS
                         break;
 
                     case 1:
-                        int[] opts = Menu.menuEjercicio1();
+                        int[] opt1 = Menu.menuEjercicio1();
                         break;
 
                     case 2:
+                        ejercicio2();
                         break;
 
                     case 3:
@@ -37,6 +38,39 @@ namespace AEUT3_02_Ejercicios_CS
             }
             while (!finalizarEjecucion);
 
+        }
+
+        private static void ejercicio2()
+        {
+            Console.Write("Introduce un texto: ");
+            string texto = Console.ReadLine();
+            bool finalizar = false;
+
+            do
+            {
+                int opt = Menu.menuEjercicio2();
+
+                if (opt > 0 && opt < 4)
+                {
+                    Console.Write("Palabra: ");
+                    string palabra = Console.ReadLine();
+                    string palabraNueva = "";
+
+                    if (opt == 2)
+                    {
+                        Console.Write("\nNueva Palabra: ");
+                        palabraNueva = Console.ReadLine();
+                    }
+
+                    texto = Metodo.accionesTexto(texto, palabra, palabraNueva, opt);
+                    Console.WriteLine(texto);
+                }
+                else if (opt == 0)
+                {
+                    finalizar = true;
+                }
+            }
+            while (!finalizar);
         }
     }
 }
