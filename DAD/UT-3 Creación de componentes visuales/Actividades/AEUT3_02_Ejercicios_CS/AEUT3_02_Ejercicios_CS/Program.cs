@@ -20,23 +20,17 @@ namespace AEUT3_02_Ejercicios_CS
                     case 0:
                         finalizarEjecucion = true;
                         break;
-
-                    /*case 1:
-                        int[] opt1 = Menu.menuEjercicio1();
-                        break;*/
-
+                    case 1:
+                        ejercicio1();
+                        break;
                     case 2:
                         ejercicio2();
                         break;
-
                     case 3:
                         ejercicio3();
                         break;
-
                     case 4:
                         ejercicio4();
-                        break;
-                    default:
                         break;
                 }
             }
@@ -58,7 +52,40 @@ namespace AEUT3_02_Ejercicios_CS
          */
         private static void ejercicio1()
         {
+            int[] opt = Menu.menuEjercicio1();
 
+            switch(opt[1]) 
+            {
+                case 1: // Manual
+                    string fechaManual = "";
+                    if (opt[0] == 1)
+                    {
+                        // Día actual
+                        fechaManual = DateTime.Now.ToString("d");
+                    }
+                    else
+                    {
+                        // Introducir día
+                        fechaManual = introducirFecha();
+                    }
+                    Metodo.calcularDiasManual(fechaManual);
+                    break;
+
+                case 2: // Automatico
+                    DateTime fechaAutomatico;
+                    if (opt[0] == 1) 
+                    {
+                        // Día actual
+                        fechaAutomatico = DateTime.Today;
+                    }
+                    else
+                    {
+                        // Introducir día
+                        DateTime.TryParse(introducirFecha(), out fechaAutomatico);
+                    }
+                    Metodo.calcularDiasAutomatico(fechaAutomatico);
+                    break;
+            }
         }
 
         /**
@@ -165,6 +192,40 @@ namespace AEUT3_02_Ejercicios_CS
             Console.WriteLine("Temperaturas de Santa Cruz de Tenerife en el mes de Octubre: ");
 
             Metodo.calcularTemperatura(informacion);
+        }
+
+        /**
+         * Método que se encarga de generar una fecha valida con los datos introducidos por el usuario
+         * @return string con la nueva fecha (valida)
+         */
+        private static string introducirFecha()
+        {
+            bool fechaCorrecta = false;
+            string fecha = "";
+            do
+            {
+                Console.Write("Dia [dd]: ");
+                string dia = Console.ReadLine();
+                Console.Write("Mes [mm]: ");
+                string mes = Console.ReadLine();
+                Console.Write("Año [yyyy]: ");
+                string anio = Console.ReadLine();
+
+                fecha = dia + "/" + mes + "/" + anio;
+
+                if (DateTime.TryParse(fecha, out DateTime result))
+                {
+                    fechaCorrecta = true;
+                }
+                else
+                {
+                    Console.WriteLine("\n\tDebes introducir una fecha valida\n");
+                }
+            }
+            while (!fechaCorrecta);
+            Console.WriteLine();
+
+            return fecha;
         }
     }
 }

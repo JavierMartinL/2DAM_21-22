@@ -9,19 +9,75 @@ namespace AEUT3_02_Ejercicios_CS
 {
     class Metodo
     {
+        /**
+         * Método que calcula la diferencia de días entre la fecha introducida y el dia de Canarias (Manualmente)
+         * @fechaActual string con la fecha de donde comenzará a contar
+         */
         public static void calcularDiasManual(string fechaActual)
         {
-            string fechaDiaCanarias = "30/05/2022";
-            Console.WriteLine("fecha actual: " + fechaActual);
-            Console.WriteLine("fecha dia canarias: " + fechaDiaCanarias);
+            // Cantidad de días que tiene cada mes
+            int[] meses = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-            string[] fechaDia = fechaDiaCanarias.Split("/");
-            string[] fechaAc = fechaActual.Split("/");
-            int cantAnios = int.Parse(fechaDia[2]) - int.Parse(fechaAc[2]);
-            if (cantAnios >= 0)
+            // Pasar la fecha introducida a enteros
+            string[] arrayFechaActual = fechaActual.Split("/");
+            int diaActual = int.Parse(arrayFechaActual[0]);
+            int mesActual = int.Parse(arrayFechaActual[1]);
+            int anioActual = int.Parse(arrayFechaActual[2]);
+
+            // Dia de Canarias
+            int diaCanarias = 30;
+            int mesDiaCanarias = 5;
+            int anioDiaCanarias = 2022;
+
+            // Cantidad de dias
+            int cantDias = 0;
+
+            // Bucle que recorre los años
+            for (int i = anioActual; i <= anioDiaCanarias; i++)
             {
-                Console.WriteLine(cantAnios);
+                // Comprobamos hasta qué mes contamos
+                int mesFin = i < anioDiaCanarias ? 12 : mesDiaCanarias;
+
+                // Bucle que recorre los meses
+                for (int j = mesActual; j <= mesFin; j++)
+                {
+                    // Bucle que recorre los dias
+                    for (int k = diaActual; k <= meses[j - 1]; k++)
+                    {
+                        // Si es el dia de Canarias terminamos el bucle
+                        if (j == mesFin && k == diaCanarias && i == anioDiaCanarias)
+                        {
+                            break;
+                        }
+                        // Sumamos los dias
+                        cantDias++;
+                    }
+                    // Al finalizar el mes comenzar el siguiente desde el día 1
+                    diaActual = 1;
+                }
+                // Al finalizar el año comenzar el siguiente desde enero
+                mesActual = 1;
             }
+
+            Console.WriteLine("Desde {0} faltan {1} dias para llegar al Dia de Canarias ({2}/{3}/{4})", fechaActual, cantDias, diaCanarias, mesDiaCanarias, anioDiaCanarias);
+
+        }
+
+        /**
+         * Método que calcula la diferencia de días entre la fecha introducida y el día de Canarias
+         */
+        public static void calcularDiasAutomatico(DateTime fechaActual)
+        {
+            // Día de Canarias
+            DateTime diaCanarias = new DateTime(2022, 5, 30);
+
+            // Recoger el tiempo entre las dos fechas
+            TimeSpan tiempo = diaCanarias - fechaActual;
+
+            // Con ese tiempo calcular el número de dias
+            int cantDias = tiempo.Days;
+
+            Console.WriteLine("Desde {0} faltan {1} dias para llegar al Dia de Canarias ({2})", fechaActual.ToString("d"), cantDias, diaCanarias.ToString("d"));
         }
 
         /**

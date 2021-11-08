@@ -37,7 +37,7 @@ namespace AEUT3_02_Ejercicios_CS
         public static int menuPrincipal()
         {
             string menu = "\nMenu de los ejercicios: " +
-                //"\n\t1) Ejercicio 1: Fechas" +
+                "\n\t1) Ejercicio 1: Fechas" +
                 "\n\t2) Ejercicio 2: Texto" +
                 "\n\t3) Ejercicio 3: ADN" +
                 "\n\t4) Ejercicio 4: Temperaturas" +
@@ -67,43 +67,21 @@ namespace AEUT3_02_Ejercicios_CS
                 "\n\t0) Salir" +
                 "\n-> ";
 
-            int optFecha = -1;
-            int optForma = -1;
-
-            int[] opts = new int[2] {optFecha, optForma};
+            int[] opts = new int[2] {-1, -1};
 
             do
             {
-                Console.Write(menuFecha);
-                try
-                {
-                    optFecha = int.Parse(Console.ReadLine());
-                    opts[0] = optFecha;
-                    
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("\n\tERROR: El valor introducido no es válido, tiene que ser un número: \n" + ex.Message);
-                }
+                opts[0] = recogerDatos(menuFecha);
             }
-            while (optFecha < 0 || optFecha > 2);
+            while (opts[0] < 0 || opts[0] > 2);
 
-            if (optFecha != 0)
+            if (opts[0] != 0)
             {
                 do
                 {
-                    Console.Write(menuForma);
-                    try
-                    {
-                        optForma = int.Parse(Console.ReadLine());
-                        opts[1] = optForma;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("\n\tERROR: El valor introducido no es válido, tiene que ser un número: \n" + ex.Message);
-                    }
+                    opts[1] = recogerDatos(menuForma);
                 }
-                while (optForma < 0 || optForma > 2);
+                while (opts[1] < 0 || opts[1] > 2);
             }
             return opts;
         }
