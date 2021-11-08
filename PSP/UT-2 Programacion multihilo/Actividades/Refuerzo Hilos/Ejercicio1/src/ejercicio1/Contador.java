@@ -11,40 +11,35 @@ package ejercicio1;
  */
 public class Contador extends Thread{
     
-    private int numero = 0;
+    public int numero = 0;
     
-    public synchronized void siguiente() {
-        notifyAll();
-        numero++;
+    public synchronized int siguiente() {
+        System.out.println(numero);
+        return numero++;
     }
     
-    public synchronized void esperarPar() {
-        if (numero % 2 != 0) {
-            try {
-                wait();
-            } catch (InterruptedException ex) { }
-        } else {
-            System.out.println("Par " + numero);
+    public synchronized void esperarPar() throws InterruptedException {
+        if (numero % 2 == 0) {
             siguiente();
+            notifyAll();
+        } else {
+            System.out.println("esperarImpar");
+            wait();
         }
     }
     
-    public synchronized void esperarImpar() {
-        if (numero % 2 == 0) {
-            try {
-                wait();
-            } catch (InterruptedException es) { }
-        } else {
-            System.out.println("Impar " + numero);
+    public synchronized void esperarImpar() throws InterruptedException {
+        if (numero % 2 != 0) {
             siguiente();
+            notifyAll();
+        } else {
+            System.out.println("esperarPar");
+            wait(50);
         }
     }
     
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            esperarPar();
-            esperarImpar();
-        }
+
     }
 }
