@@ -58,7 +58,8 @@ namespace AEUT3_02_Ejercicios_CS
         }
 
         /**
-         * Método que se encarga de contar cuántas bases aparecen, saber cual es la que se repite mayor veces seguidamente y comprobar cuál es el codón predominante.
+         * Método que se encarga de contar cuántas bases aparecen, saber cual es la que se repite mayor veces seguidamente y comprobar cuál 
+         * es el codón predominante.
          * @cadena string con la cadena de bases
          */
         public static void bioinformatica(string cadena)
@@ -131,6 +132,98 @@ namespace AEUT3_02_Ejercicios_CS
             {
                 Console.WriteLine("El codón que predomina es {0}", codonPredominante);
             }
+        }
+
+        /**
+         * Método que se encarga en controlar los datos que recibimos del fichero y muestra las media de temperaturas Máximas/Mínimas/Medias 
+         * y muestra las temperaturas más frecuentes
+         * @informacion List<string> con los datos del fichero
+         */
+        public static void calcularTemperatura(List<string> informacion)
+        {
+            // Se encargan de controlar cuantas veces se repiten las temperaturas
+            Dictionary<int, int> temperaturasMax = new Dictionary<int, int>();
+            Dictionary<int, int> temperaturasMin = new Dictionary<int, int>();
+            Dictionary<int, int> temperaturasMedia = new Dictionary<int, int>();
+
+            // Se encargan de sumar todas las temperaturas para calcular la media
+            decimal sumaTempMaximas = 0;
+            decimal sumaTempMinimas = 0;
+            decimal sumaTempMedias = 0;
+
+            // Cantidad de temperaturas introducidas
+            int cantTemperaturas = 0;
+
+            // Recorrer la información recibida y empezar a contabilizar de la línea 10 que es donde se introducen las temperaturas
+            for (int i = 10; i < informacion.Count; i++)
+            {
+                string[] datos = informacion[i].Split(",");
+
+                // Máxima
+                decimal max = decimal.Round(decimal.Parse(datos[1].Replace(".", ",")), 2);
+                sumaTempMaximas += max;
+                temperaturasMax[(int) max] = (!temperaturasMax.ContainsKey((int) max)) ? 1 : temperaturasMax[(int) max] + 1;
+
+                // MÍnima
+                decimal min = decimal.Round(decimal.Parse(datos[2].Replace(".", ",")), 2);
+                sumaTempMinimas += min;
+                temperaturasMin[(int) min] = (!temperaturasMin.ContainsKey((int) min)) ? 1 : temperaturasMin[(int) min] + 1;
+
+                // Media
+                decimal media = decimal.Round(decimal.Parse(datos[3].Replace(".", ",")), 2);
+                sumaTempMedias += media;
+                temperaturasMedia[(int) media] = (!temperaturasMedia.ContainsKey((int) media)) ? 1 : temperaturasMedia[(int) media] + 1;
+
+                cantTemperaturas++;
+            }
+
+            // Media de las temperaturas
+            decimal mediaTempMax = decimal.Round((sumaTempMaximas / cantTemperaturas), 2);
+            decimal mediaTempMin = decimal.Round((sumaTempMinimas / cantTemperaturas), 2);
+            decimal mediaTempMedia = decimal.Round((sumaTempMedias / cantTemperaturas), 2);
+
+            // Variables para controlar las temperaturas más frecuentes
+            int frecuenciaMax = 0;
+            int cantFrecuenciaMax = 0;
+            int frecuenciaMin = 0;
+            int cantFrecuenciaMin = 0;
+            int frecuenciaMedia = 0;
+            int cantFrecuenciaMedia = 0;
+
+            // Calcular la temperatura más frecuente de las máximas
+            foreach (var a in temperaturasMax)
+            {
+                if (a.Value > cantFrecuenciaMax)
+                {
+                    frecuenciaMax = a.Key;
+                    cantFrecuenciaMax = a.Value;
+                }
+            }
+
+            // Calcular la temperatura más frecuente de las mínimas
+            foreach (var a in temperaturasMin)
+            {
+                if (a.Value > cantFrecuenciaMin)
+                {
+                    frecuenciaMin = a.Key;
+                    cantFrecuenciaMin = a.Value;
+                }
+            }
+
+            // Calcular la temperatura más frecuente de las medias
+            foreach (var a in temperaturasMedia)
+            {
+                if (a.Value > cantFrecuenciaMedia)
+                {
+                    frecuenciaMedia = a.Key;
+                    cantFrecuenciaMedia = a.Value;
+                }
+            }
+
+            // Mostrar los resultados
+            Console.WriteLine("\tLa media de las temperaturas maximas es: {0} ºC y la temperatura mas frecuente es {1} ºC", mediaTempMax, frecuenciaMax);
+            Console.WriteLine("\tLa media de las temperaturas minimas es: {0} ºC y la temperatura mas frecuente es {1} ºC", mediaTempMin, frecuenciaMin);
+            Console.WriteLine("\tLa media de las temperaturas medias es: {0} ºC y la temperatura mas frecuente es {1} ºC", mediaTempMedia, frecuenciaMedia);
         }
     }
 }

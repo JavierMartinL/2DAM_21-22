@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace AEUT3_02_Ejercicios_CS
@@ -32,8 +33,9 @@ namespace AEUT3_02_Ejercicios_CS
                         ejercicio3();
                         break;
 
-                    /*case 4:
-                        break;*/
+                    case 4:
+                        ejercicio4();
+                        break;
                     default:
                         break;
                 }
@@ -141,6 +143,28 @@ namespace AEUT3_02_Ejercicios_CS
             Console.WriteLine();
 
             Metodo.bioinformatica(cadena);
+        }
+
+        /**
+         * 4.- Estructuras: Desde la web de www.meteoblue.com Phemos obtenido los datos de las temperaturas de Santa Cruz de Tenerife 
+         * desde el mes de octubre en un fichero csv. realiza el código necesario para que nos devuelva cuál ha sido la media 
+         * aritmética de las temperaturas máximas, la mínimas y de las medias, y cuál ha tenido más frecuencia (utiliza en 
+         * todo momento una precisión de 2 decimales para los valores de las temperaturas).
+         * 
+         * Utiliza la/s estructura/s de datos que creas mas adecuadas. Para gestionar las temperaturas.
+         * 
+         * y a demás crea una clase para gestionar los datos del fichero ( intenta que esta clase sea lo mas reutilizable posible 
+         * para que la puedas usar en otros desarrollos posteriores).
+         */
+        private static void ejercicio4()
+        {
+            ManejoFichero mf = new ManejoFichero("./Files/tiempoTenerife.csv");
+
+            List<string> informacion = mf.leerTodo();
+
+            Console.WriteLine("Temperaturas de Santa Cruz de Tenerife en el mes de Octubre: ");
+
+            Metodo.calcularTemperatura(informacion);
         }
     }
 }

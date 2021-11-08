@@ -40,7 +40,7 @@ namespace AEUT3_02_Ejercicios_CS
                 //"\n\t1) Ejercicio 1: Fechas" +
                 "\n\t2) Ejercicio 2: Texto" +
                 "\n\t3) Ejercicio 3: ADN" +
-                //"\n\t4) Ejercicio 4: Temperaturas" +
+                "\n\t4) Ejercicio 4: Temperaturas" +
                 "\n\t0) Salir" +
                 "\n-> ";
 
