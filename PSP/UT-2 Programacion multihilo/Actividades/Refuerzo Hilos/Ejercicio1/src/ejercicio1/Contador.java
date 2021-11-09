@@ -14,32 +14,43 @@ public class Contador extends Thread{
     public int numero = 0;
     
     public synchronized int siguiente() {
-        System.out.println(numero);
+        notifyAll();
         return numero++;
     }
     
-    public synchronized void esperarPar() throws InterruptedException {
-        if (numero % 2 == 0) {
-            siguiente();
-            notifyAll();
-        } else {
-            System.out.println("esperarImpar");
-            wait();
-        }
+    public synchronized void esperarPar() {
+        while (numero % 2 != 0)
+            esperar("Par");
+        System.out.println(numero);
     }
     
-    public synchronized void esperarImpar() throws InterruptedException {
-        if (numero % 2 != 0) {
-            siguiente();
-            notifyAll();
-        } else {
-            System.out.println("esperarPar");
-            wait(50);
-        }
+    public synchronized void esperarImpar() {
+        while (numero % 2 == 0)
+            esperar("Impar");
+        System.out.println(numero);
+    }
+    
+    private void esperar(String numero) {
+        try {
+            System.out.println("Esperando un numero " + numero + " -> hilo: " + Thread.currentThread().getName());
+            wait();
+        } catch (InterruptedException ex) { }
     }
     
     @Override
     public void run() {
-
+        
+        for (int i = 0; numero < 10; i++) {
+            siguiente();
+            if (numero % 2 == 0) {
+                esperarImpar();
+            }else {
+                esperarPar();
+            }
+            if (numero == 10){
+                System.exit(0);
+            }
+        }
+        
     }
 }

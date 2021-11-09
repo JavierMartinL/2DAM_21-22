@@ -17,8 +17,11 @@ public class Main {
     public static void main(String[] args) {
         Contador contador = new Contador();
         
-        new Thread(new Par(contador, 10)).start();
-        new Thread(new Impar(contador, 10)).start();
+        Thread hilo1 = new Thread(contador);
+        Thread hilo2 = new Thread(contador);
+        
+        hilo1.start();
+        hilo2.start();
     }
     
 }
