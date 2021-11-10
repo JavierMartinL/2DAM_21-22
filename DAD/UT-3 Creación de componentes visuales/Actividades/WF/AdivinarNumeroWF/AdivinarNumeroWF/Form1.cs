@@ -19,6 +19,12 @@ namespace AdivinarNumeroWF
 
         private void empezarPartida(object sender, EventArgs e)
         {
+            btnEmpezar.Visible = false;
+            cargarPartida();
+        }
+
+        private void cargarPartida()
+        {
         }
     }
 }
