@@ -1,0 +1,189 @@
+ <!-- pom.xml la parte de dependencias y que ejecute en java 11 -->
+
+ <dependencies>
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.1.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>javax.servlet.jsp</groupId>
+    <artifactId>javax.servlet.jsp-api</artifactId>
+    <version>2.3.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>javax.el</groupId>
+    <artifactId>javax.el-api</artifactId>
+    <version>3.0.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+    <dependency>
+        <groupId>taglibs</groupId>
+        <artifactId>standard</artifactId>
+        <version>1.1.2</version>
+    </dependency>  
+    
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.26</version>
+</dependency>    
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.12.2</version>
+</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+<dependency>
+    <groupId>commons-dbcp</groupId>
+    <artifactId>commons-dbcp</artifactId>
+    <version>1.4</version>
+</dependency>
+
+
+<!--
+ https://mvnrepository.com/artifact/org.hibernate/hibernate-core 
+-->
+<dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-core</artifactId>
+<version>5.4.3.Final</version>
+</dependency>
+<!--
+ https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager 
+-->
+<dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-entitymanager</artifactId>
+<version>5.4.3.Final</version>
+</dependency>
+<!--
+ https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api 
+-->
+<dependency>
+<groupId>javax.persistence</groupId>
+<artifactId>javax.persistence-api</artifactId>
+<version>2.2</version>
+</dependency>
+  </dependencies>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <source>1.11</source>
+          <target>1.11</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+
+
+  
+
+  <!-- en web.xml quitar el display-name y su encabezado es: -->
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://Java.sun.com/xml/ns/javaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+      version="3.0">
+
+
+
+
+
+
+
+<!-- en los ficheros jsp para que soporte jstl -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+
+
+
+<!-- en persistence.xml hay que vigilar: 
+el nombre de la unidad de persistencia
+y hay que especificar los datos para que se pueda conectar
+a mysql. Esto es, dentro de: persistence-unit aparece la etiqueta properties
+que hay que poner los datos de usuario, password y nombre ddbb además 
+de que se haga debug de mysql y decirle que use hibernate
+Adicionalmente ponemos que las transacciones son un recurso local -->
+
+<properties>
+      <property name="javax.persistence.jdbc.url" 
+value="jdbc:mysql://localhost:3306/seguimientomonedas?serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" 
+value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="1q2w3e4r"/>
+      
+      <property name="hibernate.dialect" 
+value="org.hibernate.dialect.MySQLDialect" />
+      <property name="hibernate.show_sql" value="true" />
+ 
+      
+    </properties>
+
+
+
+
+Ejemplo completo mara northwind ddbb:
+<persistence version="2.1" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<persistence-unit name="unidadPersistencia" transaction-type="RESOURCE_LOCAL">
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<class>
+es.iespuertodelacruz.jc.jpainicial.entities.Category
+</class>
+<class>
+es.iespuertodelacruz.jc.jpainicial.entities.Customer
+</class>
+<class>
+es.iespuertodelacruz.jc.jpainicial.entities.Employee
+</class>
+<class>
+es.iespuertodelacruz.jc.jpainicial.entities.OrderDetail
+</class>
+<class>es.iespuertodelacruz.jc.jpainicial.entities.Order</class>
+<class>
+es.iespuertodelacruz.jc.jpainicial.entities.Product
+</class>
+<class>
+es.iespuertodelacruz.jc.jpainicial.entities.Shipper
+</class>
+<class>
+es.iespuertodelacruz.jc.jpainicial.entities.Supplier
+</class>
+<properties>
+</properties>
+</persistence-unit>
+</persistence>
