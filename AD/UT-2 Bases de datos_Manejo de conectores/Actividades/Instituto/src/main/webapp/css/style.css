@@ -1,0 +1,13 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: #46664838;
+}
+
+.icono {
+    font-size: 100px;
+    color: black;
+}
