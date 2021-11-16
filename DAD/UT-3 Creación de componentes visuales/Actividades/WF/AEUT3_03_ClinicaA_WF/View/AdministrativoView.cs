@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class Registro : Form
+    public partial class AdministrativoView : Form
     {
-        public Registro()
+        public AdministrativoView()
         {
             InitializeComponent();
-        }
-
-        private static void login(object sender, EventArgs e)
-        {
-
         }
     }
 }

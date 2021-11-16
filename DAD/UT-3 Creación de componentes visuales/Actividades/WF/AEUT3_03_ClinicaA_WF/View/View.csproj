@@ -46,14 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Registro.cs">
+    <Compile Include="AdministrativoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro.Designer.cs">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <Compile Include="AdministrativoView.Designer.cs">
+      <DependentUpon>AdministrativoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroView.Designer.cs">
+      <DependentUpon>RegistroView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdministrativoView.resx">
+      <DependentUpon>AdministrativoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,9 +71,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro.resx">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <EmbeddedResource Include="RegistroView.resx">
+      <DependentUpon>RegistroView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +88,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\001-salida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002-etiqueta-del-precio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003-perfil-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004-perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-usuario-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\006-usuario-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\007-usuario-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008-usuario-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\009-usuario-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\010-usuario-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011-usuario-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\012-usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

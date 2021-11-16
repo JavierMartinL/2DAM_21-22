@@ -1,7 +1,7 @@
 ﻿
 namespace View
 {
-    partial class Registro
+    partial class RegistroView
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -33,62 +33,73 @@ namespace View
             this.lblPassword = new System.Windows.Forms.Label();
             this.txbUser = new System.Windows.Forms.TextBox();
             this.txbPassword = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(123, 54);
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(153, 64);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(57, 17);
+            this.lblUser.Size = new System.Drawing.Size(79, 25);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Usuario";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(126, 114);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(118, 125);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(81, 17);
+            this.lblPassword.Size = new System.Drawing.Size(114, 25);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Contraseña";
             // 
             // txbUser
             // 
-            this.txbUser.Location = new System.Drawing.Point(241, 49);
+            this.txbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUser.Location = new System.Drawing.Point(261, 61);
+            this.txbUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbUser.Name = "txbUser";
-            this.txbUser.Size = new System.Drawing.Size(100, 22);
+            this.txbUser.Size = new System.Drawing.Size(188, 30);
             this.txbUser.TabIndex = 2;
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(241, 108);
+            this.txbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassword.Location = new System.Drawing.Point(261, 122);
+            this.txbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(100, 22);
+            this.txbPassword.PasswordChar = '*';
+            this.txbPassword.Size = new System.Drawing.Size(188, 30);
             this.txbPassword.TabIndex = 3;
             // 
-            // button1
+            // btnEntrar
             // 
-            this.button1.Location = new System.Drawing.Point(220, 229);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.login);
+            this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Location = new System.Drawing.Point(231, 184);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(88, 36);
+            this.btnEntrar.TabIndex = 4;
+            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.login);
             // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(557, 266);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.txbUser);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUser);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -101,7 +112,7 @@ namespace View
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txbPassword;
         public System.Windows.Forms.TextBox txbUser;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEntrar;
     }
 }
 
