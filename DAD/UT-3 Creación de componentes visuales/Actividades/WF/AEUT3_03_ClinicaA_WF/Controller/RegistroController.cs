@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using View;
 
 namespace Controller
 {
-    class RegistroController
+    public class RegistroController
     {
-        RegistroView view;
+        Model.UserDAO userDAO = new Model.UserDAO();
         public RegistroController()
         {
-            this.view = new RegistroView();
-            view.Show();
         }
 
-        private void login(object sender, EventArgs e)
+        public string login(string user, string password)
         {
-            Console.WriteLine(view.txbUser.Text);
+            string respuesta = "";
+            userDAO.leer();
+            if (user.Equals("Javier") && password.Equals("1234"))
+            {
+                respuesta = "personalsanitario";
+                
+            }
+            return respuesta;
         }
     }
 }
