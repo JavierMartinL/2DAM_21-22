@@ -64,6 +64,9 @@ namespace View
                     break;
                 case "personalsanitario":
                     Console.WriteLine("personalsanitario");
+                    PersonalView personalView = new PersonalView();
+                    Hide();
+                    personalView.ShowDialog();
                     break;
                 case "":
                     lblError.Visible = true;
