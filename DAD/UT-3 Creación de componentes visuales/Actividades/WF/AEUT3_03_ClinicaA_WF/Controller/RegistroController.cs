@@ -3,26 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
 namespace Controller
 {
     public class RegistroController
     {
-        Model.UserDAO userDAO = new Model.UserDAO();
+        private UserDAO userDAO;
+
         public RegistroController()
         {
+            userDAO = new UserDAO();
         }
 
         public string login(string user, string password)
         {
-            string respuesta = "";
-            userDAO.leer();
-            if (user.Equals("Javier") && password.Equals("1234"))
-            {
-                respuesta = "personalsanitario";
-                
-            }
-            return respuesta;
+            Usuario usuario = new Usuario(user, password);
+
+            return userDAO.login(usuario);
         }
     }
 }

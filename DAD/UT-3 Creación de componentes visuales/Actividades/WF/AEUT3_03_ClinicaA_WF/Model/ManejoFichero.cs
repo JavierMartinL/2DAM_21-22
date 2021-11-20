@@ -16,16 +16,16 @@ namespace Model
             _file = path;
         }
 
-        public List<string> leerTodo()
+        public string leerTodo()
         {
-            List<string> texto = new List<string>();
+            string texto = "";
 
             using (StreamReader sr = File.OpenText(_file))
             {
                 string linea;
                 while ((linea = sr.ReadLine()) != null)
                 {
-                    texto.Add(linea);
+                    texto += linea + "\n";
                 }
             }
             return texto;

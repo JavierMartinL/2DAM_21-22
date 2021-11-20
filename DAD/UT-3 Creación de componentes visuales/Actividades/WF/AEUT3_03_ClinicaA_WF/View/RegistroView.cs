@@ -8,27 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Controller;
+
 namespace View
 {
     public partial class RegistroView : Form
     {
-        Controller.RegistroController registroController = new Controller.RegistroController();
+        private RegistroController registroController;
+
         public RegistroView()
         {
+            registroController = new RegistroController();
             InitializeComponent();
         }
 
         private void login(object sender, EventArgs e)
         {
-            bool error = false;
             string user = txbUser.Text;
             string password = txbPassword.Text;
 
+            bool error = false;
             lblErrorUser.Visible = false;
             lblErrorPassword.Visible = false;
-            lblError.Visible = false;
+            lblError.Visible = false;           
 
-            string registro = null;
+            string rol = null;
 
             if (user.Trim().Equals(""))
             {
@@ -44,22 +48,41 @@ namespace View
 
             if (!error)
             {
-                registro = registroController.login(user, password);
+                rol = registroController.login(user, password);
             }
 
-            switch (registro)
+            switch (rol)
             {
                 case "direccion":
+                    mensajeConstruccion(user);
                     break;
                 case "administrativo":
+                    Console.WriteLine("administrativo");
                     break;
                 case "administrador":
+                    mensajeConstruccion(user);
                     break;
                 case "personalsanitario":
+                    Console.WriteLine("personalsanitario");
                     break;
                 case "":
                     lblError.Visible = true;
                     break;
+            }
+        }
+
+        private void mensajeConstruccion(string user)
+        {
+            string mensaje = "Bienvenido " + user + 
+                " \nTe has registrado correctamente " +
+                "\n\nLo lamentamos, esta sección está en construcción";
+            const string titulo = "Construcción";
+
+            var result = MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
             }
         }
     }

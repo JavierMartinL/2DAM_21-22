@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Usuario
+    public class Usuario
     {
         private string user;
         private string password;
@@ -15,6 +15,12 @@ namespace Model
         public Usuario()
         { }
 
+        public Usuario(string user, string password)
+        {
+            this.user = user;
+            this.password = password;
+        }
+
         public Usuario(string user, string password, string tipo)
         {
             this.user = user;
@@ -22,10 +28,8 @@ namespace Model
             this.tipo = tipo;
         }
 
-        public void guardar(string user, string password)
-        {
-            Console.WriteLine(user);
-            Console.WriteLine(password);
-        }
+        public string User { get => user; set => user = value; }
+        public string Password { get => password; set => password = value; }
+        public string Tipo { get => tipo; set => tipo = value; }
     }
 }

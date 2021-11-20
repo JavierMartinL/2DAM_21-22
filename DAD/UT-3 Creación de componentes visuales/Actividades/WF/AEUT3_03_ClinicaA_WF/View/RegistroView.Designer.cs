@@ -65,7 +65,7 @@ namespace View
             // 
             this.txbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUser.Location = new System.Drawing.Point(183, 33);
-            this.txbUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbUser.Margin = new System.Windows.Forms.Padding(2);
             this.txbUser.Name = "txbUser";
             this.txbUser.Size = new System.Drawing.Size(142, 26);
             this.txbUser.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace View
             // 
             this.txbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPassword.Location = new System.Drawing.Point(183, 92);
-            this.txbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(142, 26);
@@ -84,7 +84,7 @@ namespace View
             // 
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.Location = new System.Drawing.Point(173, 173);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(66, 29);
             this.btnEntrar.TabIndex = 4;
@@ -142,7 +142,7 @@ namespace View
             this.Controls.Add(this.txbUser);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUser);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "RegistroView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -8,14 +8,31 @@ namespace Model
 {
     public class UserDAO
     {
-        public void leer()
+        private ManejoFichero mf;
+
+        public UserDAO()
         {
-            ManejoFichero mf = new ManejoFichero("./Files/users.txt");
-            List<string> a = mf.leerTodo();
-            for (int i = 0; i < a.Count; i++)
+            mf = new ManejoFichero("./Files/users.txt");
+        }
+
+        public string login(Usuario usuario)
+        {
+            string rol = "";
+            string[] usuarios = mf.leerTodo().Split('\n');
+
+            for (int i = 0; i < usuarios.Length; i++)
             {
-                Console.WriteLine(a[i]);
+                string[] datosUsuario = usuarios[i].Split(':');
+
+                if (usuario.User.Equals(datosUsuario[0]))
+                {
+                    if (usuario.Password.Equals(datosUsuario[1]))
+                    {
+                        rol = datosUsuario[2];
+                    }
+                }
             }
+            return rol;
         }
     }
 }
