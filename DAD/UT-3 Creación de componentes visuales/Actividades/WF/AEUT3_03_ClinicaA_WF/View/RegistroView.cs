@@ -57,13 +57,14 @@ namespace View
                     mensajeConstruccion(user);
                     break;
                 case "administrativo":
-                    Console.WriteLine("administrativo");
+                    AdministrativoView administrativoView = new AdministrativoView();
+                    Hide();
+                    administrativoView.ShowDialog();
                     break;
                 case "administrador":
                     mensajeConstruccion(user);
                     break;
                 case "personalsanitario":
-                    Console.WriteLine("personalsanitario");
                     PersonalView personalView = new PersonalView();
                     Hide();
                     personalView.ShowDialog();
