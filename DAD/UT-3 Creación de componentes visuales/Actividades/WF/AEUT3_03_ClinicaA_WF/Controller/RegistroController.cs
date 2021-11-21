@@ -16,8 +16,12 @@ namespace Controller
             userDAO = new UserDAO();
         }
 
+        /*
+         * Método que crea un usuario para comprobar el login
+         */
         public string login(string user, string password)
         {
+            // Crear el Usuario
             Usuario usuario = new Usuario(user, password);
 
             return userDAO.login(usuario);
