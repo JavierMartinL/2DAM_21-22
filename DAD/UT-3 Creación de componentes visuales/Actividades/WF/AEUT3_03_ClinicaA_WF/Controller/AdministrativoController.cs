@@ -9,11 +9,11 @@ using Model.entities;
 
 namespace Controller
 {
-    public class CrearPacienteController
+    public class AdministrativoController
     {
         private PacienteDAO pacienteDAO;
 
-        public CrearPacienteController()
+        public AdministrativoController()
         {
             pacienteDAO = new PacienteDAO();
         }
@@ -35,6 +35,32 @@ namespace Controller
             {
                 return "dniFalso";
             }
+        }
+
+        /*
+         * Método que controla de que forma vamos a buscar
+         */
+        public List<Paciente> buscarPaciente(string dni, string nhc)
+        {
+            List<Paciente> pacientes;
+
+            // Por NHC
+            if (!nhc.Equals(""))
+            {
+                pacientes = pacienteDAO.findAllNHC(nhc);
+            }
+            // Por DNI
+            else if (!dni.Equals(""))
+            {   
+                pacientes = pacienteDAO.findAllDni(dni);
+            }
+            // Todos
+            else
+            {
+                pacientes = pacienteDAO.findAll();
+            }
+
+            return pacientes;
         }
 
     }

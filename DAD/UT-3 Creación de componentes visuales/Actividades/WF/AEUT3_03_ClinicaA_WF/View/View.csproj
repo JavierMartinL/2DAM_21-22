@@ -52,6 +52,12 @@
     <Compile Include="AdministrativoView.Designer.cs">
       <DependentUpon>AdministrativoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscarPacienteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarPacienteView.Designer.cs">
+      <DependentUpon>BuscarPacienteView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrearPacienteView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdministrativoView.resx">
       <DependentUpon>AdministrativoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarPacienteView.resx">
+      <DependentUpon>BuscarPacienteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearPacienteView.resx">
       <DependentUpon>CrearPacienteView.cs</DependentUpon>
@@ -147,6 +156,10 @@
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{c3340d3e-130e-4e13-abb8-56a7cfdc337c}</Project>
       <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{2139169D-37E5-47B1-A680-B612117AD8D8}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

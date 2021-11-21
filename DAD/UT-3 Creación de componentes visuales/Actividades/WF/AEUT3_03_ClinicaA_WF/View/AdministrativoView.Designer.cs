@@ -71,6 +71,7 @@ namespace View
             this.tlsBuscarPaciente.Name = "tlsBuscarPaciente";
             this.tlsBuscarPaciente.Size = new System.Drawing.Size(29, 29);
             this.tlsBuscarPaciente.Text = "Buscar paciente";
+            this.tlsBuscarPaciente.Click += new System.EventHandler(this.buscarPaciente);
             // 
             // tlsCrearPaciente
             // 

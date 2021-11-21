@@ -14,11 +14,11 @@ namespace View
 {
     public partial class CrearPacienteView : Form
     {
-        CrearPacienteController crearPacienteController;
+        AdministrativoController administrativoController;
 
         public CrearPacienteView()
         {
-            crearPacienteController = new CrearPacienteController();
+            administrativoController = new AdministrativoController();
             InitializeComponent();
         }
 
@@ -74,7 +74,7 @@ namespace View
             string guardado = "";
             if (!error)
             {
-                guardado = crearPacienteController.crearPaciente(dni, nhc, nombre, apellidos, direccion, poblacion);
+                guardado = administrativoController.crearPaciente(dni, nhc, nombre, apellidos, direccion, poblacion);
             }
 
             // Comprobar que no se produzca ningun error a la hora de guardar

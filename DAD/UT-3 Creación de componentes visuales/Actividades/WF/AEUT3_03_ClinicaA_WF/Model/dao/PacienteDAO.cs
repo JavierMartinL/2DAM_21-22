@@ -18,6 +18,26 @@ namespace Model.dao
         }
 
         /*
+         * Método que busca todos los Pacientes registrados
+         */
+        public List<Paciente> findAll()
+        {
+            List<Paciente> pacientes = new List<Paciente>();
+
+            foreach (string paci in mf.leerTodo().Split('\n'))
+            {
+                string[] datosPaciente = paci.Split(':');
+
+                if (datosPaciente.Length > 1)
+                {
+                    pacientes.Add(new Paciente(datosPaciente[5], int.Parse(datosPaciente[6]), datosPaciente[0], datosPaciente[1], datosPaciente[2], datosPaciente[4]));
+                }
+            }
+
+            return pacientes;
+        }
+
+        /*
          * Método que busca un Paciente por su DNI
          */
         public Paciente findByDni(string dni)
@@ -38,6 +58,29 @@ namespace Model.dao
             }
 
             return paciente;
+        }
+
+        /*
+         * Método que busca todos los Pacientes que comienzan con el mismo numero de DNI
+         */
+        public List<Paciente> findAllDni(string dni)
+        {
+            List<Paciente> pacientes = new List<Paciente>();
+
+            foreach (string paci in mf.leerTodo().Split('\n'))
+            {
+                string[] datosPaciente = paci.Split(':');
+
+                if (datosPaciente.Length > 1)
+                {
+                    if (datosPaciente[5].StartsWith(dni))
+                    {
+                        pacientes.Add(new Paciente(datosPaciente[5], int.Parse(datosPaciente[6]), datosPaciente[0], datosPaciente[1], datosPaciente[2], datosPaciente[4]));
+                    }
+                }
+            }
+
+            return pacientes;
         }
 
         /*
@@ -62,6 +105,29 @@ namespace Model.dao
             }
 
             return paciente;
+        }
+
+        /*
+         * Método que busca todos los Pacientes que empiezan con el mismo NHC
+         */
+        public List<Paciente> findAllNHC(string nhc)
+        {
+            List<Paciente> pacientes = new List<Paciente>();
+
+            foreach (string paci in mf.leerTodo().Split('\n'))
+            {
+                string[] datosPaciente = paci.Split(':');
+
+                if (datosPaciente.Length > 1)
+                {
+                    if (datosPaciente[6].StartsWith(nhc))
+                    {
+                        pacientes.Add(new Paciente(datosPaciente[5], int.Parse(datosPaciente[6]), datosPaciente[0], datosPaciente[1], datosPaciente[2], datosPaciente[4]));
+                    }
+                }
+            }
+
+            return pacientes;
         }
 
         /*
