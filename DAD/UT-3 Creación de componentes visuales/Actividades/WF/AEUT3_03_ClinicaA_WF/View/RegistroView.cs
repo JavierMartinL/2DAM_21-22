@@ -60,6 +60,7 @@ namespace View
                     AdministrativoView administrativoView = new AdministrativoView();
                     Hide();
                     administrativoView.ShowDialog();
+                    Close();
                     break;
                 case "administrador":
                     mensajeConstruccion(user);
@@ -68,6 +69,7 @@ namespace View
                     PersonalView personalView = new PersonalView();
                     Hide();
                     personalView.ShowDialog();
+                    Close();
                     break;
                 case "":
                     lblError.Visible = true;
