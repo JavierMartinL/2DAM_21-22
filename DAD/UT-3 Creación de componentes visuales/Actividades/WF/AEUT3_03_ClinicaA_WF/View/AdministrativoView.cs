@@ -48,6 +48,17 @@ namespace View
             }
         }
 
+        private void pacientesMenu(object sender, EventArgs e)
+        {
+            tlsPaciente.Visible = true;
+        }
+
+        private void crearPaciente(object sender, EventArgs e)
+        {
+            CrearPacienteView crearPacienteView = new CrearPacienteView();
+            crearPacienteView.ShowDialog();
+        }
+
         private void mensaje(string accion)
         {
             string titulo = "En construcción";
@@ -55,11 +66,6 @@ namespace View
                 "\n\nLo lamentamos, esta sección está en construcción";
 
             MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
-
-        private void pacientesMenu(object sender, EventArgs e)
-        {
-            tlsPaciente.Visible = true;
         }
     }
 }

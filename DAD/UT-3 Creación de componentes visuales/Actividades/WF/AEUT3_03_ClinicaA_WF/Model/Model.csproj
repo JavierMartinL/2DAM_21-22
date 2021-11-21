@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dao\PacienteDAO.cs" />
+    <Compile Include="entities\Paciente.cs" />
     <Compile Include="utils\ManejoFichero.cs" />
     <Compile Include="dao\UserDAO.cs" />
     <Compile Include="entities\Usuario.cs" />

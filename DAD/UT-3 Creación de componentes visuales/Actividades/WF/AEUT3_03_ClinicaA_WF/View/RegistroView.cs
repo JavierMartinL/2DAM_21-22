@@ -34,17 +34,8 @@ namespace View
 
             string rol = null;
 
-            if (user.Trim().Equals(""))
-            {
-                lblErrorUser.Visible = true;
-                error = true;
-            }
-
-            if (password.Trim().Equals(""))
-            {
-                lblErrorPassword.Visible = true;
-                error = true;
-            }
+            if (user.Trim().Equals("")) error = lblErrorUser.Visible = true;
+            if (password.Trim().Equals("")) error = lblErrorPassword.Visible = true;
 
             if (!error)
             {

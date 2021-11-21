@@ -30,5 +30,10 @@ namespace Model
             }
             return texto;
         }
+
+        public void guardarFinal(string datos)
+        {
+            File.AppendAllText(_file, datos + '\n');
+        }
     }
 }
