@@ -75,6 +75,15 @@ namespace View
         }
 
         /*
+         * Método que muestra el formulario para eliminar a los pacientes
+         */
+        private void eliminarPaciente(object sender, EventArgs e)
+        {
+            BorrarPacienteView borrarPacienteView = new BorrarPacienteView();
+            borrarPacienteView.ShowDialog();
+        }
+
+        /*
          * Método que muestra un mensaje al usuario
          */
         private void mensaje(string accion)
@@ -85,6 +94,5 @@ namespace View
 
             MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-
     }
 }

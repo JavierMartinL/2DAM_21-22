@@ -63,5 +63,34 @@ namespace Controller
             return pacientes;
         }
 
+        /*
+         * Método que busca segun la opcion
+         */
+        public List<Paciente> buscarPaciente(string valor, int opcion)
+        {
+            List<Paciente> pacientes;
+
+            // Por NHC
+            if (opcion == 0)
+            {
+                pacientes = pacienteDAO.findAllNHC(valor);
+            }
+            // Por DNI
+            else
+            {
+                pacientes = pacienteDAO.findAllDni(valor);
+            }
+
+            return pacientes;
+        }
+
+        /*
+         * Método para eliminar un Paciente
+         */
+        public bool eliminarPaciente(int nhc)
+        {
+            return pacienteDAO.deleteByNHC(nhc);
+        }
+
     }
 }

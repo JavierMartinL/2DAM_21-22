@@ -160,5 +160,15 @@ namespace Model.dao
             return guardarPaciente;
         }
 
+        /*
+         * Método que eliminar un Paciente segun su nhc
+         */
+        public bool deleteByNHC(int nhc)
+        {
+            int postNhc = 6;
+            string strNhc = nhc + "";
+
+            return mf.eliminarFila(postNhc, strNhc);
+        }
     }
 }

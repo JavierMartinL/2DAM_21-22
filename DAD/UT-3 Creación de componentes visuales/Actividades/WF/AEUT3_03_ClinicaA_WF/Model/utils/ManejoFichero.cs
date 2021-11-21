@@ -41,5 +41,36 @@ namespace Model
         {
             File.AppendAllText(_file, datos + '\n');
         }
+
+        /*
+         * Método que elimina una linea si coinciden los valores
+         */
+        public bool eliminarFila(int pos, string value)
+        {
+            bool cambios = false;
+
+            // Crear fichero temporal
+            string temp = _file.Replace(".txt", "-temp.txt");
+            using (var sr = new StreamReader(_file))
+            using (var sw = new StreamWriter(temp))
+            {
+                string line;
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    // Si en la posición indicada coincide el valor no se escribe esa linea
+                    if (line.Split(':')[pos] != value)
+                    {
+                        sw.WriteLine(line);
+                        cambios = true;
+                    }
+                }
+            }
+
+            // Eliminar el fichero y convertir el temporal en el nuevo fichero
+            File.Delete(_file);
+            File.Move(temp, _file);
+            return cambios;
+        }
     }
 }

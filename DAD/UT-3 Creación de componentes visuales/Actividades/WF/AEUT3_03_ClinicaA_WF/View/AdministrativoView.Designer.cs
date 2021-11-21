@@ -91,6 +91,7 @@ namespace View
             this.tlsEliminarPaciente.Name = "tlsEliminarPaciente";
             this.tlsEliminarPaciente.Size = new System.Drawing.Size(29, 29);
             this.tlsEliminarPaciente.Text = "Eliminar paciente";
+            this.tlsEliminarPaciente.Click += new System.EventHandler(this.eliminarPaciente);
             // 
             // tlsVerFichaPaciente
             // 

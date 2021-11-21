@@ -52,6 +52,12 @@
     <Compile Include="AdministrativoView.Designer.cs">
       <DependentUpon>AdministrativoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="BorrarPacienteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrarPacienteView.Designer.cs">
+      <DependentUpon>BorrarPacienteView.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscarPacienteView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdministrativoView.resx">
       <DependentUpon>AdministrativoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrarPacienteView.resx">
+      <DependentUpon>BorrarPacienteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarPacienteView.resx">
       <DependentUpon>BuscarPacienteView.cs</DependentUpon>
