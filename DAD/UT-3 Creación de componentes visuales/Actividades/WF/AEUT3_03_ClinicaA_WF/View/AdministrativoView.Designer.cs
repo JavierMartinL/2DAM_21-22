@@ -61,6 +61,7 @@ namespace View
             this.tlsPaciente.Size = new System.Drawing.Size(600, 27);
             this.tlsPaciente.TabIndex = 0;
             this.tlsPaciente.Text = "toolStrip1";
+            this.tlsPaciente.Visible = false;
             // 
             // toolStripButton1
             // 
@@ -134,6 +135,7 @@ namespace View
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
             this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
+            this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesMenu);
             // 
             // centroDeDíaToolStripMenuItem
             // 

@@ -19,16 +19,19 @@ namespace View
 
         private void centroDia(object sender, EventArgs e)
         {
+            tlsPaciente.Visible = false;
             mensaje("Centro de día");
         }
 
         private void cita(object sender, EventArgs e)
         {
+            tlsPaciente.Visible = false;
             mensaje("Cita");
         }
 
         private void guardarActividad(object sender, EventArgs e)
         {
+            tlsPaciente.Visible = false;
             mensaje("Guardar actividad");
         }
 
@@ -52,6 +55,11 @@ namespace View
                 "\n\nLo lamentamos, esta sección está en construcción";
 
             MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void pacientesMenu(object sender, EventArgs e)
+        {
+            tlsPaciente.Visible = true;
         }
     }
 }
