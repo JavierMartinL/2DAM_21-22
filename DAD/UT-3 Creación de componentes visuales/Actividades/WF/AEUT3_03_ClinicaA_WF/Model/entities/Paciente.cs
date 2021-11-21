@@ -17,7 +17,7 @@ namespace Model.entities
 
         public Paciente()
         { }
-
+        
         public Paciente(string dni, int nhc, string nombre, string apellidos, string direccion, string poblacion)
         {
             this.dni = dni;
@@ -28,6 +28,9 @@ namespace Model.entities
             this.poblacion = poblacion;
         }
 
+        /*
+         * Método que válida un DNI
+         */
         public bool validarDNI(string dni)
         {
             bool dniValido;

@@ -16,6 +16,9 @@ namespace Model
             _file = path;
         }
 
+        /*
+         * Método que recorre el fichero y devuelve los datos en un string
+         */
         public string leerTodo()
         {
             string texto = "";
@@ -31,6 +34,9 @@ namespace Model
             return texto;
         }
 
+        /*
+         * Método que inserta al final de fichero una nueva línea
+         */
         public void guardarFinal(string datos)
         {
             File.AppendAllText(_file, datos + '\n');

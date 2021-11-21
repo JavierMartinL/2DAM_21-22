@@ -15,6 +15,9 @@ namespace Model
             mf = new ManejoFichero("./Files/users.txt");
         }
 
+        /*
+         * Método que con los datos del Usuario comprueba si las credenciales introducidas son válidas
+         */
         public string login(Usuario usuario)
         {
             string rol = "";

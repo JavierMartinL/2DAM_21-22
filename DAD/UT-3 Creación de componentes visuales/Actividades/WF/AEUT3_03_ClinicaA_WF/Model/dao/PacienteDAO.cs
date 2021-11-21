@@ -17,6 +17,9 @@ namespace Model.dao
             mf = new ManejoFichero("./Files/pacientes.txt");
         }
 
+        /*
+         * Método que busca un Paciente por su DNI
+         */
         public Paciente findByDni(string dni)
         {
             Paciente paciente= null;
@@ -37,6 +40,9 @@ namespace Model.dao
             return paciente;
         }
 
+        /*
+         * Método que busca un Paciente por su NHC
+         */
         public Paciente findByNHC(int nhc)
         {
             Paciente paciente = null;
@@ -58,14 +64,20 @@ namespace Model.dao
             return paciente;
         }
 
+        /*
+         * Método que comprueba si los el DNI y el NHC no existe en el fichero y si es así guarda el nuevo Paciente
+         */
         public string save(Paciente paciente)
         {
             string guardarPaciente;
 
+            // Comporbar que no existe el DNI
             if (findByDni(paciente.Dni) == null)
             {
+                // Comprobar que no existe el NHC
                 if (findByNHC(paciente.Nhc) == null)
                 {
+                    // Guardar el nuevo Paciente
                     mf.guardarFinal(paciente.ToString());
                     guardarPaciente = "guardado";
                 }
