@@ -24,9 +24,11 @@ namespace View
 
         private void login(object sender, EventArgs e)
         {
+            // Recoger los valores introducidos
             string user = txbUser.Text;
             string password = txbPassword.Text;
 
+            // Resetear los errores
             bool error = false;
             lblErrorUser.Visible = false;
             lblErrorPassword.Visible = false;
@@ -34,14 +36,17 @@ namespace View
 
             string rol = null;
 
+            // Comprobar si los campos estan vacios 
             if (user.Trim().Equals("")) error = lblErrorUser.Visible = true;
             if (password.Trim().Equals("")) error = lblErrorPassword.Visible = true;
 
+            // Si no hay error hacer el login
             if (!error)
             {
                 rol = registroController.login(user, password);
             }
 
+            // Según el rol obtenido mostramos una vista
             switch (rol)
             {
                 case "direccion":
@@ -68,6 +73,9 @@ namespace View
             }
         }
 
+        /*
+         * Método que muestra un mensaje al usuario
+         */
         private void mensajeConstruccion(string user)
         {
             string mensaje = "Bienvenido " + user + 
@@ -77,6 +85,7 @@ namespace View
 
             var result = MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+            // Cerrar la App
             if (result == DialogResult.OK)
             {
                 Application.Exit();

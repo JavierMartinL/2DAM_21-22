@@ -17,6 +17,11 @@ namespace View
             InitializeComponent();
         }
 
+        private void pacientesMenu(object sender, EventArgs e)
+        {
+            tlsPaciente.Visible = true;
+        }
+
         private void centroDia(object sender, EventArgs e)
         {
             tlsPaciente.Visible = false;
@@ -35,6 +40,9 @@ namespace View
             mensaje("Guardar actividad");
         }
 
+        /*
+         * Método para cerrar la App
+         */
         private void salir(object sender, EventArgs e)
         {
             string titulo = "Salir";
@@ -48,17 +56,18 @@ namespace View
             }
         }
 
-        private void pacientesMenu(object sender, EventArgs e)
-        {
-            tlsPaciente.Visible = true;
-        }
-
+        /*
+         * Método que muestra el formulario para crear un nuevo Paciente
+         */
         private void crearPaciente(object sender, EventArgs e)
         {
             CrearPacienteView crearPacienteView = new CrearPacienteView();
             crearPacienteView.ShowDialog();
         }
 
+        /*
+         * Método que muestra un mensaje al usuario
+         */
         private void mensaje(string accion)
         {
             string titulo = "En construcción";

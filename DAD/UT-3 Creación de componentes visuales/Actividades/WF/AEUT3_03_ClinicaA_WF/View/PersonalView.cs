@@ -58,6 +58,9 @@ namespace View
             mensaje("Eliminar nota");
         }
 
+        /*
+         * Método para cerrar la App
+         */
         private void salir(object sender, EventArgs e)
         {
             string titulo = "Salir";
@@ -71,6 +74,10 @@ namespace View
             }
         }
 
+
+        /*
+         * Método que muestra un mensaje al usuario
+         */
         private void mensaje(string accion)
         {
             string titulo = accion;

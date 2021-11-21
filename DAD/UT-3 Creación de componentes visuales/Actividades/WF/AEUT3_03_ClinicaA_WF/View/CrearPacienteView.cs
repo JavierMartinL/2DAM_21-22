@@ -22,10 +22,14 @@ namespace View
             InitializeComponent();
         }
 
+        /*
+         * Método para guardar un nuevo Paciente
+         */
         private void crearPaciente(object sender, EventArgs e)
         {
             bool error = false;
 
+            // Recoger los valores introducidos
             string dni = txbDni.Text.Trim();
             string strNhc = txbNhc.Text.Trim();
             int nhc = -1;
@@ -34,6 +38,7 @@ namespace View
             string direccion = txbDireccion.Text.Trim();
             string poblacion = txbPoblacion.Text.Trim();
 
+            // Resetear los errores
             lblErrorDni.Visible = false;
             lblErrorNhc.Visible = false;
             lblErrorNombre.Visible = false;
@@ -41,6 +46,7 @@ namespace View
             lblErrorDireccion.Visible = false;
             lblErrorPoblacion.Visible = false;
 
+            // Comprobar si los campos estan vacios 
             if (dni.Equals("")) error = lblErrorDni.Visible = true;
             if (strNhc.Equals(""))
             {
@@ -64,12 +70,14 @@ namespace View
             if (direccion.Equals("")) error = lblErrorDireccion.Visible = true;
             if (poblacion.Equals("")) error = lblErrorPoblacion.Visible = true;
 
+            // Si no hay error crear el Paciente
             string guardado = "";
             if (!error)
             {
                 guardado = crearPacienteController.crearPaciente(dni, nhc, nombre, apellidos, direccion, poblacion);
             }
 
+            // Comprobar que no se produzca ningun error a la hora de guardar
             switch(guardado)
             {
                 case "dni":
@@ -91,6 +99,9 @@ namespace View
 
         }
 
+        /*
+         * Método que muestra un mensaje de ERROR al usuario
+         */
         private void mensajeError(string mensaje)
         {
             MessageBox.Show(mensaje, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
