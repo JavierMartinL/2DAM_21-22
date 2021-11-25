@@ -17,6 +17,16 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`northwind` /*!40100 DEFAULT CHARACTER S
 
 USE `northwind`;
 
+/*Tabla para el login*/
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `user` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`user`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
 /*Table structure for table `categories` */
 
 DROP TABLE IF EXISTS `categories`;
