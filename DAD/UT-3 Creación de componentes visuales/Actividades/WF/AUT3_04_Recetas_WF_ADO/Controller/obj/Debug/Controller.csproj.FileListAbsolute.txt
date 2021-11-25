@@ -1,0 +1,9 @@
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\bin\Debug\Controller.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\bin\Debug\Controller.pdb
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\bin\Debug\Modelo.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\bin\Debug\Modelo.pdb
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\obj\Debug\Controller.csproj.AssemblyReference.cache
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\obj\Debug\Controller.csproj.CopyComplete
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\obj\Debug\Controller.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Controller\obj\Debug\Controller.pdb

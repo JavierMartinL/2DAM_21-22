@@ -1,0 +1,13 @@
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\bin\Debug\View.exe.config
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\bin\Debug\View.exe
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\bin\Debug\View.pdb
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\bin\Debug\Controller.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\bin\Debug\Controller.pdb
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.csproj.AssemblyReference.cache
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.RegistroView.resources
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.Properties.Resources.resources
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.csproj.GenerateResource.cache
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.csproj.CoreCompileInputs.cache
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.csproj.CopyComplete
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.exe
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.pdb
