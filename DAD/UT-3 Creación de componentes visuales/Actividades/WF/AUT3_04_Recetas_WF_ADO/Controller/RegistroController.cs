@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace Controller
 {
-    public class Class1
+    public class RegistroController
     {
+
+        public void login(string user, string password)
+        {
+
+        }
+
     }
 }

@@ -8,18 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Controller;
+
 namespace View
 {
     public partial class RegistroView : Form
     {
+        private RegistroController registroController;
+
         public RegistroView()
         {
+            registroController = new RegistroController();
             InitializeComponent();
         }
 
-        private void registro(object sender, EventArgs e)
+        private void login(object sender, EventArgs e)
         {
-            
+            bool error = false;
+
+            string user = txbUser.Text;
+            string password = txbPassword.Text;
+
+            if (user.Equals(""))
+            {
+                error = true;
+            }
+
+            if (password.Equals(""))
+            {
+                error = true;
+            }
+
+            if (!error)
+            {
+                registroController.login(user, password);
+            }
         }
     }
 }

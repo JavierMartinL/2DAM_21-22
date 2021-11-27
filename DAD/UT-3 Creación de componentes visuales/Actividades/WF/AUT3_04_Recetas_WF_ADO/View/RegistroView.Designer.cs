@@ -81,7 +81,7 @@ namespace View
             this.btnRegistro.TabIndex = 4;
             this.btnRegistro.Text = "Registro";
             this.btnRegistro.UseVisualStyleBackColor = true;
-            this.btnRegistro.Click += new System.EventHandler(this.registro);
+            this.btnRegistro.Click += new System.EventHandler(this.login);
             // 
             // RegistroView
             // 
