@@ -30,5 +30,10 @@ namespace Controller
             else
                 return recetaDao.findByCategria(categoria);
         }
+
+        public bool eliminarReceta(int value)
+        {
+            return recetaDao.delete(value);
+        }
     }
 }

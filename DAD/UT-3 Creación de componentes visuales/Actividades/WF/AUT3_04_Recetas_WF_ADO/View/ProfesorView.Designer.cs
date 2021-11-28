@@ -109,7 +109,7 @@ namespace View
             this.Name = "ProfesorView";
             this.Text = "Profesor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.cerrarFormulario);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cerrarFormulario);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecetas)).EndInit();

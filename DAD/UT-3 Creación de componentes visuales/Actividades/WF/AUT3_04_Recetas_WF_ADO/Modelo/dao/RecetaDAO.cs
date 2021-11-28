@@ -24,7 +24,7 @@ namespace Modelo.dao
             MySqlCommand mysqlCmd = null;
             MySqlDataAdapter mysqlDAdapter = null;
             DataTable recetas = null;
-            string sql = "SELECT name, time, ingredients, description FROM recipes;";
+            string sql = "SELECT id, name, time, ingredients, description FROM recipes;";
 
             try
             {
@@ -57,7 +57,7 @@ namespace Modelo.dao
             MySqlCommand mysqlCmd = null;
             MySqlDataAdapter mysqlDAdapter = null;
             DataTable recetas = null;
-            string sql = "SELECT name, time, ingredients, description FROM recipes WHERE category = '" + categoria + "';";
+            string sql = "SELECT id, name, time, ingredients, description FROM recipes WHERE category = '" + categoria + "';";
 
             try
             {
@@ -120,6 +120,35 @@ namespace Modelo.dao
             }
 
             return categorias;
+        }
+
+        public bool delete(int id)
+        {
+            MySqlConnection connection = null;
+            MySqlCommand mysqlCmd = null;
+            bool deleteOk = false;
+            string sql = "DELETE FROM recipes WHERE id = " + id + ";";
+
+            try
+            {
+                connection = dataSource.getConnection();
+                connection.Open();
+
+                mysqlCmd = new MySqlCommand(sql, connection);
+
+                deleteOk = mysqlCmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR!: " + ex.ToString());
+            }
+            finally
+            {
+                if (mysqlCmd != null) mysqlCmd.Dispose();
+                if (connection != null) connection.Close();
+            }
+
+            return deleteOk;
         }
 
     }

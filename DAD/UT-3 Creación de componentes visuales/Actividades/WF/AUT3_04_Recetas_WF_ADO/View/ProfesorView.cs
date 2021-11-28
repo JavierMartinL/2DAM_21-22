@@ -46,39 +46,60 @@ namespace View
 
             if (dgvRecetas.Columns.Count > 0)
             {
-                dgvRecetas.Columns[0].HeaderText = "Nombre de la receta";
-                dgvRecetas.Columns[0].ReadOnly = true;
+                dgvRecetas.Columns[0].Visible = false;
 
-                dgvRecetas.Columns[1].HeaderText = "Tiempo de preparación en minutos";
+                dgvRecetas.Columns[1].HeaderText = "Nombre de la receta";
                 dgvRecetas.Columns[1].ReadOnly = true;
 
-                dgvRecetas.Columns[2].HeaderText = "Ingredientes necesarios";
+                dgvRecetas.Columns[2].HeaderText = "Tiempo de preparación en minutos";
                 dgvRecetas.Columns[2].ReadOnly = true;
 
-                dgvRecetas.Columns[3].HeaderText = "Descripción de la preparación";
+                dgvRecetas.Columns[3].HeaderText = "Ingredientes necesarios";
                 dgvRecetas.Columns[3].ReadOnly = true;
+
+                dgvRecetas.Columns[4].HeaderText = "Descripción de la preparación";
+                dgvRecetas.Columns[4].ReadOnly = true;
             }
             dgvRecetas.AutoResizeColumns();
             dgvRecetas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvRecetas.Update();
         }
 
+        private void borrarReceta(object sender, EventArgs e)
+        {
+            if (dgvRecetas.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow Rw in dgvRecetas.SelectedRows)
+                {
+                    string mensaje = "¿Estas seguro que quieres eliminar la receta \"" + Rw.Cells[1].Value + "\"?";
+                    DialogResult eliminar = MessageBox.Show(mensaje, "Eliminar Receta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (eliminar == DialogResult.Yes)
+                        if (profesorController.eliminarReceta((int)Rw.Cells[0].Value))
+                        {
+                            dgvRecetas.Rows.Remove(Rw);
+                            cargarCategorias();
+                        }
+                }
+            }
+        }
+
         private void salir(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cerrarFormulario(object sender, FormClosingEventArgs e)
         {
             string titulo = "Salir";
             string mensaje = "¿Quieres cerrar la aplicación?";
 
             DialogResult cerrar = MessageBox.Show(mensaje, titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-            if (cerrar == DialogResult.Yes)
+            if (cerrar == DialogResult.No)
             {
-                Application.Exit();
+                e.Cancel = true;
             }
-        }
-
-        private void cerrarFormulario(object sender, FormClosedEventArgs e)
-        {
-            salir(sender, e);
         }
     }
 }

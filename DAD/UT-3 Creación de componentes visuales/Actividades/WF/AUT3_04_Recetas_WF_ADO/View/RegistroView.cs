@@ -51,7 +51,8 @@ namespace View
                 case "profesora":
                     ProfesorView profesorView = new ProfesorView();
                     this.Hide();
-                    profesorView.Show();
+                    profesorView.ShowDialog();
+                    Application.Exit();
                     break;
 
                 case "alumno":
