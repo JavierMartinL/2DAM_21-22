@@ -25,23 +25,46 @@ namespace View
         private void login(object sender, EventArgs e)
         {
             bool error = false;
+            lblErrorUser.Visible = false;
+            lblErrorPassword.Visible = false;
+            lblError.Visible = false;
 
             string user = txbUser.Text;
             string password = txbPassword.Text;
+            string rol = null;
 
-            if (user.Equals(""))
-            {
-                error = true;
-            }
+            if (user.Equals("")) 
+                error = lblErrorUser.Visible = true;
+            if (password.Equals("")) 
+                error = lblErrorPassword.Visible = true;
 
-            if (password.Equals(""))
-            {
-                error = true;
-            }
+            if (!error) 
+                rol = registroController.login(user, password);
 
-            if (!error)
+            switch (rol)
             {
-                registroController.login(user, password);
+                case "":
+                    lblError.Visible = true;
+                    break;
+
+                case "profesor":
+                case "profesora":
+
+                    Console.WriteLine("Es un profesor/a");
+
+                    break;
+
+                case "alumno":
+                case "alumna":
+
+                    string mensaje = "Bienvenido \"" + user +
+                        "\"\nTe has registrado correctamente " +
+                        "\n\nLo lamentamos, esta sección está en construcción";
+                    const string titulo = "Bienvenido";
+
+                    MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Application.Exit();
+                    break;
             }
         }
     }
