@@ -4,3 +4,15 @@ D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Activi
 D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\obj\Debug\Modelo.dll
 D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\obj\Debug\Modelo.pdb
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\MySql.Data.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\Google.Protobuf.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\ZstdNet.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\BouncyCastle.Crypto.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\Ubiety.Dns.Core.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\System.Memory.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\System.Buffers.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\K4os.Compression.LZ4.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\K4os.Hash.xxHash.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\System.Numerics.Vectors.dll
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\Modelo\bin\Debug\MySql.Data.xml
