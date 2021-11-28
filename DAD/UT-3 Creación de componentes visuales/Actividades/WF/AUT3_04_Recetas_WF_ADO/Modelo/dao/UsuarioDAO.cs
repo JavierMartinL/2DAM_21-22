@@ -18,16 +18,9 @@ namespace Modelo.dao
             dataSource = DBConnection.getInstance();
         }
 
-        public List<Usuario> findAll()
-        {
-            return null;
-        }
-
-        public Usuario findById(int id)
-        {
-            return null;
-        }
-
+        /*
+         * Método que buscar un Usuario según el nombre introducido y devuelve un usuario con todo los datos
+         */
         public Usuario findByName(string nombre)
         {
             MySqlConnection connection = null;
@@ -67,26 +60,6 @@ namespace Modelo.dao
             }
 
             return usuario;
-        }
-
-        public List<Usuario> findByRol(string rol)
-        {
-            return null;
-        }
-
-        public void save(Usuario usuario)
-        {
-
-        }
-
-        public void update(Usuario usuario)
-        {
-
-        }
-
-        public void delete(int id)
-        {
-
         }
     }
 }

@@ -19,6 +19,9 @@ namespace Modelo.dao
             dataSource = DBConnection.getInstance();
         }
 
+        /*
+         * Método que recoge todas la recetas de la base de datos y devuelve en un DataTable
+         */
         public DataTable findAll()
         {
             MySqlConnection connection = null;
@@ -52,6 +55,9 @@ namespace Modelo.dao
             return recetas;
         }
 
+        /*
+         * Método que recoge todas la recetas de una categoría de la base de datos y devuelve en un DataTable
+         */
         public DataTable findByCategria(string categoria)
         {
             MySqlConnection connection = null;
@@ -85,6 +91,9 @@ namespace Modelo.dao
             return recetas;
         }
 
+        /*
+         * Método que recoge las categorías que existen en la base de datos y devuelve una Lista de string
+         */
         public List<string> findCategorias()
         {
             MySqlConnection connection = null;
@@ -123,6 +132,9 @@ namespace Modelo.dao
             return categorias;
         }
 
+        /*
+         * Método que guarda una receta en la base de datos y devuelve un bool en función de cómo ha ido el guardado
+         */
         public bool save(Receta receta)
         {
             MySqlConnection connection = null;
@@ -158,6 +170,9 @@ namespace Modelo.dao
             return saveOk;
         }
 
+        /*
+         * Método que elimina una receta mediante su id de la base de datos y devuelve un bool en función de cómo ha ido la eliminación
+         */
         public bool delete(int id)
         {
             MySqlConnection connection = null;
