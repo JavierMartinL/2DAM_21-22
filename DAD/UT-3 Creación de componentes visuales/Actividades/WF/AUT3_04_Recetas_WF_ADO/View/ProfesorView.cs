@@ -8,13 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Controller;
+
 namespace View
 {
     public partial class ProfesorView : Form
     {
+        private ProfesorController profesorController;
+
         public ProfesorView()
         {
+            profesorController = new ProfesorController();
             InitializeComponent();
+            cargarCategorias();
+        }
+
+        private void cargarCategorias()
+        {
+            tsmiCategorias.DropDownItems.Clear();
+
+            tsmiCategorias.DropDownItems.Add("TODAS");
+
+            foreach (string categoria in profesorController.recogerCategorias())
+            {
+                tsmiCategorias.DropDownItems.Add(categoria.ToUpper());
+            }
+
         }
 
         private void salir(object sender, EventArgs e)
@@ -28,6 +47,11 @@ namespace View
             {
                 Application.Exit();
             }
+        }
+
+        private void cerrarFormulario(object sender, FormClosedEventArgs e)
+        {
+            salir(sender, e);
         }
     }
 }
