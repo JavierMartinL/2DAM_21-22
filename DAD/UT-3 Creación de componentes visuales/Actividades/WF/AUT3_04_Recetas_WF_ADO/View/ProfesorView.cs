@@ -65,6 +65,13 @@ namespace View
             dgvRecetas.Update();
         }
 
+        private void crearReceta(object sender, EventArgs e)
+        {
+            CrearReceta crearReceta = new CrearReceta();
+            crearReceta.ShowDialog();
+            cargarCategorias();
+        }
+
         private void borrarReceta(object sender, EventArgs e)
         {
             if (dgvRecetas.SelectedRows.Count > 0)

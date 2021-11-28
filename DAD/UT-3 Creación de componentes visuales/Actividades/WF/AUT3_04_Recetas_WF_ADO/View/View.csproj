@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrearReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearReceta.Designer.cs">
+      <DependentUpon>CrearReceta.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfesorView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrearReceta.resx">
+      <DependentUpon>CrearReceta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProfesorView.resx">
       <DependentUpon>ProfesorView.cs</DependentUpon>
     </EmbeddedResource>

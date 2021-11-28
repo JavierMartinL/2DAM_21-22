@@ -73,6 +73,7 @@ namespace View
             this.añadirRecetaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.añadirRecetaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.añadirRecetaToolStripMenuItem.Text = "Añadir Receta";
+            this.añadirRecetaToolStripMenuItem.Click += new System.EventHandler(this.crearReceta);
             // 
             // borrarRecetaToolStripMenuItem
             // 

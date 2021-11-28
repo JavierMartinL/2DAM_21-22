@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Data;
 using MySql.Data.MySqlClient;
+using Modelo.entities;
 
 namespace Modelo.dao
 {
@@ -120,6 +121,41 @@ namespace Modelo.dao
             }
 
             return categorias;
+        }
+
+        public bool save(Receta receta)
+        {
+            MySqlConnection connection = null;
+            MySqlCommand mysqlCmd = null;
+            bool saveOk = false;
+            string sql = "INSERT INTO recipes (name, category, time, ingredients, description) VALUES (" +
+                "'" + receta.Nombre + "', " +
+                "'" + receta.Categoria + "', " +
+                "'" + receta.Tiempo + "', " +
+                "'" + receta.Ingredientes + "', " +
+                "'" + receta.Descripcion + "'" +
+                ");";
+
+            try
+            {
+                connection = dataSource.getConnection();
+                connection.Open();
+
+                mysqlCmd = new MySqlCommand(sql, connection);
+
+                saveOk = mysqlCmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR!: " + ex.ToString());
+            }
+            finally
+            {
+                if (mysqlCmd != null) mysqlCmd.Dispose();
+                if (connection != null) connection.Close();
+            }
+
+            return saveOk;
         }
 
         public bool delete(int id)

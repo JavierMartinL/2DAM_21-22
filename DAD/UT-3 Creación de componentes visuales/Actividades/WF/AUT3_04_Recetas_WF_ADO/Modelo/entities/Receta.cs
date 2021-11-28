@@ -17,6 +17,15 @@ namespace Modelo.entities
 
         public Receta() { }
 
+        public Receta(string nombre, string categoria, string tiempo, string ingredientes, string descripcion)
+        {
+            this.nombre = nombre;
+            this.categoria = categoria;
+            this.tiempo = tiempo;
+            this.ingredientes = ingredientes;
+            this.descripcion = descripcion;
+        }
+
         public Receta(int id, string nombre, string categoria, string tiempo, string ingredientes, string descripcion)
         {
             this.id = id;
