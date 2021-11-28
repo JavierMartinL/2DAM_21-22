@@ -25,3 +25,4 @@ D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Activi
 D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\bin\Debug\Modelo.pdb
 D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\bin\Debug\MySql.Data.xml
 D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.exe.config
+D:\Javier\Documents\2DAM_21-22\DAD\UT-3 Creación de componentes visuales\Actividades\WF\AUT3_04_Recetas_WF_ADO\View\obj\Debug\View.ProfesorView.resources

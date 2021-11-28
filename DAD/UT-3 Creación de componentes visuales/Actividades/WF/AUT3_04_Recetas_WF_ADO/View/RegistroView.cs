@@ -49,9 +49,9 @@ namespace View
 
                 case "profesor":
                 case "profesora":
-
-                    Console.WriteLine("Es un profesor/a");
-
+                    ProfesorView profesorView = new ProfesorView();
+                    this.Hide();
+                    profesorView.Show();
                     break;
 
                 case "alumno":

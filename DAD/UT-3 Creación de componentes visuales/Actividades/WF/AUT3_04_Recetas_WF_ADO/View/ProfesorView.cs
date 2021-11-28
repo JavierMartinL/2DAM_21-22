@@ -16,5 +16,18 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void salir(object sender, EventArgs e)
+        {
+            string titulo = "Salir";
+            string mensaje = "¿Quieres cerrar la aplicación?";
+
+            DialogResult cerrar = MessageBox.Show(mensaje, titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (cerrar == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
