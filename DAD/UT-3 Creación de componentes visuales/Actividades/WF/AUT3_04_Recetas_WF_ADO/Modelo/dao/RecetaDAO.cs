@@ -18,6 +18,72 @@ namespace Modelo.dao
             dataSource = DBConnection.getInstance();
         }
 
+        public DataTable findAll()
+        {
+            MySqlConnection connection = null;
+            MySqlCommand mysqlCmd = null;
+            MySqlDataAdapter mysqlDAdapter = null;
+            DataTable recetas = null;
+            string sql = "SELECT name, time, ingredients, description FROM recipes;";
+
+            try
+            {
+                connection = dataSource.getConnection();
+                connection.Open();
+
+                mysqlCmd = new MySqlCommand(sql, connection);
+
+                recetas = new DataTable();
+                mysqlDAdapter = new MySqlDataAdapter(mysqlCmd);
+                mysqlDAdapter.Fill(recetas);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR!: " + ex.ToString());
+            }
+            finally
+            {
+                if (mysqlCmd != null) mysqlCmd.Dispose();
+                if (mysqlDAdapter != null) mysqlDAdapter.Dispose();
+                if (connection != null) connection.Close();
+            }
+
+            return recetas;
+        }
+
+        public DataTable findByCategria(string categoria)
+        {
+            MySqlConnection connection = null;
+            MySqlCommand mysqlCmd = null;
+            MySqlDataAdapter mysqlDAdapter = null;
+            DataTable recetas = null;
+            string sql = "SELECT name, time, ingredients, description FROM recipes WHERE category = '" + categoria + "';";
+
+            try
+            {
+                connection = dataSource.getConnection();
+                connection.Open();
+
+                mysqlCmd = new MySqlCommand(sql, connection);
+
+                recetas = new DataTable();
+                mysqlDAdapter = new MySqlDataAdapter(mysqlCmd);
+                mysqlDAdapter.Fill(recetas);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR!: " + ex.ToString());
+            }
+            finally
+            {
+                if (mysqlCmd != null) mysqlCmd.Dispose();
+                if (mysqlDAdapter != null) mysqlDAdapter.Dispose();
+                if (connection != null) connection.Close();
+            }
+
+            return recetas;
+        }
+
         public List<string> findCategorias()
         {
             MySqlConnection connection = null;
@@ -55,5 +121,6 @@ namespace Modelo.dao
 
             return categorias;
         }
+
     }
 }

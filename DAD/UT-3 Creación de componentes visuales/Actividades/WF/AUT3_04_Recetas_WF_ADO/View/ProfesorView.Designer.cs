@@ -35,9 +35,9 @@ namespace View
             this.añadirRecetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarRecetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRecetas = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecetas)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -80,6 +80,7 @@ namespace View
             this.borrarRecetaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.borrarRecetaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.borrarRecetaToolStripMenuItem.Text = "Borrar Receta";
+            this.borrarRecetaToolStripMenuItem.Click += new System.EventHandler(this.borrarReceta);
             // 
             // salirToolStripMenuItem
             // 
@@ -88,21 +89,21 @@ namespace View
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salir);
             // 
-            // dataGridView1
+            // dgvRecetas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 426);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecetas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRecetas.Location = new System.Drawing.Point(0, 24);
+            this.dgvRecetas.Name = "dgvRecetas";
+            this.dgvRecetas.Size = new System.Drawing.Size(800, 426);
+            this.dgvRecetas.TabIndex = 1;
             // 
             // ProfesorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvRecetas);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ProfesorView";
@@ -111,7 +112,7 @@ namespace View
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.cerrarFormulario);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecetas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,6 +126,6 @@ namespace View
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirRecetaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarRecetaToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRecetas;
     }
 }

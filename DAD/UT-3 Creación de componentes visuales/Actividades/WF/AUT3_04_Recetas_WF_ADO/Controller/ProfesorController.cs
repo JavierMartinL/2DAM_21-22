@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,14 @@ namespace Controller
         public List<string> recogerCategorias()
         {
             return recetaDao.findCategorias();
+        }
+
+        public DataTable buscarRecetasCategoria(string categoria)
+        {
+            if (categoria.Equals("todas"))
+                return recetaDao.findAll();
+            else
+                return recetaDao.findByCategria(categoria);
         }
     }
 }
