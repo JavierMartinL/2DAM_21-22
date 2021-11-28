@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProfesorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfesorView.Designer.cs">
+      <DependentUpon>ProfesorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroView.cs">
       <SubType>Form</SubType>
     </Compile>
