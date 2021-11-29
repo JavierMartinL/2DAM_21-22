@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,14 +24,20 @@ namespace View
             cargarCategorias();
         }
 
+        /*
+         * Método que introduce las categorías dentro del menú desplegable 
+         */
         private void cargarCategorias()
         {
+            // Limpiar Categorias
             tsmiCategorias.DropDownItems.Clear();
 
+            // Opción para mostrar todas las recetas
             var itemTodas = new ToolStripMenuItem("TODAS");
             itemTodas.Click += new EventHandler(mostrarRecetasCategoria); 
             tsmiCategorias.DropDownItems.Add(itemTodas);
 
+            // Insertar todas las categorías recogidas de la DDBB
             foreach (string categoria in profesorController.recogerCategorias())
             {
                 var newItem = new ToolStripMenuItem(categoria.ToUpper());
@@ -40,10 +47,15 @@ namespace View
 
         }
 
+        /*
+         * Método que muestra las recetas
+         */
         private void mostrarRecetasCategoria(object sender, EventArgs e)
         {
+            // Recoger las recetas según la opción elegida
             dgvRecetas.DataSource = profesorController.buscarRecetasCategoria(sender.ToString().ToLower());
 
+            // Cambiar el nombre de las columnas
             if (dgvRecetas.Columns.Count > 0)
             {
                 dgvRecetas.Columns[0].Visible = false;
@@ -60,11 +72,16 @@ namespace View
                 dgvRecetas.Columns[4].HeaderText = "Descripción de la preparación";
                 dgvRecetas.Columns[4].ReadOnly = true;
             }
+            // Ajustar el tamaño de las celdas
             dgvRecetas.AutoResizeColumns();
             dgvRecetas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            // Actualizar la lista
             dgvRecetas.Update();
         }
 
+        /*
+         * Método que muestra del modal para insertar una nueva receta
+         */
         private void crearReceta(object sender, EventArgs e)
         {
             CrearReceta crearReceta = new CrearReceta();
@@ -72,16 +89,22 @@ namespace View
             cargarCategorias();
         }
 
+        /*
+         * Método que recoge las filas seleccionadas que queremos eliminar
+         */
         private void borrarReceta(object sender, EventArgs e)
         {
             if (dgvRecetas.SelectedRows.Count > 0)
             {
+                //Recorrer las filas seleccionadas
                 foreach (DataGridViewRow Rw in dgvRecetas.SelectedRows)
                 {
+                    // Confirmar su eliminación
                     string mensaje = "¿Estas seguro que quieres eliminar la receta \"" + Rw.Cells[1].Value + "\"?";
                     DialogResult eliminar = MessageBox.Show(mensaje, "Eliminar Receta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (eliminar == DialogResult.Yes)
+                        // Eliminar la receta y la fila a la que corresponde
                         if (profesorController.eliminarReceta((int)Rw.Cells[0].Value))
                         {
                             dgvRecetas.Rows.Remove(Rw);
@@ -91,11 +114,17 @@ namespace View
             }
         }
 
+        /*
+         * Método para cerrar el formulario
+         */
         private void salir(object sender, EventArgs e)
         {
             Close();
         }
 
+        /*
+         * Método que pregunta al usuario si está seguro de cerrar el formulario
+         */
         private void cerrarFormulario(object sender, FormClosingEventArgs e)
         {
             string titulo = "Salir";
