@@ -21,5 +21,17 @@ namespace View
             loginController = new LoginController();
             InitializeComponent();
         }
+
+        private void login(object sender, EventArgs e)
+        {
+            // Recoger los datos del usuario
+            int staff = int.Parse(txbStaff.Text);
+            string password = txbPassword.Text;
+            string rol = null;
+
+            // enviar datos al controlador
+            rol = loginController.login(staff, password);
+            
+        }
     }
 }
