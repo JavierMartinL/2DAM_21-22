@@ -127,6 +127,43 @@ namespace View
             this.lblError.Text = "Las credenciales introducidas no son validas";
             this.lblError.Visible = false;
             // 
+            // lblErrorStaff
+            // 
+            this.lblErrorStaff.AutoSize = true;
+            this.lblErrorStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorStaff.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorStaff.Location = new System.Drawing.Point(178, 66);
+            this.lblErrorStaff.Name = "lblErrorStaff";
+            this.lblErrorStaff.Size = new System.Drawing.Size(42, 16);
+            this.lblErrorStaff.TabIndex = 5;
+            this.lblErrorStaff.Text = "Error";
+            this.lblErrorStaff.Visible = false;
+            // 
+            // lblErrorPassword
+            // 
+            this.lblErrorPassword.AutoSize = true;
+            this.lblErrorPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorPassword.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorPassword.Location = new System.Drawing.Point(178, 118);
+            this.lblErrorPassword.Name = "lblErrorPassword";
+            this.lblErrorPassword.Size = new System.Drawing.Size(170, 16);
+            this.lblErrorPassword.TabIndex = 6;
+            this.lblErrorPassword.Text = "Introduce la contraseña";
+            this.lblErrorPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblErrorPassword.Visible = false;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(178, 129);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(321, 16);
+            this.lblError.TabIndex = 9;
+            this.lblError.Text = "Las credenciales introducidas no son validas";
+            this.lblError.Visible = false;
+            // 
             // LoginVIew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

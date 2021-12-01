@@ -61,7 +61,7 @@ namespace View
             
 
             // enviar datos al controlador si no hay errores
-            if (!error) { 
+            if (!error) {
                 bool loginOK = loginController.login(staff, password);
 
                 if (loginOK) // Login Correcto
