@@ -21,9 +21,9 @@ namespace Controller
         /*
          * Método que comprueba que la contraseña introducida es igual a la del usuario y devuelve el rol del usuario
          */
-        public string login(int idStaff, string password)
+        public bool login(int idStaff, string password)
         {
-            string rol = "";
+            bool loginOK = false;
             // Recoger los datos del Usuario
             Usuario usuario = usuarioDAO.findById(idStaff);
 
@@ -32,10 +32,10 @@ namespace Controller
                 // Comprobar que la contraseña es igual a la que esta guardada en la base de datos
                 if (usuario.Password.Equals(password))
                 {
-                    rol = usuario.Rol;
+                    loginOK = true;
                 }
             }
-            return rol;
+            return loginOK;
         }
     }
 }
