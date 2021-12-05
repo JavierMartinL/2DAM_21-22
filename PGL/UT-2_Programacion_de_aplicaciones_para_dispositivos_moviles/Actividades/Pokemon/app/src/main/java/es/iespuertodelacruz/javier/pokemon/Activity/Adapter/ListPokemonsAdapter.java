@@ -4,9 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
@@ -17,11 +21,13 @@ public class ListPokemonsAdapter extends RecyclerView.Adapter<ListPokemonsAdapte
 
     private List<Pokemon> mPokemonsList;
     private LayoutInflater mInflater;
+    private Context context;
 
     final private ListItemClick mOnClickListener;
 
     public ListPokemonsAdapter(List<Pokemon> itemList, Context context, ListItemClick listener) {
         this.mInflater = LayoutInflater.from(context);
+        this.context = context;
         this.mPokemonsList = itemList;
         this.mOnClickListener = listener;
     }
@@ -41,7 +47,14 @@ public class ListPokemonsAdapter extends RecyclerView.Adapter<ListPokemonsAdapte
 
     @Override
     public void onBindViewHolder(final ListPokemonsAdapter.ViewHolder holder, final int position) {
-        holder.bindPokemon(mPokemonsList.get(position));
+        Pokemon pokemon = mPokemonsList.get(position);
+        holder.bindPokemon(pokemon);
+
+        Glide.with(context)
+                .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon.getNumber() + ".png")
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.imagePokemon);
     }
 
     public void setItems(List<Pokemon> items) { mPokemonsList = items; }
@@ -49,12 +62,14 @@ public class ListPokemonsAdapter extends RecyclerView.Adapter<ListPokemonsAdapte
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView namePokemon;
+        ImageView imagePokemon;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-           namePokemon = itemView.findViewById(R.id.tvNamePokemon );
-           itemView.setOnClickListener(this);
+            namePokemon = itemView.findViewById(R.id.tvNamePokemon );
+            imagePokemon = itemView.findViewById(R.id.fotoPokemon);
+            itemView.setOnClickListener(this);
         }
 
         public void bindPokemon(final Pokemon item) {
