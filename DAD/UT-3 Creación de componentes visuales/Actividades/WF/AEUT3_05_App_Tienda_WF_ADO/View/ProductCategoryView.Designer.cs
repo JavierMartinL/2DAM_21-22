@@ -56,6 +56,7 @@ namespace View
             this.btnFilter.TabIndex = 1;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.filtar);
             // 
             // btnAdd
             // 
