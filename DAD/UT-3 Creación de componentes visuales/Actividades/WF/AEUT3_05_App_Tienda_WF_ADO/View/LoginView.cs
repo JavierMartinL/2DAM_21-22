@@ -43,13 +43,14 @@ namespace View
             } 
             else
             {
-                // Controlar que lo introducido se un numero
+                // Controlar que lo introducido se un número
                 try
                 {
                     staff = int.Parse(txbStaff.Text);
                 }
                 catch (Exception ex)
                 {
+                    // Si no es un número mostrar el error
                     lblErrorStaff.Text = "Este campo tiene que ser un número";
                     error = lblErrorStaff.Visible = true;
                 }
@@ -62,19 +63,32 @@ namespace View
 
             // enviar datos al controlador si no hay errores
             if (!error) {
-                bool loginOK = loginController.login(staff, password);
-
-                if (loginOK) // Login Correcto
+                if (loginController.login(staff, password)) // Login Correcto
                 {
-                    Console.WriteLine("Estas dentro");
+                    // Ocultar login
+                    this.Hide();
+
+                    // Mostrar formulario de Categorias
+                    CategoriaView categoriasView = new CategoriaView();
+                    categoriasView.ShowDialog();
+
+                    // Mostrar Login
+                    this.Show();
                 }
                 else // Error con las credenciales
                 {
                     lblError.Visible = true;
                 }
+
+                // Limpiar los valores
+                txbStaff.Text = "";
+                txbPassword.Text = "";
             }
         }
 
+        /*
+         * Método para hacer el login cuando el usuario pulse en Enter
+         */
         private void loginkey(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

@@ -42,7 +42,9 @@ namespace View
             // lblStaff
             // 
             this.lblStaff.AutoSize = true;
+            this.lblStaff.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaff.ForeColor = System.Drawing.SystemColors.Control;
             this.lblStaff.Location = new System.Drawing.Point(49, 39);
             this.lblStaff.Name = "lblStaff";
             this.lblStaff.Size = new System.Drawing.Size(115, 24);
@@ -71,8 +73,10 @@ namespace View
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(49, 91);
+            this.lblPassword.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPassword.Location = new System.Drawing.Point(72, 89);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(92, 24);
             this.lblPassword.TabIndex = 2;
@@ -93,6 +97,7 @@ namespace View
             // lblErrorStaff
             // 
             this.lblErrorStaff.AutoSize = true;
+            this.lblErrorStaff.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblErrorStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorStaff.ForeColor = System.Drawing.Color.Red;
             this.lblErrorStaff.Location = new System.Drawing.Point(178, 66);
@@ -105,6 +110,7 @@ namespace View
             // lblErrorPassword
             // 
             this.lblErrorPassword.AutoSize = true;
+            this.lblErrorPassword.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblErrorPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPassword.ForeColor = System.Drawing.Color.Red;
             this.lblErrorPassword.Location = new System.Drawing.Point(178, 118);
@@ -118,43 +124,7 @@ namespace View
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(178, 129);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(321, 16);
-            this.lblError.TabIndex = 9;
-            this.lblError.Text = "Las credenciales introducidas no son validas";
-            this.lblError.Visible = false;
-            // 
-            // lblErrorStaff
-            // 
-            this.lblErrorStaff.AutoSize = true;
-            this.lblErrorStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorStaff.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorStaff.Location = new System.Drawing.Point(178, 66);
-            this.lblErrorStaff.Name = "lblErrorStaff";
-            this.lblErrorStaff.Size = new System.Drawing.Size(42, 16);
-            this.lblErrorStaff.TabIndex = 5;
-            this.lblErrorStaff.Text = "Error";
-            this.lblErrorStaff.Visible = false;
-            // 
-            // lblErrorPassword
-            // 
-            this.lblErrorPassword.AutoSize = true;
-            this.lblErrorPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorPassword.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorPassword.Location = new System.Drawing.Point(178, 118);
-            this.lblErrorPassword.Name = "lblErrorPassword";
-            this.lblErrorPassword.Size = new System.Drawing.Size(170, 16);
-            this.lblErrorPassword.TabIndex = 6;
-            this.lblErrorPassword.Text = "Introduce la contraseña";
-            this.lblErrorPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblErrorPassword.Visible = false;
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
             this.lblError.Location = new System.Drawing.Point(178, 129);
@@ -169,6 +139,7 @@ namespace View
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = global::View.Properties.Resources.login;
             this.ClientSize = new System.Drawing.Size(599, 154);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblErrorPassword);
