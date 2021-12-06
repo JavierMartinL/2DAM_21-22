@@ -46,14 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriaView.Designer.cs">
+      <DependentUpon>CategoriaView.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManCategoryView.Designer.cs">
+      <DependentUpon>ManCategoryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CategoriaView.resx">
+      <DependentUpon>CategoriaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +99,10 @@
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{2ec52649-a389-4f4d-94ff-69886f9b23fd}</Project>
       <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{94977581-3812-4742-8F74-7AD56614EC11}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
