@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CategoriaController.cs" />
     <Compile Include="LoginController.cs" />
+    <Compile Include="ProductCategoryController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
