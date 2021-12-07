@@ -82,6 +82,7 @@ namespace View
             this.btnView.TabIndex = 3;
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.Click += new System.EventHandler(this.verProducto);
             // 
             // ltbCategorias
             // 

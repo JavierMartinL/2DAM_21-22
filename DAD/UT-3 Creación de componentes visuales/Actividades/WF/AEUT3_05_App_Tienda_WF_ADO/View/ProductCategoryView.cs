@@ -132,6 +132,27 @@ namespace View
             }
         }
 
+        private void verProducto(object sender, EventArgs e)
+        {
+            // Recoger un unico Producto
+            if (dgvProductos.SelectedRows.Count == 1)
+            {
+                // Recorrer la fila seleccionada
+                DataGridViewRow fila = dgvProductos.SelectedRows[0];
+
+                // Recoger el Id del producto
+                int idProducto = int.Parse(fila.Cells[0].Value.ToString());
+
+                // Cargar el nuevo formulario
+                ProductoDetail productoDetail = new ProductoDetail(idProducto);
+                productoDetail.Show();
+            }
+            else
+            {
+                errorSeleccion();
+            }
+        }
+
         /*
          * Método para controlar el error al no seleccionar un producto
          */
@@ -144,5 +165,6 @@ namespace View
                 MessageBoxIcon.Information
                 );
         }
+
     }
 }

@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ctlProductDetailLib">
+      <HintPath>..\..\..\..\..\..\..\..\..\Desktop\ctlProductDetailLib\ctlProductDetailLib\bin\Debug\ctlProductDetailLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ProductoDetail">
+      <HintPath>..\..\..\..\..\..\..\..\..\Desktop\ProductoDetail\ProductoDetail\bin\Debug\ProductoDetail.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +76,12 @@
     <Compile Include="ProductCategoryView.Designer.cs">
       <DependentUpon>ProductCategoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductoDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductoDetail.Designer.cs">
+      <DependentUpon>ProductoDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddProductView.resx">
@@ -83,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductCategoryView.resx">
       <DependentUpon>ProductCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductoDetail.resx">
+      <DependentUpon>ProductoDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
