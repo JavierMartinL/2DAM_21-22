@@ -1,4 +1,5 @@
-﻿using Model.utils;
+﻿using Model.entities;
+using Model.utils;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,52 @@ namespace Model.dao
             }
 
             return productos;
+        }
+
+        /*
+         * Método que busca un Producto segun el id
+         */
+        public Producto findById(int idProducto)
+        {
+            MySqlConnection connection = null;
+            MySqlCommand mysqlCmd = null;
+            MySqlDataReader mysqlReader = null;
+            Producto producto = null;
+            string sql = "SELECT * FROM catman WHERE id = " + idProducto + ";";
+
+            try
+            {
+                connection = dataSource.getConnection();
+                connection.Open();
+
+                mysqlCmd = new MySqlCommand(sql, connection);
+
+                mysqlReader = mysqlCmd.ExecuteReader();
+
+                while (mysqlReader.Read())
+                {
+                    int id = int.Parse(mysqlReader["id"].ToString());
+                    string nombre = mysqlReader["name"].ToString();
+                    string categoria = mysqlReader["category"].ToString();
+                    string descripcion = mysqlReader["description"].ToString();
+                    double price = double.Parse(mysqlReader["price"].ToString());
+                    int cantidad = int.Parse(mysqlReader["quantity"].ToString());
+                    
+                    producto = new Producto(id, nombre, categoria, descripcion, price, cantidad);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR!: " + ex.ToString());
+            }
+            finally
+            {
+                if (mysqlCmd != null) mysqlCmd.Dispose();
+                if (mysqlReader != null) mysqlReader.Dispose();
+                if (connection != null) connection.Close();
+            }
+
+            return producto;
         }
 
         /*
@@ -129,6 +176,39 @@ namespace Model.dao
             }
 
             return categorias;
+        }
+
+        /*
+         * Método que actualiza un Producto
+         */
+        public bool UpdateQuantity(Producto producto)
+        {
+            MySqlConnection connection = null;
+            MySqlCommand mysqlCmd = null;
+            bool saveOk = false;
+            string sql = "UPDATE catman SET quantity = " + producto.Cantidad + " " +
+                "WHERE id = " + producto.Id + ";";
+
+            try
+            {
+                connection = dataSource.getConnection();
+                connection.Open();
+
+                mysqlCmd = new MySqlCommand(sql, connection);
+
+                saveOk = mysqlCmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR!: " + ex.ToString());
+            }
+            finally
+            {
+                if (mysqlCmd != null) mysqlCmd.Dispose();
+                if (connection != null) connection.Close();
+            }
+
+            return saveOk;
         }
     }
 }

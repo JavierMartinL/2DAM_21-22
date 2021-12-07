@@ -46,9 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dao\CategoriaDAO.cs" />
+    <Compile Include="dao\PedidoDAO.cs" />
     <Compile Include="dao\ProductoDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="entities\Categoria.cs" />
+    <Compile Include="entities\Pedido.cs" />
     <Compile Include="entities\Producto.cs" />
     <Compile Include="entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
