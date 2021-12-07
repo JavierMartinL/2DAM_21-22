@@ -103,5 +103,46 @@ namespace View
                 cargarProductos(categoria);
             }
         }
+
+        /*
+         * Método para agregar un pedido mediante un producto seleccionado
+         */
+        private void addProduct(object sender, EventArgs e)
+        {
+            // Recoger un unico Producto
+            if (dgvProductos.SelectedRows.Count == 1)
+            {
+                // Recorrer la fila seleccionada
+                DataGridViewRow fila = dgvProductos.SelectedRows[0];
+
+                // Recoger el Id del producto
+                int idProducto = int.Parse(fila.Cells[0].Value.ToString());
+
+                // Crear el nuevo formulario y enviar el ID del producto
+                AddProductView addProductView = new AddProductView(idProducto);
+                // Mostrar el formulario
+                addProductView.ShowDialog();
+
+                // Recargar los productos y las categorias
+                cargarProductos("All");
+                cargarCategorias();
+            } else
+            {
+                errorSeleccion();
+            }
+        }
+
+        /*
+         * Método para controlar el error al no seleccionar un producto
+         */
+        private void errorSeleccion()
+        {
+            MessageBox.Show(
+                "Es necesario seleccionar un producto", 
+                "Falta seleccionar Producto", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Information
+                );
+        }
     }
 }

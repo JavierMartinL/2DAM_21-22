@@ -69,6 +69,7 @@ namespace View
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.addProduct);
             // 
             // btnView
             // 
@@ -107,6 +108,7 @@ namespace View
             this.Controls.Add(this.dgvProductos);
             this.Name = "ProductCategoryView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Category: MAN";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 
