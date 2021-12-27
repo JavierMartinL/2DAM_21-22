@@ -1,0 +1,13 @@
+body {
+  background-color: rgba(195, 195, 195, 0.54);
+}
+
+.title {
+  font-size: 100px;
+  font-family: 'Francois One', sans-serif;
+}
+
+.form {
+  width: 450px;
+  font-family: 'Open Sans', sans-serif;
+}
