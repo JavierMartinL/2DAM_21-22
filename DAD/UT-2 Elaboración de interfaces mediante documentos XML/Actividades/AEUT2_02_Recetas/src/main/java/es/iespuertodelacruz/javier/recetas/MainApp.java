@@ -17,6 +17,11 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
         
+        // Iniciar la aplicación en pantalla completa
+        stage.setMaximized(true);
+        // Eliminar el marco de la aplicación y los botones
+        //stage.initStyle(StageStyle.UNDECORATED);
+        
         stage.setScene(scene);
         stage.show();
     }

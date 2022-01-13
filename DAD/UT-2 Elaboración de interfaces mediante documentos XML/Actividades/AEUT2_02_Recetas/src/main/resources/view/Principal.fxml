@@ -1,20 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="es.iespuertodelacruz.javier.recetas.controller.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="961.0" prefWidth="1349.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iespuertodelacruz.javier.recetas.controller.PrincipalController">
     <children>
-      <VBox prefHeight="576.0" prefWidth="143.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label text="Principal" />
-            <Label text="Información nutricional" />
-            <Label text="Buscador de recetas" />
-            <Label text="Estadísticas" />
-            <Label text="Gestión de usuarios" />
-            <Label text="Poner notas" />
-         </children>
-      </VBox>
+      <BorderPane prefHeight="844.0" prefWidth="1349.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="389.0" prefWidth="167.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Principal">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="HOME" size="30.0" />
+                     </graphic>
+                  </Label>
+                  <Label text="Información nutricional">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView />
+                     </graphic>
+                  </Label>
+                  <Label text="Buscador de recetas">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SEARCH" size="30" />
+                     </graphic>
+                  </Label>
+                  <Label text="Estadísticas">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView />
+                     </graphic>
+                  </Label>
+                  <Label text="Gestión de usuarios">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView />
+                     </graphic>
+                  </Label>
+                  <Label text="Poner notas">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView />
+                     </graphic>
+                  </Label>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <Pane prefHeight="805.0" prefWidth="1182.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
