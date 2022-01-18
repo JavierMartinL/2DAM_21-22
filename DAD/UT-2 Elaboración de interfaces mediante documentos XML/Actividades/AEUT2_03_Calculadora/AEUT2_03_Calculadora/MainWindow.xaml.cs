@@ -24,5 +24,11 @@ namespace AEUT2_03_Calculadora
         {
             InitializeComponent();
         }
+
+        private void pulsacion(object sender, RoutedEventArgs e)
+        {
+            Button boton = (Button) e.OriginalSource;
+
+        }
     }
 }
