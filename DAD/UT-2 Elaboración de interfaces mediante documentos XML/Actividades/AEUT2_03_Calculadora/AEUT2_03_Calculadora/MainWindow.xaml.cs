@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AEUT2_03_Calculadora.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,12 +24,23 @@ namespace AEUT2_03_Calculadora
         public MainWindow()
         {
             InitializeComponent();
+
+            //Vista.Navigate(new CalculadoraView());
         }
 
-        private void pulsacion(object sender, RoutedEventArgs e)
+        private void cambiarMoneda(object sender, RoutedEventArgs e)
         {
-            Button boton = (Button) e.OriginalSource;
+            //Vista.Navigate(new MonedaView());
+        }
 
+        private void cambiarCalculadora(object sender, RoutedEventArgs e)
+        {
+            //Vista.Navigate(new CalculadoraView());
+        }
+
+        private void pulsar(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine(e.Key);
         }
     }
 }

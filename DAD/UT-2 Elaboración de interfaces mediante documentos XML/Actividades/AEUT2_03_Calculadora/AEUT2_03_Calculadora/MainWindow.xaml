@@ -4,44 +4,85 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AEUT2_03_Calculadora"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="Calculadora" Height="525" Width="325">
-    <Grid ButtonBase.Click="pulsacion">
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBox Margin="30,10,30,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="12" Text="" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" BorderBrush="{x:Null}"/>
-        <TextBox x:Name="Resultado" Margin="20,0,20,10" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="34" Text="" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" BorderBrush="{x:Null}"/>
-        <Button Margin="2" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">c</Button>
-        <Button Margin="2" Grid.Column="2" Grid.Row="2">⌫</Button>
-        <Button Margin="2" Grid.Column="3" Grid.Row="2">/</Button>
-        <Button Margin="2" Grid.Column="0" Grid.Row="3">7</Button>
-        <Button Margin="2" Grid.Column="1" Grid.Row="3">8</Button>
-        <Button Margin="2" Grid.Column="2" Grid.Row="3">9</Button>
-        <Button Margin="2" Grid.Column="3" Grid.Row="3">x</Button>
-        <Button Margin="2" Grid.Column="0" Grid.Row="4">4</Button>
-        <Button Margin="2" Grid.Column="1" Grid.Row="4">5</Button>
-        <Button Margin="2" Grid.Column="2" Grid.Row="4">6</Button>
-        <Button Margin="2" Grid.Column="3" Grid.Row="4">-</Button>
-        <Button Margin="2" Grid.Column="0" Grid.Row="5">1</Button>
-        <Button Margin="2" Grid.Column="1" Grid.Row="5">2</Button>
-        <Button Margin="2" Grid.Column="2" Grid.Row="5">3</Button>
-        <Button Margin="2" Grid.Column="3" Grid.Row="5">+</Button>
-        <Button Margin="2" Grid.Column="0" Grid.Row="6">+/-</Button>
-        <Button Margin="2" Grid.Column="1" Grid.Row="6">0</Button>
-        <Button Margin="2" Grid.Column="2" Grid.Row="6">,</Button>
-        <Button Margin="2" Grid.Column="3" Grid.Row="6">=</Button>
+
+        <Button Grid.Column="0" Grid.Row="0" Panel.ZIndex="1">
+            <fa:FontAwesome Icon="Bars" FontSize="25" Padding="5" />
+        </Button>
+
+        <TextBlock x:Name="Titulo" Margin="5" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Aa" />
+
+        <DockPanel x:Name="Menu" Background="Red" Width="200" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,45,5,0" Padding="5">
+                <StackPanel>
+                    <Button Margin="5" Content="Estándar" Click="cambiarCalculadora" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                    <Button Margin="5" Content="Estándar" />
+                    <Button Margin="5" Content="Moneda" />
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+        
+        <!--<Button Margin="10" Click="cambiarCalculadora">Calculadora</Button>-->
+        
+        <!--<Button Click="cambiarMoneda" Grid.Row="1">Moneda</Button>-->
+
+        <!--<Frame x:Name="Vista" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.RowSpan="2">-->
+            
+        <!--</Frame>-->
     </Grid>
 </Window>
