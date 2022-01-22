@@ -5,10 +5,121 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AEUT2_03_Calculadora.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="CalculadoraView">
+      d:DesignHeight="600" d:DesignWidth="400"
+      Title="Estándar">
 
-    <Grid Background="Red">
-        
+    <Page.Resources>
+        <!-- Estilo de los botones Numéricos -->
+        <Style TargetType="{x:Type Button}" x:Key="ButtonNumerico">
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1" Margin="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#52504f"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Estilo de los botones de Operación -->
+        <Style TargetType="{x:Type Button}" x:Key="ButtonOperador">
+            <Setter Property="Background" Value="#171615" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1" Margin="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#52504f"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Estilo del boton de Cálculo -->
+        <Style TargetType="{x:Type Button}" x:Key="ButtonCalculo">
+            <Setter Property="Background" Value="#064a12" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1" Margin="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#018219"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- Resultado -->
+        <Label Content="4 +" x:Name="Memoria" FontSize="16" Margin="40,0" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0"/>
+        <Label Content="32" x:Name="Resultado" Margin="20,0,20,10" FontSize="34" FontWeight="DemiBold" Foreground="White" BorderBrush="{x:Null}" Background="Transparent" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1"/>
+
+        <!-- Botones Numéricos -->
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="6">0</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="5">1</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="5">2</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="5">3</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="4">4</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="4">5</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="4">6</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="3">7</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="3">8</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="3">9</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="6">+/-</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="6">,</Button>
+
+        <!-- Botones de Operación -->
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">C</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="2" Grid.Row="2">⌫</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="2">/</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="3">x</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="4">-</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="5">+</Button>
+
+        <!-- Boton de Cálculo-->
+        <Button Style="{StaticResource ButtonCalculo}" Grid.Column="3" Grid.Row="6">=</Button>
     </Grid>
 </Page>
