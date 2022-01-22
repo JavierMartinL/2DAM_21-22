@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AEUT2_03_Calculadora.View"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="400"
       Title="Estándar">
@@ -74,9 +75,33 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Estilo del boton que despliega/oculta el historial -->
+        <Style TargetType="{x:Type Button}" x:Key="ButtonHistorial">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Height" Value="50" />
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Page.Resources>
-    
-    <Grid>
+
+    <Grid x:Name="griCalculadora" ButtonBase.Click="buttonPulsado">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -84,6 +109,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="auto" />
             <RowDefinition />
             <RowDefinition />
@@ -93,33 +119,46 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
+        <!-- Boton que muestra el Historial -->
+        <Button Style="{StaticResource ButtonHistorial}" Grid.Column="4" Grid.Row="0" Panel.ZIndex="4" Click="controlarHistorial">
+            <fa:FontAwesome Icon="History" Foreground="White" FontSize="18" Width="50" Padding="5" />
+        </Button>
+
+        <!-- Historial de Operaciones realizadas -->
+        <DockPanel x:Name="Historial" Background="#262626" Width="0" HorizontalAlignment="Right" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Grid.RowSpan="8" Panel.ZIndex="1">
+            <StackPanel Margin="5">
+                <TextBlock Text="Historial" Foreground="White" FontSize="30" Margin="10, 25, 10, 10" />
+                <Label x:Name="ContenidoHistorial" Foreground="White" FontSize="18" Margin="15,5,5,5" />
+            </StackPanel>
+        </DockPanel>
+
         <!-- Resultado -->
-        <Label Content="4 +" x:Name="Memoria" FontSize="16" Margin="40,0" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0"/>
-        <Label Content="32" x:Name="Resultado" Margin="20,0,20,10" FontSize="34" FontWeight="DemiBold" Foreground="White" BorderBrush="{x:Null}" Background="Transparent" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1"/>
+        <Label x:Name="Memoria" FontSize="16" Margin="40,0" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1"/>
+        <Label x:Name="Resultado" Margin="20,0,20,10" FontSize="34" FontWeight="DemiBold" Foreground="White" BorderBrush="{x:Null}" Background="Transparent" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2"/>
 
         <!-- Botones Numéricos -->
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="6">0</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="5">1</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="5">2</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="5">3</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="4">4</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="4">5</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="4">6</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="3">7</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="3">8</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="3">9</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="6">+/-</Button>
-        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="6">,</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="7">0</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="6">1</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="6">2</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="6">3</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="5">4</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="5">5</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="5">6</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="4">7</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="1" Grid.Row="4">8</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="4">9</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="0" Grid.Row="7">+/-</Button>
+        <Button Style="{StaticResource ButtonNumerico}" Grid.Column="2" Grid.Row="7">,</Button>
 
         <!-- Botones de Operación -->
-        <Button Style="{StaticResource ButtonOperador}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">C</Button>
-        <Button Style="{StaticResource ButtonOperador}" Grid.Column="2" Grid.Row="2">⌫</Button>
-        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="2">/</Button>
-        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="3">x</Button>
-        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="4">-</Button>
-        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="5">+</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3">C</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="2" Grid.Row="3">⌫</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="3">/</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="4">x</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="5">-</Button>
+        <Button Style="{StaticResource ButtonOperador}" Grid.Column="3" Grid.Row="6">+</Button>
 
         <!-- Boton de Cálculo-->
-        <Button Style="{StaticResource ButtonCalculo}" Grid.Column="3" Grid.Row="6">=</Button>
+        <Button Style="{StaticResource ButtonCalculo}" Grid.Column="3" Grid.Row="7">=</Button>
     </Grid>
 </Page>

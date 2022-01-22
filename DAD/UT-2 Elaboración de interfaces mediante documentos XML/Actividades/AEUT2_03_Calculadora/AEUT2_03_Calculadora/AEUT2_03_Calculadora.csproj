@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Calculadora.cs" />
     <Compile Include="View\CalculadoraView.xaml.cs">
       <DependentUpon>CalculadoraView.xaml</DependentUpon>
     </Compile>
