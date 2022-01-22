@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -21,26 +22,75 @@ namespace AEUT2_03_Calculadora
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Variable para controlar si mostramos o ocultamos el Menu
+        private bool mostrarMenu;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            //Vista.Navigate(new CalculadoraView());
+            // Ocultar el menu y mostrar por defecto la Calculadora
+            mostrarMenu = false;
+            Titulo.Text = "Estándar";
+            Vista.Navigate(new CalculadoraView());
+            controlarMenu(null, null);
         }
 
-        private void cambiarMoneda(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Método que controla la visualización del menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void controlarMenu(object sender, RoutedEventArgs e)
         {
-            //Vista.Navigate(new MonedaView());
+            DoubleAnimation animacion;
+
+            if (mostrarMenu)
+            {
+                animacion = new DoubleAnimation(200, new Duration(TimeSpan.FromSeconds(0.4)));
+                Menu.BeginAnimation(WidthProperty, animacion);
+            }
+            else
+            {
+                animacion = new DoubleAnimation(0, new Duration(TimeSpan.FromSeconds(0.2)));
+                Menu.BeginAnimation(WidthProperty, animacion);
+            }
+
+            mostrarMenu = !mostrarMenu;
         }
 
-        private void cambiarCalculadora(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Método que controla la vista segun el item pulsado en el Menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mostrarVista(object sender, RoutedEventArgs e)
         {
-            //Vista.Navigate(new CalculadoraView());
-        }
+            // Recoger el boton y extraer el nombre
+            Button itemButton = (Button)e.OriginalSource;
+            string buttonName = itemButton.Name;
 
-        private void pulsar(object sender, KeyEventArgs e)
-        {
-            Console.WriteLine(e.Key);
+            switch(buttonName)
+            {
+                // Mostrar la calculadora Básica
+                case "Estándar":
+                    Titulo.Text = buttonName;
+                    Vista.Navigate(new CalculadoraView());
+                    break;
+
+                // Mostrar el convertidor de Moneda
+                case "Moneda":
+                    Titulo.Text = buttonName;
+                    Vista.Navigate(new MonedaView());
+                    break;
+
+                // Resto de vistas
+                default:
+                    MessageBox.Show("La vista está en construccion!", "En construccion", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    break;
+            }
+
+            controlarMenu(null, null);
         }
     }
 }
