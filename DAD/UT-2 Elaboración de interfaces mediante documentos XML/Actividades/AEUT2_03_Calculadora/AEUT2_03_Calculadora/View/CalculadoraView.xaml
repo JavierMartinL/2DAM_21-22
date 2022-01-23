@@ -101,7 +101,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid x:Name="griCalculadora" ButtonBase.Click="buttonPulsado">
+    <Grid ButtonBase.Click="buttonPulsado">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
