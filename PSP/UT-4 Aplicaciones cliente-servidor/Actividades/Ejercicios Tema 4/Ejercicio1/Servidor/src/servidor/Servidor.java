@@ -14,36 +14,55 @@ import java.net.Socket;
  *
  * @author Javier Martin Lorenzo <javiermartin.gara@gmail.com>
  */
-public class Servidor {
-
+public class Servidor extends Thread {
+    
+    Socket socketCliente;
     static final int PUERTO = 2000;
     
     private int secreto;
     private boolean acertado;
     
-    public Servidor() {
+    public Servidor(Socket socketCliente) {
+        this.socketCliente = socketCliente;
+        generarSecreto();
+    }
+    
+    public static void main(String[] args) {
         try {
-            ServerSocket skServidor = new ServerSocket(PUERTO);
+            
+            ServerSocket serverSocket = new ServerSocket(PUERTO);
             System.out.println("Escucho en el puerto " + PUERTO);
             
-            generarSecreto();
+            while (true) {
+                Socket cliente = serverSocket.accept();
+                System.out.println("\nCliente Conectado");
+                new Servidor(cliente).start();
+            }
             
-            Socket sCliente = skServidor.accept();
-            DataInputStream flujo_entrada = new DataInputStream(sCliente.getInputStream());
-            DataOutputStream flujo_salida = new DataOutputStream(sCliente.getOutputStream());
-
+        } catch (Exception e) { }
+    }
+    
+    public void run() {
+        try {
+            
+            DataInputStream entrada = new DataInputStream(socketCliente.getInputStream());
+            DataOutputStream salida = new DataOutputStream(socketCliente.getOutputStream());
+            
+            salida.writeUTF("Tienes que adivinar un número del 0 al 100");
+            
             while (!acertado) {
-                int numero = flujo_entrada.readInt();
+                int numero = entrada.readInt();
                 
                 String mensaje = comprobarNumero(numero);
                 System.out.println(mensaje);
                 
-                flujo_salida.writeUTF(mensaje);
+                salida.writeUTF(mensaje);
             }
             
-            sCliente.close();
-        } catch (Exception ex) {
-            System.err.println(ex.getMessage());
+            socketCliente.close();
+            System.out.println("Cliente Desconectado");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
     
@@ -60,7 +79,7 @@ public class Servidor {
         } else if (numero < secreto) {
             mensaje = numero + " es mas pequeño que el secreto";
         } else {
-            mensaje = "Acertaste! El secreto es " + secreto;
+            mensaje = "Acertaste!";
             acertado = true;
         }
         
