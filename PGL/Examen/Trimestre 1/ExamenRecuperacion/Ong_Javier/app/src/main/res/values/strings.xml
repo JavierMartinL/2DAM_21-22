@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ong_Javier</string>
+    <string name="identificador">Identificador:</string>
+    <string name="nombre">Nombre:</string>
+    <string name="fecha_nacimiento">Fecha Nacimiento:</string>
+    <string name="raza">Raza:</string>
+    <string name="btnGuardar">Guardar</string>
+</resources>
