@@ -1,0 +1,56 @@
+feb 04, 2022 12:55:09 AM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 12:55:16 AM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 6:11:57 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 6:12:32 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 6:12:47 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 6:26:47 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 6:28:14 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 6:32:16 PM ejercicio1.Main validarFichero
+ADVERTENCIA: El nombre del Fichero debe tener como máximo 8 caracteres y una extens
+feb 04, 2022 7:03:09 PM ejercicio1.Main mostrarFichero
+ADVERTENCIA: java.nio.file.NoSuchFileException: 1.esd
+feb 04, 2022 7:06:32 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:06:42 PM ejercicio1.Main mostrarFichero
+ADVERTENCIA: Error al intentar leer el fichero "hola.txt"
+feb 04, 2022 7:07:36 PM ejercicio1.Main mostrarFichero
+ADVERTENCIA: Error al intentar leer el fichero "hola.txt" puede ser que no exista
+feb 04, 2022 7:14:12 PM ejercicio1.Main validarFichero
+ADVERTENCIA: El nombre del Fichero debe tener como máximo 8 caracteres y una extensión de 3 caracteres
+feb 04, 2022 7:17:56 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:18:25 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:18:34 PM ejercicio1.Main validarFichero
+ADVERTENCIA: El nombre del Fichero debe tener como máximo 8 caracteres y una extensión de 3 caracteres
+feb 04, 2022 7:18:40 PM ejercicio1.Main mostrarFichero
+ADVERTENCIA: Error al intentar leer el fichero "prueba.txa" puede ser que no exista
+feb 04, 2022 7:22:05 PM ejercicio1.Main mostrarFichero
+ADVERTENCIA: Error al intentar leer el fichero "Prueba.txa" puede ser que no exista
+feb 04, 2022 7:30:04 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:30:06 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:30:08 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:30:13 PM ejercicio1.Main validarFichero
+ADVERTENCIA: El nombre del Fichero debe tener como máximo 8 caracteres y una extensión de 3 caracteres
+feb 04, 2022 7:32:08 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:32:10 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:32:13 PM ejercicio1.Main validarUsuario
+ADVERTENCIA: El nombre de Usuario debe tener 8 caracteres entre la a y la z
+feb 04, 2022 7:32:19 PM ejercicio1.Main validarFichero
+ADVERTENCIA: El nombre del Fichero debe tener como máximo 8 caracteres y una extensión de 3 caracteres
+feb 04, 2022 7:32:23 PM ejercicio1.Main validarFichero
+ADVERTENCIA: El nombre del Fichero debe tener como máximo 8 caracteres y una extensión de 3 caracteres
+feb 04, 2022 7:32:31 PM ejercicio1.Main mostrarFichero
+ADVERTENCIA: Error al intentar leer el fichero "hola.txt" puede ser que no exista

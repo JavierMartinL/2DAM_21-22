@@ -1,0 +1,5 @@
+Hola esto es una prueba
+
+de la cual abre un fichero 
+
+y muestra su contenido
