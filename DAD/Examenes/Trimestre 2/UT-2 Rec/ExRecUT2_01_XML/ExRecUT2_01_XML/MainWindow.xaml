@@ -7,6 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
         
+        <!-- Menu Lateral -->
+        <DockPanel Background="#262626" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+            <StackPanel Margin="10, 20" ButtonBase.Click="cambiarVista" >
+                <Button Margin="5, 15" Content="Vendedores" />
+                <Button Margin="5, 15" Content="Responsables" />
+            </StackPanel>
+        </DockPanel>
+        
+        <!-- Vista de la opcion elegida en el Menu -->
+        <Frame x:Name="frmVista" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="2" />
     </Grid>
 </Window>
