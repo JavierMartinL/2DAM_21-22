@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Articulo.cs" />
+    <Compile Include="Model\ArticuloVendido.cs" />
     <Compile Include="View\ResponsableView.xaml.cs">
       <DependentUpon>ResponsableView.xaml</DependentUpon>
     </Compile>

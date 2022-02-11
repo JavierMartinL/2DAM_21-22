@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExRecUT2_01_XML.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,20 @@ namespace ExRecUT2_01_XML.View
     /// </summary>
     public partial class ResponsableView : Page
     {
+        // Lista de Articulos Vendidos
+        List<ArticuloVendido> lista;
+
         public ResponsableView()
         {
             InitializeComponent();
+
+            // Almacenar datos en una lista de Articulos Vendidos de prueba
+            lista = new List<ArticuloVendido>();
+            lista.Add(new ArticuloVendido("Botas", 42, "Marrón", 2));
+            lista.Add(new ArticuloVendido("Sandalias", 36, "Naranja", 4));
+
+            // Cargar la lista de Articulos Vendidos en el DataGrid
+            dtgListaArticulosVendidos.ItemsSource = lista;
         }
     }
 }

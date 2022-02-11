@@ -9,6 +9,17 @@
       Title="ResponsableView">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- Lista de productos Comprados -->
+        <DataGrid x:Name="dtgListaArticulosVendidos" Margin="10" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" IsReadOnly="True" />
         
     </Grid>
 </Page>
