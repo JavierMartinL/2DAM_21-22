@@ -1,0 +1,58 @@
+{
+  "empleados": [
+    {
+      "id": 1,
+      "apellidos": "Álvarez Herrera",
+      "calle": "Iriarte",
+      "fechaContrato": "2018-11-10",
+      "municipio": "Puerto de la Cruz",
+      "nombre": "Francisco",
+      "numero": 100
+    },
+    {
+      "id": 2,
+      "apellidos": "González Ruíz",
+      "calle": "Iriarte",
+      "fechaContrato": "2016-09-10",
+      "municipio": "Puerto de la Cruz",
+      "nombre": "Luis",
+      "numero": 100
+    },
+    {
+      "id": 3,
+      "apellidos": "Díaz Díaz",
+      "calle": "Trinidad",
+      "fechaContrato": "2019-07-12",
+      "municipio": "La Laguna",
+      "nombre": "Marta",
+      "numero": 31
+    },
+    {
+      "id": 4,
+      "apellidos": "Pérez Rico",
+      "calle": "San Antonio",
+      "fechaContrato": "2019-03-12",
+      "municipio": "Puerto de la Cruz",
+      "nombre": "Ana",
+      "numero": 5
+    },
+    {
+      "id": 5,
+      "apellidos": "García Herrera",
+      "calle": "San Antonio",
+      "fechaContrato": "2020-09-09",
+      "municipio": "La Laguna",
+      "nombre": "Arminda",
+      "numero": 25
+    },
+    {
+      "id": 6,
+      "apellidos": "Antequera",
+      "calle": "Melancolía",
+      "fechaContrato": "2020-09-09",
+      "municipio": "Santa Lucia",
+      "nombre": "Marta",
+      "numero": 42
+    }
+  ]
+}
