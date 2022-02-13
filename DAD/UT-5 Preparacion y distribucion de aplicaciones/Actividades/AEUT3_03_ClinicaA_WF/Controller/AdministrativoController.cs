@@ -9,18 +9,31 @@ using Model.entities;
 
 namespace Controller
 {
+    /// <summary>
+    /// Controlador de Administrativo
+    /// </summary>
     public class AdministrativoController
     {
         private PacienteDAO pacienteDAO;
 
+        /// <summary>
+        /// Constructor que inicializa la clase PacienteDAO
+        /// </summary>
         public AdministrativoController()
         {
             pacienteDAO = new PacienteDAO();
         }
 
-        /*
-         * Método que se encarga de comprobar si el DNI es válido y llamar a paciente DAO para guardar el Paciente
-         */
+        /// <summary>
+        /// Método que se encarga de comprobar si el DNI es válido y llamar a paciente DAO para guardar el Paciente
+        /// </summary>
+        /// <param name="dni">DNI del paciente</param>
+        /// <param name="nhc">NHC del paciente</param>
+        /// <param name="nombre">Nombre del paciente</param>
+        /// <param name="apellidos">Apellidos del paciente</param>
+        /// <param name="direccion">Dirección del paciente</param>
+        /// <param name="poblacion">Poblacion del paciente</param>
+        /// <returns></returns>
         public string crearPaciente(string dni, int nhc, string nombre, string apellidos, string direccion, string poblacion)
         {
             // Crear al Paciente
@@ -37,9 +50,12 @@ namespace Controller
             }
         }
 
-        /*
-         * Método que controla de que forma vamos a buscar
-         */
+        /// <summary>
+        /// Método que controla de que forma vamos a buscar
+        /// </summary>
+        /// <param name="dni">DNI del paciente a buscar</param>
+        /// <param name="nhc">NHC del paciente a buscar</param>
+        /// <returns>Lista de pacientes relacionados con el NHC, el DNI o todos</returns>
         public List<Paciente> buscarPaciente(string dni, string nhc)
         {
             List<Paciente> pacientes;
@@ -63,9 +79,12 @@ namespace Controller
             return pacientes;
         }
 
-        /*
-         * Método que busca segun la opcion
-         */
+        /// <summary>
+        /// Método que busca segun la opcion
+        /// </summary>
+        /// <param name="valor">Contenido a buscar</param>
+        /// <param name="opcion">0 = NHC, 1 = DNI</param>
+        /// <returns>Lista de pacientes relacionados con el NHC o el DNI</returns>
         public List<Paciente> buscarPaciente(string valor, int opcion)
         {
             List<Paciente> pacientes;
@@ -84,9 +103,11 @@ namespace Controller
             return pacientes;
         }
 
-        /*
-         * Método para eliminar un Paciente
-         */
+        /// <summary>
+        /// Método para eliminar un Paciente
+        /// </summary>
+        /// <param name="nhc">NHC del paciente</param>
+        /// <returns>TRUE si se elimina el paciente, FALSE si falla la eliminacion</returns>
         public bool eliminarPaciente(int nhc)
         {
             return pacienteDAO.deleteByNHC(nhc);
