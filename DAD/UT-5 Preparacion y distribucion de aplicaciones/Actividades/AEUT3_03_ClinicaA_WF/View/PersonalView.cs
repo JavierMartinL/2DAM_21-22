@@ -132,5 +132,14 @@ namespace View
             MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        /// <summary>
+        /// Método que muestra la Ayuda de SANDCASTLE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mostrarAyuda(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "DocumentacionSHFB.chm");
+        }
     }
 }

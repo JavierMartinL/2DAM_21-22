@@ -43,6 +43,7 @@ namespace View
             this.tsmicitaMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiguardarActividadMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmisalirMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsPaciente.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +126,7 @@ namespace View
             this.tsmicentroDeDíaMenu,
             this.tsmicitaMenu,
             this.tsmiguardarActividadMenu,
+            this.ayudaToolStripMenuItem,
             this.tsmisalirMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -168,6 +170,13 @@ namespace View
             this.tsmisalirMenu.Size = new System.Drawing.Size(32, 24);
             this.tsmisalirMenu.Click += new System.EventHandler(this.salir);
             // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.mostrarAyuda);
+            // 
             // AdministrativoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,5 +214,6 @@ namespace View
         private System.Windows.Forms.ToolStripButton tlsEliminarPaciente;
         private System.Windows.Forms.ToolStripButton tlsVerFichaPaciente;
         private System.Windows.Forms.ToolStripButton tlsSacarEtiquetasPaciente;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
     }
 }
