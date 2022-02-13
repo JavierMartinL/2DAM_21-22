@@ -13,15 +13,27 @@ using Controller;
 
 namespace View
 {
+    /// <summary>
+    /// Vista de eliminar Paciente
+    /// </summary>
     public partial class BorrarPacienteView : Form
     {
         private AdministrativoController administrativoController;
+
+        /// <summary>
+        /// Controlador que inicializa el controlador de Administrativo
+        /// </summary>
         public BorrarPacienteView()
         {
             administrativoController = new AdministrativoController();
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Método para guardar un nuevo Paciente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buscarPacientes(object sender, EventArgs e)
         {
             // Limpiar la lista
@@ -48,10 +60,12 @@ namespace View
 
         }
 
-        /*
-         * Método que recoge el item de la lista que ha sido pulsado con el click derecho
-         * y pregunta al usuario si esta seguro de eliminarlo
-         */
+        /// <summary>
+        /// Método que recoge el item de la lista que ha sido pulsado con el click derecho 
+        /// y pregunta al usuario si esta seguro de eliminarlo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void eliminarPaciente(object sender, MouseEventArgs e)
         {
             // Comprobar que es el click izq

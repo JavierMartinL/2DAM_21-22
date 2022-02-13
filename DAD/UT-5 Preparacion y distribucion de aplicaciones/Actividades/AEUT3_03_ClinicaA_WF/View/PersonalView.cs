@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace View
 {
+    /// <summary>
+    /// Vista de Personal
+    /// </summary>
     public partial class PersonalView : Form
     {
 
@@ -18,49 +21,91 @@ namespace View
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Método que abre la ventana para buscar pacientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buscarPaciente(object sender, EventArgs e)
         {
             mensaje("Buscar paciente");
         }
 
+        /// <summary>
+        /// Método que abre la ventana para ver la ficha de un paciente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void verFicha(object sender, EventArgs e)
         {
             mensaje("Ver ficha paciente");
         }
 
+        /// <summary>
+        /// Método que abre la ventana para ver etiquetas de un paciente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sacarEtiqueta(object sender, EventArgs e)
         {
             mensaje("Sacar etiquetas del paciente");
         }
 
+        /// <summary>
+        /// Método que abre la ventana para ver las actas de un paciente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void actasClinicas(object sender, EventArgs e)
         {
             mensaje("Ver actas clínicos del paciente");
         }
 
+        /// <summary>
+        /// Método que abre la ventana para buscar una nota
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buscarNota(object sender, EventArgs e)
         {
             mensaje("Buscar nota");
         }
 
+        /// <summary>
+        /// Método que abre la ventana para crear una nota
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void crearNota(object sender, EventArgs e)
         {
             mensaje("Crear nota");
         }
 
+        /// <summary>
+        /// Método que abre la ventana para modificar una nota
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modificarNota(object sender, EventArgs e)
         {
             mensaje("Modificar nota");
         }
 
+        /// <summary>
+        /// Método que abre la ventana para eliminar una nota
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void eliminarNota(object sender, EventArgs e)
         {
             mensaje("Eliminar nota");
         }
 
-        /*
-         * Método para cerrar la App
-         */
+        /// <summary>
+        /// Método para cerrar la App
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salir(object sender, EventArgs e)
         {
             string titulo = "Salir";
@@ -74,10 +119,10 @@ namespace View
             }
         }
 
-
-        /*
-         * Método que muestra un mensaje al usuario
-         */
+        /// <summary>
+        /// Método que muestra un mensaje al usuario
+        /// </summary>
+        /// <param name="accion">Acción que queremos mostrar en el mensaje</param>
         private void mensaje(string accion)
         {
             string titulo = accion;

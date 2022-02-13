@@ -12,19 +12,27 @@ using Controller;
 
 namespace View
 {
+    /// <summary>
+    /// Vista de Crear Paciente
+    /// </summary>
     public partial class CrearPacienteView : Form
     {
         AdministrativoController administrativoController;
 
+        /// <summary>
+        /// Controlador que inicializa el controlador de Administrativo
+        /// </summary>
         public CrearPacienteView()
         {
             administrativoController = new AdministrativoController();
             InitializeComponent();
         }
 
-        /*
-         * Método para guardar un nuevo Paciente
-         */
+        /// <summary>
+        /// Método para guardar un nuevo Paciente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void crearPaciente(object sender, EventArgs e)
         {
             bool error = false;
@@ -99,9 +107,10 @@ namespace View
 
         }
 
-        /*
-         * Método que muestra un mensaje de ERROR al usuario
-         */
+        /// <summary>
+        /// Método que muestra un mensaje de ERROR al usuario
+        /// </summary>
+        /// <param name="mensaje">Mensaje de error que queremos mostrar al usuario</param>
         private void mensajeError(string mensaje)
         {
             MessageBox.Show(mensaje, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);

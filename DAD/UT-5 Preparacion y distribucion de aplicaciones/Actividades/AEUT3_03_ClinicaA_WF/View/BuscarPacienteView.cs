@@ -13,19 +13,27 @@ using Model.entities;
 
 namespace View
 {
+    /// <summary>
+    /// Vista de Buscar Paciente
+    /// </summary>
     public partial class BuscarPacienteView : Form
     {
         AdministrativoController administrativoController;
 
+        /// <summary>
+        /// Controlador que inicializa el controlador de Administrativo
+        /// </summary>
         public BuscarPacienteView()
         {
             administrativoController = new AdministrativoController();
             InitializeComponent();
         }
 
-        /*
-         * Método que recoge y muestra los datos de los Pacientes
-         */
+        /// <summary>
+        /// Método que recoge y muestra los datos de los Pacientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buscarPaciente(object sender, EventArgs e)
         {
             // Limpiar la lista

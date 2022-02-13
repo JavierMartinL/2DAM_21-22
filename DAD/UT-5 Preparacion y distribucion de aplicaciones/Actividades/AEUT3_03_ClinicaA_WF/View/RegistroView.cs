@@ -12,16 +12,27 @@ using Controller;
 
 namespace View
 {
+    /// <summary>
+    /// Vista del Registro
+    /// </summary>
     public partial class RegistroView : Form
     {
         private RegistroController registroController;
 
+        /// <summary>
+        /// Controlador que inicializa el controlador de Registro
+        /// </summary>
         public RegistroView()
         {
             registroController = new RegistroController();
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Método que controla el Login de los Usuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void login(object sender, EventArgs e)
         {
             // Recoger los valores introducidos
@@ -73,9 +84,10 @@ namespace View
             }
         }
 
-        /*
-         * Método que muestra un mensaje al usuario
-         */
+        /// <summary>
+        /// Método que muestra un mensaje al usuario y la vista esta en construcción
+        /// </summary>
+        /// <param name="user">Nombre del usuario</param>
         private void mensajeConstruccion(string user)
         {
             string mensaje = "Bienvenido " + user + 
