@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationParaTest
 {
-    class EjercicioCaracteres
+    public class EjercicioCaracteres
     {
         /// <summary>
         /// EXERCICIO CARACTERES PRA TEST
@@ -18,7 +18,7 @@ namespace ApplicationParaTest
             String resultado = "";
             String texto = "";
 
-            texto = leerArchivo();
+            texto = leerArchivo("frases.txt");
             if (texto.Equals("")) Console.WriteLine("\nEl programa tiene problemas con el archivo!Vuelve a intentarlo mas tarde");
             else
             {
@@ -42,7 +42,7 @@ namespace ApplicationParaTest
         /// </summary>
         /// <param name="texto"></param>
         /// <returns></returns>
-        private static string transformaTexto(string texto)
+        public static string transformaTexto(string texto)
         {
 
             String result = "";
@@ -111,7 +111,7 @@ namespace ApplicationParaTest
         /// </summary>
         /// <param name="result">Cadena que contiene el archivo. Result no tiene espacios, está dada la vuelta y en minúsculas</param>
         /// <returns></returns>
-        private static string sacarAcentos(string result)
+        public static string sacarAcentos(string result)
         {
             char[] vocalesA = { 'à', 'á', 'è', 'é', 'í', 'ò', 'ó', 'ú', 'ï', 'ü' };
             char[] vocales = { 'a', 'a', 'e', 'e', 'i', 'o', 'o', 'u', 'i', 'u' };
@@ -127,7 +127,7 @@ namespace ApplicationParaTest
         /// </summary>
         /// <param name="result">Cadena que contiene el archivo. Result no contiene espacios</param>
         /// <returns></returns>
-        private static string darVuelta(string result)
+        public static string darVuelta(string result)
         {
             char[] charsOfResult = new char[100];//supongamos que el archivo no tiene demasiados caracteres!!!
 
@@ -142,12 +142,12 @@ namespace ApplicationParaTest
         /// Método que lee el archivo y lo pasa a una cadena
         /// </summary>
         /// <returns>  La cadena que contiene el archivo </returns>
-        private static String leerArchivo()
+        public static String leerArchivo(string urlFichero)
         {
             String result = "";
             try
             {
-                using (StreamReader sr = new StreamReader("frases.txt"))
+                using (StreamReader sr = new StreamReader(urlFichero))
                 {
                     string line;
 
