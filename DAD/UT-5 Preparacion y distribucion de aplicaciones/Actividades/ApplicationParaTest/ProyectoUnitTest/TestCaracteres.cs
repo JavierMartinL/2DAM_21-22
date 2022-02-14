@@ -34,6 +34,11 @@ namespace ProyectoUnitTest
             Assert.AreEqual(resultado_ok, resultado);
         }
 
+        // Recorridos para leerArchivo
+        // Camino 1 = I -> 1 -> 2 -> 3 -> ... -> 2 -> F
+        // Camino 2 = I -> 1 -> 2 -> F
+        // Camino 3 = I -> 1 -> F
+
         [TestMethod]
         public void TestLeerArchivo_Camino1()
         {

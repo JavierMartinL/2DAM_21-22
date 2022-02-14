@@ -146,13 +146,14 @@ namespace ApplicationParaTest
         {
             String result = "";
             try
-            {
+            { // Nodo 1
                 using (StreamReader sr = new StreamReader(urlFichero))
                 {
                     string line;
-
+                    // Nodo 2
                     while ((line = sr.ReadLine()) != null)
                     {
+                        // Nodo 3
                         result += line;
                     }
                 }
@@ -163,6 +164,7 @@ namespace ApplicationParaTest
                 Console.WriteLine("The file could not be read!");
                 // Console.WriteLine(e.Message);
             }
+            // Nodo Final
             return result;
         }
     }
