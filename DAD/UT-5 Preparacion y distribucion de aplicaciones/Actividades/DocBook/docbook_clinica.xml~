@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:trans="http://docbook.org/ns/transclusion"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:m="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>DocBook: Clínica Javier</title>
+
+    <author>
+      <personname><firstname>Javier</firstname><surname>Martín
+      Lorenzo</surname></personname>
+
+      <affiliation>
+        <orgname>javiermartin.gara@gmail.com</orgname>
+      </affiliation>
+    </author>
+
+    <volumenum>2.0</volumenum>
+  </info>
+
+  <chapter>
+    <title>Login</title>
+
+    <section>
+      <title>Prueba</title>
+
+      <para>Prueba</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="img/login/login.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>Prueba</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="img/login/login_vacio.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>Prueba</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="img/login/login_error_credenciales.png"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Vistas según el tipo de Usuario</title>
+
+    <section>
+      <title>Administrativo</title>
+
+      <para>Prueba</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="541"
+                     fileref="img/vistas/administrativo/administrativo.png"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+
+    <section>
+      <title>Personal Sanitario</title>
+
+      <para>Prueba</para>
+    </section>
+
+    <section>
+      <title>Administrador</title>
+
+      <para>Prueba</para>
+    </section>
+
+    <section>
+      <title>Dirección</title>
+
+      <para>Prueba</para>
+    </section>
+  </chapter>
+</book>

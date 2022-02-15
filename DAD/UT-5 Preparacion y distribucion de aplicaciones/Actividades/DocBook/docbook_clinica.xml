@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:trans="http://docbook.org/ns/transclusion"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:m="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>DocBook: Clínica Javier</title>
+
+    <author>
+      <personname><firstname>Javier</firstname><surname>Martín
+      Lorenzo</surname></personname>
+
+      <affiliation>
+        <orgname>javiermartin.gara@gmail.com</orgname>
+      </affiliation>
+    </author>
+
+    <volumenum>2.0</volumenum>
+  </info>
+
+  <chapter>
+    <title>Login</title>
+
+    <section>
+      <title>Ventana de Login</title>
+
+      <para>Cuando se inicia la aplicación la primera ventana que aparece es
+      la de Login con la cual los usuarios registrados podrán acceder a la
+      aplicación. Una vez introducida las credenciales el usuario podrá
+      acceder a su ventana según el rol que disponga. Esta aplicación dispone
+      de cuatro roles: <emphasis role="bold">Administrador, Administrativo,
+      Dirección y Personal Sanitario.</emphasis></para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="img/login/login.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <section>
+        <title>Error campos vacíos</title>
+
+        <para>Si el usuario deberá introducir su nick y contraseña, si intenta
+        acceder dejando algún campo vacío sera informado de que los campos son
+        obligatorios.</para>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="img/login/login_vacio.png"/>
+          </imageobject>
+        </mediaobject>
+      </section>
+
+      <section>
+        <title>Error credenciales</title>
+
+        <para>En el caso de que el usuario introduzca algún campo incorrecto
+        que no corresponda con los datos de un usuario registrado, también
+        será informado.</para>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="img/login/login_error_credenciales.png"/>
+          </imageobject>
+        </mediaobject>
+      </section>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Vistas según el rol del usuario</title>
+
+    <section>
+      <title>Administrativo</title>
+
+      <para>Los usuarios con rol de Administrativo podrán gestionar los
+      pacientes, así como sus nota y acceder a la ayuda. Actualmente no se
+      puede realizar acciones con los botones del menú <emphasis
+      role="bold">Pacientes</emphasis> y <emphasis
+      role="bold">Notas</emphasis> ya que se encuentra en construcción.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="541"
+                     fileref="img/vistas/administrativo/administrativo.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <section>
+        <title>Menú</title>
+
+        <section>
+          <title>Pacientes</title>
+
+          <para>Dentro del menú despegable de pacientes podemos observar que
+          tenemos 5 acciones.</para>
+
+          <orderedlist>
+            <listitem>
+              <para><emphasis role="bold">Buscar:</emphasis> Puedes buscar uno
+              u todos los pacientes que tenemos almacenado.</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Crear:</emphasis> Puedes crear un
+              nuevo paciente y almacenar su información.</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Eliminar: </emphasis>Puedes eliminar
+              a un paciente.</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Ver Ficha:</emphasis> Puedes
+              visualizar la ficha medica del paciente. (Se encuentra en
+              construcción)</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Sacar Etiqueta:</emphasis> (Se
+              encuentra en construcción)</para>
+            </listitem>
+          </orderedlist>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/menu.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Centro de día</title>
+
+          <para>El botón del menú Centro de día podemos ver todos los
+          pacientes que tenemos actualmente dentro de nuestra clínica (Se
+          encuentra en construcción)</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/menu_centro_dia.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Cita</title>
+
+          <para>El botón del menú Cita podemos gestionar las citas de
+          cualquier paciente (Se encuentra en construcción)</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/Cita.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Guardar actividad</title>
+
+          <para>El botón del menú Guardar Actividad se encarga de almacenar
+          toda la información que esta en memoria. (Se encuentra en
+          construcción)</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/guardar_actividad.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Ayuda</title>
+
+          <para>El botón del menú Ayuda te muestra el contenido del documento
+          de Administrador generado con SandCastle</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata contentwidth="519"
+                         fileref="img/vistas/administrativo/ayuda.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Salir (Icono Puerta)</title>
+
+          <para>El botón del menú Salir finalizaras la aplicación en caso de
+          aceptar o si deseas continuar deberás negarlo</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/salir.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+      </section>
+
+      <section>
+        <title>Funcionalidad</title>
+
+        <para>Funcionalidad del menú de paciente</para>
+
+        <section>
+          <title>Buscar Pacientes</title>
+
+          <para>Puedes buscar todos los pacientes o filtrar por el DNI o por
+          el NHC</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/vistas/buscar.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Crear Paciente</title>
+
+          <para>Puedes crear un nuevo paciente y almacenar su información.
+          Todo los campos están controlados y para pode almacenar un paciente
+          nuevo no debe existir ni un DNI ni NHC almacenado, en este caso no
+          se podrá crear el paciente.</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/vistas/crear.png"/>
+            </imageobject>
+          </mediaobject>
+
+          <para>En caso de dejar algún campo vació se le notificara y no podrá
+          crear al paciente</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/vistas/crear_vacio.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Eliminar Paciente</title>
+
+          <para>Para eliminar un paciente debes buscarlo filtrando a todos o
+          por el DNI o por el NHC. Una vez localizado el paciente debemos
+          pulsar <emphasis role="bold">click izquierdo</emphasis> en el ratón
+          para poder eliminar al paciente.</para>
+
+          <mediaobject>
+            <imageobjectco>
+              <areaspec otherunits="imagemap" units="other">
+                <area coords="???" xlink:href="???" xml:id="???"/>
+              </areaspec>
+
+              <imageobject>
+                <imagedata fileref="img/vistas/administrativo/vistas/eliminar.png"/>
+              </imageobject>
+            </imageobjectco>
+          </mediaobject>
+
+          <para>Para poder eliminar el paciente debes confirmar la
+          acción.</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/vistas/eliminar1.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+      </section>
+    </section>
+
+    <section>
+      <title>Personal Sanitario</title>
+
+      <para>Los usuarios con rol de Personal Sanitario podrán gestionar los
+      pacientes, así como sus nota y acceder a la ayuda. Actualmente no se
+      puede realizar acciones con los botones del menú <emphasis
+      role="bold">Pacientes</emphasis> y <emphasis
+      role="bold">Notas</emphasis> ya que se encuentra en construcción.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="556"
+                     fileref="img/vistas/personal_sanitario/personal_sanitario.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <section>
+        <title>Menú</title>
+
+        <section>
+          <title>Pacientes</title>
+
+          <para>Dentro del menú despegable de pacientes podemos observar que
+          tenemos 4 acciones. (Se encuentra en construcción)</para>
+
+          <orderedlist>
+            <listitem>
+              <para><emphasis role="bold">Buscar:</emphasis> Puedes buscar uno
+              u todos los pacientes que tenemos almacenado.</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Ver ficha:</emphasis> Puedes
+              visualizar el contenido de la ficha de un paciente en
+              concreto.</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Sacar etiqueta: </emphasis></para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Actas clínicas:</emphasis> Puedes
+              visualizar todas las actas clínicas de un paciente.</para>
+            </listitem>
+          </orderedlist>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/personal_sanitario/menu_pacientes.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Notas</title>
+
+          <para>Dentro del menú despegable de notas podemos observar que
+          tenemos 4 acciones. (Se encuentra en construcción)</para>
+
+          <orderedlist>
+            <listitem>
+              <para><emphasis role="bold">Buscar:</emphasis> Puedes buscar una
+              u todas las notas que has creado</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Crear: </emphasis> Te permite
+              generar una nueva nota</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Modificar:</emphasis> Te permite
+              modificar el contenido de una nota</para>
+            </listitem>
+
+            <listitem>
+              <para><emphasis role="bold">Eliminar:</emphasis> Puedes eliminar
+              una de tus notas</para>
+            </listitem>
+          </orderedlist>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/personal_sanitario/menu_notas.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Ayuda</title>
+
+          <para>El botón del menú Ayuda te muestra el contenido del documento
+          de Administrador generado con SandCastle</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata contentwidth="492"
+                         fileref="img/vistas/administrativo/ayuda.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+
+        <section>
+          <title>Salir</title>
+
+          <para>El botón del menú Salir finalizaras la aplicación en caso de
+          aceptar o si deseas continuar deberás negarlo</para>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="img/vistas/administrativo/salir.png"/>
+            </imageobject>
+          </mediaobject>
+        </section>
+      </section>
+    </section>
+
+    <section>
+      <title>Administrador</title>
+
+      <para>Los usuarios con rol de Administrador no podrán acceder
+      temporalmente a la aplicación porque su ventana se encuentra en
+      construcción.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="img/vistas/administrador/administrador.png"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+
+    <section>
+      <title>Dirección</title>
+
+      <para>Los usuarios con rol de Dirección no podrán acceder temporalmente
+      a la aplicación porque su ventana se encuentra en construcción.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="img/vistas/direccion/direccion.png"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+  </chapter>
+</book>
