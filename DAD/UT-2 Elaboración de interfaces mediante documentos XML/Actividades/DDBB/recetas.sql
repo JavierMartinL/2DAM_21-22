@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `reseta`;
-CREATE DATABASE `reseta`;
-USE `reseta`;
+DROP DATABASE IF EXISTS `receta`;
+CREATE DATABASE `receta`;
+USE `receta`;
 
 CREATE TABLE `users` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -21,8 +21,8 @@ CREATE TABLE `recetas` (
     `tipo` varchar(255) NOT NULL,
     `ingredientes` varchar(255) NOT NULL,
     `pasos` varchar(255) NOT NULL,
-    `comensales` int NOT NULL,
-    `tiempo` int NOT NULL,
+    `comensales` int,
+    `tiempo` int,
     `calorias` int NOT NULL,
     `imagen` varchar(255) NOT NULL,
     PRIMARY KEY (`id`),
