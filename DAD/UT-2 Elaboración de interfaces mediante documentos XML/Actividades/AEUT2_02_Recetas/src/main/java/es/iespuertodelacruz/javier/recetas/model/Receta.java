@@ -17,10 +17,10 @@ public class Receta {
     private String tipo;
     private String ingredientes;
     private String pasos;
-    private int comensales;
-    private int tiempo;
+    private Integer comensales;
+    private Integer tiempo;
     private int calorias;
-    private String imgane;
+    private String imagen;
 
     /**
      * Constructor por defecto
@@ -39,9 +39,9 @@ public class Receta {
      * @param comensales de la receta
      * @param tiempo de la receta
      * @param calorias de la receta
-     * @param imgane de la receta
+     * @param imagen de la receta
      */
-    public Receta(int id, String nombre, Usuario usuario, String tipo, String ingredientes, String pasos, int comensales, int tiempo, int calorias, String imgane) {
+    public Receta(int id, String nombre, Usuario usuario, String tipo, String ingredientes, String pasos, Integer comensales, Integer tiempo, int calorias, String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.usuario = usuario;
@@ -51,7 +51,7 @@ public class Receta {
         this.comensales = comensales;
         this.tiempo = tiempo;
         this.calorias = calorias;
-        this.imgane = imgane;
+        this.imagen = imagen;
     }
     
     // Getters y Setters
@@ -104,19 +104,19 @@ public class Receta {
         this.pasos = pasos;
     }
 
-    public int getComensales() {
+    public Integer getComensales() {
         return comensales;
     }
 
-    public void setComensales(int comensales) {
+    public void setComensales(Integer comensales) {
         this.comensales = comensales;
     }
 
-    public int getTiempo() {
+    public Integer getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(int tiempo) {
+    public void setTiempo(Integer tiempo) {
         this.tiempo = tiempo;
     }
 
@@ -128,12 +128,12 @@ public class Receta {
         this.calorias = calorias;
     }
 
-    public String getImgane() {
-        return imgane;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setImgane(String imgane) {
-        this.imgane = imgane;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     
 }
