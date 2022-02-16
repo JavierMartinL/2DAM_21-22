@@ -180,7 +180,7 @@ public class UsuarioDAO implements ICrud<Usuario, Integer> {
         String sql = "UPDATE " + UsuarioEntry.TABLE_NAME + " SET "
                 + UsuarioEntry.COLUMN_NOMBRE + " = ?, "
                 + UsuarioEntry.COLUMN_PASSWORD + " = ?, "
-                + UsuarioEntry.COLUMN_ROL + " = ? WHERE"
+                + UsuarioEntry.COLUMN_ROL + " = ? WHERE "
                 + UsuarioEntry.COLUMN_ID + " = ?";
         boolean ok;
         

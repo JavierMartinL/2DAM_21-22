@@ -223,7 +223,7 @@ public class RecetaDAO implements ICrud<Receta, Integer>{
                 + RecetaEntry.COLUMN_COMENSALES + " = ?, "
                 + RecetaEntry.COLUMN_TIEMPO + " = ?, "
                 + RecetaEntry.COLUMN_CALORIAS + " = ?, "
-                + RecetaEntry.COLUMN_IMAGEN + " = ? WHERE"
+                + RecetaEntry.COLUMN_IMAGEN + " = ? WHERE "
                 + RecetaEntry.COLUMN_ID + " = ?";
         boolean ok;
         
