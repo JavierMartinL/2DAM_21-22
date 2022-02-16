@@ -13,13 +13,11 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -78,6 +76,10 @@ public class GestionUsuariosController implements Initializable {
         cargarUsuarios();
     }
 
+    /**
+     * Método que controla el boton para crear un usuario
+     * @param event 
+     */
     @FXML
     private void crearUsuario(MouseEvent event) {
         try {
@@ -97,6 +99,10 @@ public class GestionUsuariosController implements Initializable {
         cargarUsuarios();
     }
 
+    /**
+     * Método que controla el boton para modificar un usuario
+     * @param event 
+     */
     @FXML
     private void modificarUsuario(MouseEvent event) {
         Usuario usuario = null;
@@ -129,6 +135,10 @@ public class GestionUsuariosController implements Initializable {
         }
     }
 
+    /**
+     * Método que controla el boton para eliminar un usuario
+     * @param event 
+     */
     @FXML
     private void eliminarUsuario(MouseEvent event) {
         Usuario usuario = null;

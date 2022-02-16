@@ -42,7 +42,7 @@ public class PrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        cargarVista("/view/Home.fxml");
+        vistaHome(null);
     }
     
     /**
@@ -51,7 +51,19 @@ public class PrincipalController implements Initializable {
      */
     @FXML
     private void vistaHome(MouseEvent event) {
-        cargarVista("/view/Home.fxml");
+        try {
+            pnPanel.getChildren().clear();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Home.fxml"));
+            
+            Node node = (Node)loader.load();
+            
+            HomeController hc = loader.getController();
+            hc.setUsuario(usuario);
+            
+            pnPanel.getChildren().add(node);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     /**
@@ -109,6 +121,7 @@ public class PrincipalController implements Initializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
         controlarMenu();
+        vistaHome(null);
     }
 
     /**

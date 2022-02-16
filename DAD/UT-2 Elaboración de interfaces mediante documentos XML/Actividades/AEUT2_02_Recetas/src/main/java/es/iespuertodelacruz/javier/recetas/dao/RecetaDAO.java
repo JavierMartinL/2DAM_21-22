@@ -119,6 +119,49 @@ public class RecetaDAO implements ICrud<Receta, Integer>{
     }
     
     /**
+     * Método que recoge todos las recetas segun el nombre de la DDBB
+     * @param strNombre a buscar
+     * @return Lista de Recetas
+     */
+    public List<Receta> findByNombre(String strNombre) {
+        ArrayList<Receta> recetas = new ArrayList<>();
+
+        String sql = "SELECT * FROM " + RecetaEntry.TABLE_NAME + " WHERE "
+                + RecetaEntry.COLUMN_NOMBRE + " LIKE ?";
+
+        try (Connection connection = gestorDDBB.getConnection();
+                PreparedStatement ps = connection.prepareStatement(sql)) {
+
+            ps.setString(1, "%" + strNombre + "%");
+            
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt(RecetaEntry.COLUMN_ID);
+                String nombre = resultSet.getString(RecetaEntry.COLUMN_NOMBRE);
+                int usuarioId = resultSet.getInt(RecetaEntry.COLUMN_USUARIO);
+                String tipo = resultSet.getString(RecetaEntry.COLUMN_TIPO);
+                String ingredientes = resultSet.getString(RecetaEntry.COLUMN_INGREDIENTES);
+                String pasos = resultSet.getString(RecetaEntry.COLUMN_PASOS);
+                Integer comensales = resultSet.getInt(RecetaEntry.COLUMN_COMENSALES);
+                Integer tiempo = resultSet.getInt(RecetaEntry.COLUMN_TIEMPO);
+                int calorias = resultSet.getInt(RecetaEntry.COLUMN_CALORIAS);
+                String imagen = resultSet.getString(RecetaEntry.COLUMN_IMAGEN);
+
+                Usuario usuario = usuarioDAO.findById(usuarioId);
+                
+                recetas.add(new Receta(id, nombre, usuario, tipo, ingredientes,
+                        pasos, comensales, tiempo, calorias, imagen));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return recetas;
+    }
+    
+    /**
      * Método que recoge todos los tipos de Receta y cuantas veces aparece
      * @return Lista con el tipo y la cantidad
      */
