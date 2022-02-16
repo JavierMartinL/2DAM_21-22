@@ -6,19 +6,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/Principal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
         
-        // Iniciar la aplicación en pantalla completa
-        stage.setMaximized(true);
         // Eliminar el marco de la aplicación y los botones
         //stage.initStyle(StageStyle.UNDECORATED);
         
