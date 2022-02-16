@@ -14,6 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -115,6 +116,35 @@ public class RecetaDAO implements ICrud<Receta, Integer>{
         }
         
         return receta;
+    }
+    
+    /**
+     * Método que recoge todos los tipos de Receta y cuantas veces aparece
+     * @return Lista con el tipo y la cantidad
+     */
+    public HashMap<String, Integer> findDistinctTipo() {
+        HashMap<String, Integer> tipos = new HashMap<String, Integer>();
+        
+        String sql = "SELECT DISTINCT(" + RecetaEntry.COLUMN_TIPO + "),"
+                + " COUNT(" + RecetaEntry.COLUMN_TIPO + ") FROM " + RecetaEntry.TABLE_NAME
+                + " GROUP BY " + RecetaEntry.COLUMN_TIPO;
+
+        try (Connection connection = gestorDDBB.getConnection();
+                PreparedStatement ps = connection.prepareStatement(sql)) {
+
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                tipos.put(
+                        resultSet.getString(RecetaEntry.COLUMN_TIPO),
+                        resultSet.getInt(2));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return tipos;
     }
 
     /**
