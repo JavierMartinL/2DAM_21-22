@@ -18,7 +18,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         
         // Eliminar el marco de la aplicación y los botones
-        //stage.initStyle(StageStyle.UNDECORATED);
+        stage.initStyle(StageStyle.UNDECORATED);
         
         stage.setScene(scene);
         stage.show();

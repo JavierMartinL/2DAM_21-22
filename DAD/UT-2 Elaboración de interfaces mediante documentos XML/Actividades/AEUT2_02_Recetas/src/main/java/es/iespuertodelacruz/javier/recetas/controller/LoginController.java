@@ -20,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -44,6 +45,8 @@ public class LoginController implements Initializable {
     private Label lblErrorPassword;
     @FXML
     private Label lblErrorCredenciales;
+    @FXML
+    private Button btnCerrar;
 
     /**
      * Initializes the controller class.
@@ -145,6 +148,7 @@ public class LoginController implements Initializable {
             // Cargar la nueva ventada Principal
             Scene scene = new Scene(parent);
             stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);
             stage.show();
             
@@ -164,6 +168,16 @@ public class LoginController implements Initializable {
         lblErrorUsuario.setVisible(false);
         lblErrorPassword.setVisible(false);
         lblErrorCredenciales.setVisible(false);
+    }
+
+    /**
+     * Método que cierra la ventana de login
+     * @param event 
+     */
+    @FXML
+    private void cerrar(MouseEvent event) {
+        stage = (Stage) btnCerrar.getScene().getWindow();
+        stage.close();
     }
 
 }
