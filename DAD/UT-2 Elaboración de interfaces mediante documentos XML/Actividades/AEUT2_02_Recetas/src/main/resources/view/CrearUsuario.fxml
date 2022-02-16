@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="338.0" prefWidth="318.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="es.iespuertodelacruz.javier.recetas.controller.CrearUsuarioController">
+<AnchorPane id="AnchorPane" prefHeight="338.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iespuertodelacruz.javier.recetas.controller.CrearUsuarioController">
    <children>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -35,7 +34,7 @@
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
             </TextField>
-            <Label fx:id="lblErrorNombre" alignment="CENTER" prefHeight="17.0" prefWidth="361.0" text="El campo nombre no puede esta vacío">
+            <Label fx:id="lblErrorNombre" alignment="CENTER" prefHeight="17.0" prefWidth="361.0" text="El campo nombre no puede esta vacío" textFill="#d12710">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -50,7 +49,7 @@
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
             </PasswordField>
-            <Label fx:id="lblErrorPassword" alignment="CENTER" prefHeight="17.0" prefWidth="403.0" text="El campo contraseña no puede esta vacío">
+            <Label fx:id="lblErrorPassword" alignment="CENTER" prefHeight="17.0" prefWidth="403.0" text="El campo contraseña no puede esta vacío" textFill="#d12710">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -65,7 +64,7 @@
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
             </ComboBox>
-            <Label fx:id="lblErrorRol" alignment="CENTER" prefHeight="17.0" prefWidth="427.0" text="El campo rol no puede esta vacío">
+            <Label fx:id="lblErrorRol" alignment="CENTER" prefHeight="17.0" prefWidth="427.0" text="El campo rol no puede esta vacío" textFill="#d12710">
                <VBox.margin>
                   <Insets bottom="15.0" />
                </VBox.margin>

@@ -35,7 +35,7 @@
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
             </TextField>
-            <Label fx:id="lblErrorTitulo" alignment="CENTER" prefHeight="17.0" prefWidth="361.0" text="El campo titulo no puede esta vacío">
+            <Label fx:id="lblErrorTitulo" alignment="CENTER" prefHeight="17.0" prefWidth="361.0" text="El campo titulo no puede esta vacío" textFill="#d12710">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -50,7 +50,7 @@
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
             </ComboBox>
-            <Label fx:id="lblErrorTipo" alignment="CENTER" prefHeight="17.0" prefWidth="403.0" text="El campo tipo no puede esta vacío">
+            <Label fx:id="lblErrorTipo" alignment="CENTER" prefHeight="17.0" prefWidth="403.0" text="El campo tipo no puede esta vacío" textFill="#d12710">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -61,7 +61,7 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </TextField>
-            <Label fx:id="lblErrorIngredientes" alignment="CENTER" prefHeight="17.0" prefWidth="361.0" text="El campo ingrediente no puede esta vacío" />
+            <Label fx:id="lblErrorIngredientes" alignment="CENTER" prefHeight="17.0" prefWidth="361.0" text="El campo ingrediente no puede esta vacío" textFill="#d12710" />
             <Label prefHeight="17.0" prefWidth="647.0" text="Pasos">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -72,7 +72,7 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </TextArea>
-            <Label fx:id="lblErrorPasos" alignment="CENTER" prefHeight="17.0" prefWidth="427.0" text="El campo pasos no puede esta vacío">
+            <Label fx:id="lblErrorPasos" alignment="CENTER" prefHeight="17.0" prefWidth="427.0" text="El campo pasos no puede esta vacío" textFill="#d12710">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -108,7 +108,7 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </TextField>
-            <Label fx:id="lblErrorCalorias" alignment="CENTER" prefHeight="17.0" prefWidth="361.0" text="El campo calorias no puede esta vacío">
+            <Label fx:id="lblErrorCalorias" alignment="CENTER" prefHeight="17.0" prefWidth="361.0" text="El campo calorias no puede esta vacío" textFill="#d12710">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>

@@ -38,7 +38,7 @@
                         <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <Label fx:id="lblErrorUsuario" alignment="CENTER" prefHeight="17.0" prefWidth="501.0" text="Error Usuario">
+                  <Label fx:id="lblErrorUsuario" alignment="CENTER" prefHeight="17.0" prefWidth="501.0" text="Error Usuario" textFill="#d12710">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -53,7 +53,7 @@
                         <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                      </VBox.margin>
                   </PasswordField>
-                  <Label fx:id="lblErrorPassword" alignment="CENTER" prefHeight="17.0" prefWidth="503.0" text="Error Contraseña">
+                  <Label fx:id="lblErrorPassword" alignment="CENTER" prefHeight="17.0" prefWidth="503.0" text="Error Contraseña" textFill="#d12710">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -66,7 +66,7 @@
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
                   </Button>
-                  <Label fx:id="lblErrorCredenciales" alignment="CENTER" prefHeight="17.0" prefWidth="500.0" text="Error Credenciales" />
+                  <Label fx:id="lblErrorCredenciales" alignment="CENTER" prefHeight="17.0" prefWidth="500.0" text="Error Credenciales" textFill="#d12710" />
                </children>
             </VBox>
          </children>
