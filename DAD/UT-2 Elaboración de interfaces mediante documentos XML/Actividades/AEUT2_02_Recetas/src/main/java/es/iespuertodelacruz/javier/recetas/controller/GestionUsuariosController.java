@@ -19,7 +19,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -54,6 +56,8 @@ public class GestionUsuariosController implements Initializable {
     private Button btnModificar;
     @FXML
     private Button btnEliminar;
+    @FXML
+    private Label lblErrorSeleccion;
 
     /**
      * Initializes the controller class.
@@ -69,6 +73,8 @@ public class GestionUsuariosController implements Initializable {
         clmPassword.setVisible(false);
         clmRol.setCellValueFactory(new PropertyValueFactory<Usuario, String>("rol"));
 
+        lblErrorSeleccion.setVisible(false);
+        
         cargarUsuarios();
     }
 
@@ -86,7 +92,7 @@ public class GestionUsuariosController implements Initializable {
 
         } catch (IOException ex) {
             ex.printStackTrace();
-        }
+        } 
         
         cargarUsuarios();
     }
@@ -96,6 +102,7 @@ public class GestionUsuariosController implements Initializable {
         Usuario usuario = null;
         int index = tbvListaUsuarios.getSelectionModel().getSelectedIndex();
         if (index >= 0) {
+            lblErrorSeleccion.setVisible(false);
             usuario = usuarios.get(index);
 
             try {
@@ -116,6 +123,9 @@ public class GestionUsuariosController implements Initializable {
             }
             
             cargarUsuarios();
+        } else {
+            lblErrorSeleccion.setText("Para modificar un usuario debes seleccionarlo en la tabla");
+            lblErrorSeleccion.setVisible(true);
         }
     }
 
@@ -124,11 +134,15 @@ public class GestionUsuariosController implements Initializable {
         Usuario usuario = null;
         int index = tbvListaUsuarios.getSelectionModel().getSelectedIndex();
         if (index >= 0) {
+            lblErrorSeleccion.setVisible(false);
             usuario = usuarios.get(index);
 
             usuarioDAO.delete(usuario.getId());
             
             cargarUsuarios();
+        } else {
+            lblErrorSeleccion.setText("Para eliminar un usuario debes seleccionarlo en la tabla");
+            lblErrorSeleccion.setVisible(true);
         }
     }
 
