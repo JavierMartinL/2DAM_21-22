@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -86,6 +87,8 @@ public class CrearRecetaController implements Initializable {
         tipos.add("postres");
         
         cmbTipo.setItems(FXCollections.observableList(tipos));
+        spnComensales.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0, 2));
+        spnTiempo.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0, 10));
         
         limpiarErrores();
     }    
