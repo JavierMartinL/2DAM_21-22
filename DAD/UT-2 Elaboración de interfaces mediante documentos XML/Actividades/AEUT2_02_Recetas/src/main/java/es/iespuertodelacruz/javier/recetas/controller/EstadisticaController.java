@@ -64,6 +64,10 @@ public class EstadisticaController implements Initializable {
         }
     }
     
+    /**
+     * Método que recoge todas las recetas y genera una tarta con el nombre de la receta
+     * y la cantidad de calorias que tiene cada una
+     */
     private void recogerCalorias() {
         ObservableList<PieChart.Data> pierCharData = FXCollections.observableArrayList();
         recetas = recetaDAO.findAll();
