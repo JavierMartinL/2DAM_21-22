@@ -25,6 +25,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -161,7 +162,7 @@ public class HomeController implements Initializable {
         if (index >= 0) {
             lblErrorSeleccion.setVisible(false);
             receta = recetas.get(index);
-            
+
             recetaDAO.delete(receta.getId());
             cargarRecetas(null);
         } else {
@@ -174,7 +175,7 @@ public class HomeController implements Initializable {
      * Método que recoge las recetas y las muestra dentro de la lista
      */
     private void cargarRecetas(String nombre) {
-        
+
         if (nombre == null) {
             recetas = recetaDAO.findAll();
         } else {
@@ -186,7 +187,8 @@ public class HomeController implements Initializable {
 
     /**
      * Setter de Usuario
-     * @param usuario 
+     *
+     * @param usuario
      */
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -194,16 +196,51 @@ public class HomeController implements Initializable {
 
     /**
      * Método que filtra las recetas por el nombre
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void buscarReceta(MouseEvent event) {
         String nombre = txtFiltro.getText().trim();
-        
+
         if (nombre != null && !nombre.equals("")) {
             cargarRecetas(nombre);
         } else {
             cargarRecetas(null);
+        }
+    }
+
+    /**
+     * Método que controla del doble click dentro de la lista para poder mostrar
+     * todos los datos de una receta
+     * @param event 
+     */
+    @FXML
+    private void mostrarReceta(MouseEvent event) {
+        if (event.getButton().equals(MouseButton.PRIMARY)) {
+            if (event.getClickCount() == 2) {
+                Receta receta = null;
+                int index = tbvListaRecetas.getSelectionModel().getSelectedIndex();
+                if (index >= 0) {
+                    receta = recetas.get(index);
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DetalleReceta.fxml"));
+                        Parent root = loader.load();
+
+                        DetalleRecetaController detalleRecetaController = loader.getController();
+                        detalleRecetaController.setReceta(receta);
+
+                        Scene scene = new Scene(root);
+                        Stage stage = new Stage();
+                        stage.initModality(Modality.APPLICATION_MODAL);
+                        stage.setScene(scene);
+                        stage.showAndWait();
+
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
         }
     }
 

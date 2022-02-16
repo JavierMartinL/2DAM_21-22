@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="447.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iespuertodelacruz.javier.recetas.controller.HomeController">
    <children>
-      <TableView fx:id="tbvListaRecetas" layoutX="10.0" layoutY="10.0" prefHeight="365.0" prefWidth="789.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+      <TableView fx:id="tbvListaRecetas" layoutX="10.0" layoutY="10.0" onMouseClicked="#mostrarReceta" prefHeight="365.0" prefWidth="789.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <columns>
             <TableColumn fx:id="clmId" prefWidth="75.0" text="Id" />
             <TableColumn fx:id="clmTitulo" prefWidth="75.0" text="Titulo" />
