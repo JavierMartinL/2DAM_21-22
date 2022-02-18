@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:trans="http://docbook.org/ns/transclusion"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:m="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Examen UT-5: Tienda</title>
+
+    <author>
+      <personname><firstname>Javier</firstname><surname>Martín
+      Lorenzo</surname></personname>
+
+      <affiliation>
+        <orgname>Esta es la documentación de una aplicación para la gestion de
+        una tienda. En esta aplicación podemos realizar comprar, ver todos los
+        productos y sus categorias, pudiendo filtrar por ellas para una
+        busqueda mas sencilla. Una aplicación facil de utilizar y con un corto
+        proseso de adaptación.</orgname>
+      </affiliation>
+    </author>
+
+    <pubdate>2.0</pubdate>
+  </info>
+
+  <chapter>
+    <title>Acceso</title>
+
+    <section>
+      <title>Acceso a la aplicación</title>
+
+      <para>Para acceder a la aplicación debemos tener un número de
+      identificación de Staff y una contraseña. Ambos valores deben ser
+      validos y estar almacenados dentro de la base de datos de la aplicación.
+      Tienes que tener en cuenta que el identificador tiene que ser un número
+      y no se permite la introducción de caracteres.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="413" fileref="img/Screenshot_1.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>Tras hacer el login correctamente aparecerá una lista de botones
+      con todas las categorías principales que dispone la tienda</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="236" fileref="img/Screenshot_2.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>Si pulsamos en la categoría Man accederemos a todos sus productos
+      y subcategorias</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="446" fileref="img/Screenshot_3.png"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Funcionalidad de las Vistas</title>
+
+    <section>
+      <title>Login</title>
+
+      <para>En el login aparecen dos textfield en donde debemos introducir
+      unas credenciales validas para poder acceder a la aplicación. Ambos
+      valores deberán estar dentro de la base de datos para ser comparados con
+      los introducidos por el usuario para poder dar acceso o no.</para>
+
+      <para>En la parte superior izquierda podemos observar un botón el cual
+      nos mostrara la ayuda de administrador</para>
+    </section>
+
+    <section>
+      <title>Categorías</title>
+
+      <para>En la vista de categorías se muestran todas las categorías
+      principales de la tienda. En este momento todas las categorías están en
+      construcción al no estar preparada su vista y nos muestra una alerta con
+      esa información, excepto la categoría Man la cual si dispone de una
+      vista a la cual acceder.</para>
+    </section>
+
+    <section>
+      <title>Categoría Man</title>
+
+      <para>En la vista de categoría Man podemos observar una tabla con todos
+      los productos que están relacionados con esta categoría. En la parte
+      inferior izquierda podemos observar las subcategorias que tiene la
+      categoría Man, pudiendo filtrar por ellas y mostrar los productos que
+      están relacionados.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="429" fileref="img/Screenshot_4.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>En la parte inferior izquierda podemos observar dos botones que
+      interactúan con un producto seleccionado previamente de la lista. El
+      primer botón "Select quantity" sirve para realizar una compra del
+      producto seleccionado y modifica el Stock.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="444" fileref="img/Screenshot_5.png"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>El segundo botón ¨"View Row Selected" se encarga de recoger los
+      datos del producto y lo muestra en una nueva ventana nueva, con lo cual
+      podemos visualizar fácilmente los datos del producto.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="445" fileref="img/Screenshot_6.png"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+  </chapter>
+</book>
