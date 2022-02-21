@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TresEnRaya</string>
+
+    <string name="home_titulo">Tres en Raya</string>
+    <string name="boton_jugar">Jugar</string>
+
+    <string name="jugador_titulo">Jugadores</string>
+    <string name="jugador1">Jugador 1</string>
+    <string name="jugador2">Jugador 2</string>
+    <string name="boton_jugadores">Empezar</string>
+    <string name="input_nombre">Introduce el nombre</string>
+
+    <string name="home_login">Login</string>
+    <string name="input_email">Introduce el email</string>
+    <string name="input_password">Introduce la Contraseña</string>
+    <string name="boton_login">Login</string>
+    <string name="boton_registro">Crear Cuenta</string>
+
+    <string name="registro">Registro</string>
+
+    <string name="boton_repetir">Repetir</string>
+    <string name="boton_home">Inicio</string>
+</resources>
